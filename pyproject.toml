@@ -103,3 +103,6 @@ exclude_lines = [
     "if TYPE_CHECKING:",
     "@abstractmethod",
 ]
+[tool.poetry]
+package-mode = false
+
