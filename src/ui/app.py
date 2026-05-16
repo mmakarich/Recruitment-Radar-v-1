@@ -1,11 +1,20 @@
 """Streamlit UI dla Recruitment Radar."""
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
+import sys
 import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, cast
+
+# Streamlit Cloud can execute this nested entrypoint with src/ui as import root.
+# Ensure repository root is importable so `from src...` imports work reliably.
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
 import pandas as pd
 import streamlit as st
