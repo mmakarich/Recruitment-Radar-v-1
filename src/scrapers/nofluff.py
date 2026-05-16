@@ -154,6 +154,7 @@ class NoFluffScraper(BaseScraper):
         if params.location:
             query["city"] = params.location
         query["sort"] = "newest"
+        query["salaryCurrency"] = "PLN"
         return query
 
     def normalize(self, raw: dict[str, Any]) -> JobOffer:

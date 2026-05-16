@@ -203,7 +203,10 @@ def main(argv: list[str] | None = None) -> int:
 
     print(json.dumps(summary, ensure_ascii=False, default=str))
 
-    return 1 if summary["errors"] else 0
+    if summary["total_count"] == 0 and summary["errors"]:
+        return 1
+
+    return 0
 
 
 if __name__ == "__main__":
