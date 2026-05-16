@@ -155,6 +155,7 @@ class NoFluffScraper(BaseScraper):
             query["city"] = params.location
         query["sort"] = "newest"
         query["salaryCurrency"] = "PLN"
+        query["salaryPeriod"] = "month"
         return query
 
     def normalize(self, raw: dict[str, Any]) -> JobOffer:
