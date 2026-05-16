@@ -1,0 +1,91 @@
+{
+  "data": [
+    {
+      "slug": "innovation-software-junior-mid-frontend-developer-wroclaw-javascript",
+      "title": "Junior+/Mid Frontend Developer",
+      "requiredSkills": ["React", "React Native", "PHP"],
+      "niceToHaveSkills": ["TypeScript"],
+      "workplaceType": "remote",
+      "workingTime": "full_time",
+      "experienceLevel": "mid",
+      "employmentTypes": [
+        {
+          "from": 8000,
+          "to": 13000,
+          "currency": "pln",
+          "type": "b2b",
+          "unit": "month",
+          "gross": false
+        },
+        {
+          "from": 7000,
+          "to": 11000,
+          "currency": "pln",
+          "type": "permanent",
+          "unit": "month",
+          "gross": true
+        }
+      ],
+      "categoryId": 1,
+      "multilocation": [
+        {
+          "city": "Wrocław",
+          "slug": "innovation-software-junior-mid-frontend-developer-wroclaw-javascript",
+          "street": "Żmigrodzka 81/83",
+          "latitude": 51.1417004,
+          "longitude": 17.0323959
+        }
+      ],
+      "city": "Wrocław",
+      "remoteInterview": true,
+      "companyName": "Innovation Software",
+      "publishedAt": "2025-02-13T11:22:38.449Z",
+      "openToHireUkrainians": false,
+      "languages": [],
+      "link": "https://justjoin.it/job-offer/innovation-software-junior-mid-frontend-developer-wroclaw-javascript"
+    },
+    {
+      "slug": "acme-corp-senior-python-engineer-warsaw",
+      "title": "Senior Python Engineer",
+      "requiredSkills": ["Python", "FastAPI", "PostgreSQL"],
+      "niceToHaveSkills": null,
+      "workplaceType": "partly_remote",
+      "workingTime": "full_time",
+      "experienceLevel": "senior",
+      "employmentTypes": [
+        {
+          "type": "mandate_contract",
+          "from": 100,
+          "to": 200,
+          "currency": "pln",
+          "unit": "hour",
+          "gross": true
+        }
+      ],
+      "multilocation": [
+        {"city": "Warszawa"},
+        {"city": "Kraków"}
+      ],
+      "companyName": "Acme Corp",
+      "publishedAt": "2025-03-01T08:00:00.000Z",
+      "link": "https://justjoin.it/job-offer/acme-corp-senior-python-engineer-warsaw"
+    },
+    {
+      "slug": "stealth-co-lead-architect",
+      "title": "Lead Architect",
+      "requiredSkills": ["AWS", "Terraform"],
+      "niceToHaveSkills": null,
+      "workplaceType": "office",
+      "experienceLevel": "c-level",
+      "employmentTypes": [],
+      "multilocation": [],
+      "companyName": "Stealth Co",
+      "publishedAt": "2025-04-10T15:30:00.000Z"
+    }
+  ],
+  "meta": {
+    "totalItems": 3,
+    "totalPages": 1,
+    "currentPage": 1
+  }
+}
