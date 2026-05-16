@@ -157,3 +157,19 @@ def test_main_returns_two_for_unknown_portal(tmp_path: Path) -> None:
     code = run_scraping.main(["--portals", "missing", "--output-dir", str(tmp_path)])
 
     assert code == 2
+
+
+def test_main_returns_zero_when_at_least_one_scraper_succeeds(tmp_path: Path) -> None:
+    code = run_scraping.main(
+        [
+            "--keywords",
+            "python",
+            "--portals",
+            "ok,failing",
+            "--output-dir",
+            str(tmp_path),
+        ]
+    )
+
+    assert code == 0
+    assert any(tmp_path.iterdir())
