@@ -80,9 +80,8 @@ def _guard_auth() -> None:
         require_authorized_email(_get_user_email(), allowed_emails)
     except UnauthorizedError:
         st.error("Brak dostępu do aplikacji Recruitment Radar.")
-        if _is_logged_in():
-            if st.button("Wyloguj"):
-                st.logout()
+        if _is_logged_in() and st.button("Wyloguj"):
+            st.logout()
         st.stop()
 
 
