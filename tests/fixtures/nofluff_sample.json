@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "title": "Senior Python Developer",
+      "name": "Data Wizards",
+      "url": "senior-python-developer-data-wizards",
+      "location": {
+        "places": [
+          {"city": "Warszawa"},
+          {"city": "Kraków"}
+        ]
+      },
+      "workplaceType": "remote",
+      "seniority": "senior",
+      "technology": ["Python", "Django", "AWS"],
+      "salary": [
+        {
+          "type": "b2b",
+          "min": 22000,
+          "max": 28000,
+          "currency": "PLN",
+          "unit": "month"
+        },
+        {
+          "type": "permanent",
+          "min": 16000,
+          "max": 21000,
+          "currency": "PLN",
+          "unit": "month"
+        }
+      ],
+      "posted": 1739445758000
+    },
+    {
+      "title": "Mid Backend Engineer",
+      "company": {"name": "Backend House"},
+      "url": "mid-backend-engineer-backend-house",
+      "location": {
+        "places": [
+          {"city": "Gdańsk"}
+        ]
+      },
+      "workMode": "hybrid",
+      "experienceLevel": "mid",
+      "technologies": [{"name": "Python"}, {"name": "FastAPI"}],
+      "salary": "undisclosed",
+      "posted": "2025-02-12T10:00:00Z"
+    },
+    {
+      "title": "Lead Architect",
+      "companyName": "Enterprise Apps",
+      "slug": "lead-architect-enterprise-apps",
+      "location": {
+        "places": [
+          {"city": "Wrocław"},
+          {"city": "Poznań"}
+        ]
+      },
+      "workplaceType": "office",
+      "level": "lead",
+      "skills": ["Architecture", "Cloud"],
+      "salary": {
+        "ranges": [
+          {
+            "type": "permanent",
+            "from": 25000,
+            "to": 32000,
+            "currency": "PLN",
+            "period": "month"
+          }
+        ]
+      },
+      "posted": 1739354400000
+    }
+  ]
+}
