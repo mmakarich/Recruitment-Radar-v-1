@@ -180,3 +180,20 @@ Docelowy entry point dla Streamlit Community Cloud:
 Instrukcja deploymentu i konfiguracji sekretów znajduje się w:
 
     docs/STREAMLIT_CLOUD_DEPLOYMENT.md
+
+## End-to-end smoke
+
+Synthetic end-to-end smoke test:
+
+    python scripts/smoke_end_to_end.py --output-dir tmp/smoke
+
+The smoke test verifies:
+
+- synthetic offers can pass through matching pipeline,
+- Excel export is generated,
+- DOCX report is generated,
+- generated files are readable.
+
+Release checklist:
+
+    docs/RELEASE_CHECKLIST.md
