@@ -1,0 +1,69 @@
+name: Weekly scraping
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      keywords:
+        description: "Comma-separated keywords"
+        required: false
+        default: "python,javascript,react,java,devops"
+      portals:
+        description: "Comma-separated portals or 'all'"
+        required: false
+        default: "all"
+      limit_per_portal:
+        description: "Maximum offers per portal"
+        required: false
+        default: "200"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Run scraping
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/run_scraping.py \
+            --keywords "${{ github.event.inputs.keywords || 'python,javascript,react,java,devops' }}" \
+            --portals "${{ github.event.inputs.portals || 'all' }}" \
+            --limit-per-portal "${{ github.event.inputs.limit_per_portal || '200' }}"
+
+      - name: Commit snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git lfs track "*.parquet"
+          git add data/snapshots/ .gitattributes
+          git diff --staged --quiet || git commit -m "chore(data): weekly snapshot $(date +%Y-%m-%d)"
+          git push
+
+      - name: Upload scraping summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraping-summary-${{ github.run_id }}
+          path: data/snapshots/*/summary.json
