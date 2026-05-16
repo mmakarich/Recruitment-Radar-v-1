@@ -30,8 +30,19 @@ APP_TITLE = "Recruitment Radar"
 REPO_FULL_NAME = "mmakarich/Recruitment-Radar-v-1"
 
 
+def _get_streamlit_user() -> Any | None:
+    return getattr(st, "user", None)
+
+
+def _is_logged_in() -> bool:
+    user = _get_streamlit_user()
+    if user is None:
+        return False
+    return bool(getattr(user, "is_logged_in", False))
+
+
 def _get_user_email() -> str | None:
-    user = getattr(st, "user", None)
+    user = _get_streamlit_user()
     if user is None:
         return None
 
@@ -39,12 +50,38 @@ def _get_user_email() -> str | None:
     return email if isinstance(email, str) else None
 
 
+def _render_login_gate(allowed_emails: tuple[str, ...]) -> None:
+    if not allowed_emails:
+        return
+
+    if _is_logged_in():
+        return
+
+    st.title("📡 Recruitment Radar")
+    st.info("Zaloguj się, aby uzyskać dostęp do aplikacji.")
+    if st.button("Zaloguj przez SSO"):
+        st.login()
+    st.stop()
+
+
+def _render_logout_control() -> None:
+    if _is_logged_in():
+        email = _get_user_email() or "authenticated user"
+        st.sidebar.caption(f"Zalogowano jako: {email}")
+        if st.sidebar.button("Wyloguj"):
+            st.logout()
+
+
 def _guard_auth() -> None:
     allowed_emails = parse_allowed_emails(settings.OAUTH_ALLOWED_EMAILS)
+    _render_login_gate(allowed_emails)
+
     try:
         require_authorized_email(_get_user_email(), allowed_emails)
     except UnauthorizedError:
         st.error("Brak dostępu do aplikacji Recruitment Radar.")
+        if _is_logged_in() and st.button("Wyloguj"):
+            st.logout()
         st.stop()
 
 
@@ -218,6 +255,7 @@ def _download_exports(matched: list[MatchedOffer], jd: MatchingJDParsed | None) 
 
 
 def _render_sidebar() -> dict[str, Any]:
+    _render_logout_control()
     st.sidebar.header("Filtry")
 
     selected_portals = st.sidebar.multiselect(
