@@ -166,3 +166,17 @@ Jeśli jeden scraper zakończy się błędem, pozostałe scrapery nadal działaj
 ```bash
 python scripts/run_scraping.py --keywords "python" --portals "justjoin,nofluff" --limit-per-portal 10
 ```
+
+## Deployment Streamlit Cloud
+
+Aplikacja UI działa przez Streamlit:
+
+    streamlit run src/ui/app.py
+
+Docelowy entry point dla Streamlit Community Cloud:
+
+    src/ui/app.py
+
+Instrukcja deploymentu i konfiguracji sekretów znajduje się w:
+
+    docs/STREAMLIT_CLOUD_DEPLOYMENT.md
