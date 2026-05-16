@@ -8,3 +8,5 @@ __pycache__/
 data/snapshots/*.parquet
 .streamlit/secrets.toml
 htmlcov/
+
+*.egg-info/
