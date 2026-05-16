@@ -1,0 +1,66 @@
+{
+  "data": [
+    {
+      "title": "Marketing Automation Specialist",
+      "companyName": "Growth Wizards",
+      "slug": "growth-wizards-marketing-automation-specialist-warszawa",
+      "link": "https://rocketjobs.pl/oferta-pracy/growth-wizards-marketing-automation-specialist-warszawa",
+      "multilocation": [
+        {"city": "Warszawa"}
+      ],
+      "requiredSkills": ["Marketing Automation", "HubSpot", "SQL"],
+      "employmentTypes": [
+        {
+          "type": "b2b",
+          "from": 12000,
+          "to": 17000,
+          "currency": "PLN",
+          "unit": "month"
+        },
+        {
+          "type": "permanent",
+          "from": 9000,
+          "to": 13000,
+          "currency": "PLN",
+          "unit": "month"
+        }
+      ],
+      "experienceLevel": "mid",
+      "workplaceType": "remote",
+      "publishedAt": "2025-02-13T11:22:38.449Z"
+    },
+    {
+      "title": "Senior Performance Marketing Manager",
+      "companyName": "Ads House",
+      "slug": "ads-house-senior-performance-marketing-manager",
+      "multilocation": [
+        {"city": "Kraków"},
+        {"city": "Wrocław"}
+      ],
+      "requiredSkills": ["Google Ads", "Meta Ads", "Analytics"],
+      "employmentTypes": [
+        {
+          "type": "mandate_contract",
+          "from": 8000,
+          "to": 11000,
+          "currency": "PLN",
+          "unit": "month"
+        }
+      ],
+      "experienceLevel": "senior",
+      "workplaceType": "hybrid",
+      "publishedAt": "2025-02-12T10:00:00Z"
+    },
+    {
+      "title": "Lead Sales Architect",
+      "companyName": "Enterprise Sales",
+      "slug": "enterprise-sales-lead-sales-architect",
+      "multilocation": [],
+      "requiredSkills": ["Sales", "CRM", "Enterprise"],
+      "employmentTypes": [],
+      "experienceLevel": "c-level",
+      "workplaceType": "office",
+      "publishedAt": "2025-02-11T08:00:00Z"
+    }
+  ]
+}
