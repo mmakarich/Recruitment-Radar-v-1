@@ -1,0 +1,18 @@
+{
+  "snapshot_date": "2026-05-16",
+  "started_at": "2026-05-16T20:35:26.028863+00:00",
+  "keywords": [
+    "python"
+  ],
+  "limit_per_portal": 10,
+  "portals": {
+    "nofluff": {
+      "count": 10,
+      "elapsed_s": 0.611,
+      "file": "nofluff.parquet"
+    }
+  },
+  "errors": {},
+  "total_count": 10,
+  "finished_at": "2026-05-16T20:35:26.040917+00:00"
+}
