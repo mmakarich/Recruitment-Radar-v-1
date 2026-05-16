@@ -10,6 +10,9 @@ from typing import Any
 import pytest
 import respx
 
+from src.matching.compare import JDParsed, MatchScore
+from src.matching.dedup import DedupedOffer
+from src.matching.pipeline import MatchedOffer
 from src.scrapers.base import JobOffer, SalaryRange
 
 
@@ -56,3 +59,46 @@ def justjoin_sample() -> dict[str, Any]:
 @pytest.fixture()
 def justjoin_full_offer(justjoin_sample: dict[str, Any]) -> dict[str, Any]:
     return justjoin_sample["data"][0]
+
+
+# ---------------------------------------------------------------------------
+# Helpery dla testow export (Prompt 8)
+# ---------------------------------------------------------------------------
+
+
+def make_matched_offer(job_offer: JobOffer, score: int = 75) -> MatchedOffer:
+    """Tworzy MatchedOffer z minimalnym DedupedOffer i MatchScore do testow."""
+    deduped = DedupedOffer(
+        primary=job_offer,
+        duplicates=(),
+        portals=(job_offer.portal,),
+        salary_variants=(job_offer.salary,) if job_offer.salary else (),
+        match_confidence=100,
+    )
+    ms = MatchScore(
+        total=score,
+        title_score=score,
+        company_score=0,
+        tech_overlap=0.5,
+        seniority_match=True,
+        location_match=True,
+        work_mode_match=True,
+        salary_delta=None,
+    )
+    return MatchedOffer(deduped=deduped, match_score=ms)
+
+
+@pytest.fixture
+def sample_jd() -> JDParsed:
+    """Przykladowe sparsowane ogloszenie do testow exportu."""
+    from src.scrapers.base import SalaryRange
+
+    return JDParsed(
+        title="Senior Python Developer",
+        company="Acme Corp",
+        location="Warsaw",
+        work_mode="hybrid",
+        seniority="senior",
+        tech_stack=("Python", "FastAPI", "AWS"),
+        salary=SalaryRange(min=18000, max=25000, currency="PLN", period="month", contract="b2b"),
+    )
