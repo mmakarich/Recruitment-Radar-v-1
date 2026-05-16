@@ -116,3 +116,53 @@ Wszystkie pakiety mają licencje MIT/Apache 2.0/BSD i aktywne maintenance (commi
 ## Status promptów
 
 Patrz checklist na końcu `Recruitment_Radar_Prompty.docx`.
+
+## Jak działa automatyczne odświeżanie danych
+
+Recruitment Radar ma workflow GitHub Actions `Weekly scraping`, który uruchamia scrapery i zapisuje wyniki jako snapshoty Parquet w `data/snapshots/{YYYY-MM-DD}/`.
+
+### Harmonogram
+
+Workflow uruchamia się automatycznie co poniedziałek o 6:00 UTC:
+
+```text
+0 6 * * 1
+```
+
+### Uruchomienie ręczne
+
+Workflow można uruchomić ręcznie z GitHub UI:
+
+```text
+Actions → Weekly scraping → Run workflow
+```
+
+Dostępne parametry:
+
+- `keywords` — lista fraz po przecinku, np. `python,javascript,react`
+- `portals` — lista portali po przecinku albo `all`
+- `limit_per_portal` — maksymalna liczba ofert na portal
+
+### Wyniki
+
+Każde uruchomienie zapisuje:
+
+```text
+data/snapshots/{YYYY-MM-DD}/{portal}.parquet
+data/snapshots/{YYYY-MM-DD}/summary.json
+```
+
+`summary.json` zawiera:
+
+- liczbę ofert per portal,
+- czas wykonania per portal,
+- błędy per portal,
+- łączną liczbę ofert.
+
+Jeśli jeden scraper zakończy się błędem, pozostałe scrapery nadal działają. Workflow zwróci exit code `1`, żeby GitHub Actions oznaczył problem, ale zapisze dane z portali, które zakończyły się sukcesem.
+
+### Lokalny smoke run
+
+```bash
+python scripts/run_scraping.py --keywords "python" --portals "justjoin,nofluff" --limit-per-portal 10
+```
