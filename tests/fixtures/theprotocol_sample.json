@@ -1,0 +1,64 @@
+{
+  "props": {
+    "pageProps": {
+      "jobOffers": {
+        "items": [
+          {
+            "title": "Senior Python Developer",
+            "employer": {"name": "Protocol Software"},
+            "slug": "senior-python-developer-warszawa,oferta,abc123",
+            "workplaces": [{"city": "Warszawa", "region": "Mazovian"}],
+            "workMode": "remote",
+            "seniority": "senior",
+            "technologies": [{"name": "Python"}, {"name": "FastAPI"}, {"name": "AWS"}],
+            "salary": {
+              "ranges": [
+                {
+                  "from": 22000,
+                  "to": 28000,
+                  "currency": "PLN",
+                  "period": "month",
+                  "contract": "b2b"
+                }
+              ]
+            },
+            "contractTypes": ["b2b"],
+            "publishedAt": "2026-05-13T10:00:00Z"
+          },
+          {
+            "title": "Mid Backend Engineer",
+            "employer": {"name": "Backend Protocol"},
+            "slug": "mid-backend-engineer-krakow,oferta,def456",
+            "workplaces": [{"city": "Kraków"}],
+            "workingMode": "hybrid",
+            "level": "mid",
+            "technology": ["Python", "Django"],
+            "salary": {
+              "ranges": [
+                {
+                  "min": 5000,
+                  "max": 6500,
+                  "currency": "EUR",
+                  "period": "month",
+                  "contract": "permanent"
+                }
+              ]
+            },
+            "publishedAt": 1778676000000
+          },
+          {
+            "title": "Lead Architect",
+            "companyName": "Architecture Protocol",
+            "slug": "lead-architect,oferta,ghi789",
+            "workplaces": [],
+            "workplaceType": "office",
+            "experienceLevel": "lead",
+            "skills": ["Architecture", "Cloud"],
+            "salary": null,
+            "publishedAt": "2026-05-12T08:00:00Z"
+          }
+        ]
+      }
+    }
+  }
+}
