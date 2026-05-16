@@ -197,3 +197,14 @@ The smoke test verifies:
 Release checklist:
 
     docs/RELEASE_CHECKLIST.md
+
+## Deployment verification
+
+Before deploying to Streamlit Cloud, run:
+
+    python scripts/verify_deployment_readiness.py
+    python scripts/smoke_end_to_end.py --output-dir tmp/smoke
+
+Deployment smoke checklist:
+
+    docs/DEPLOYMENT_SMOKE_CHECKLIST.md
