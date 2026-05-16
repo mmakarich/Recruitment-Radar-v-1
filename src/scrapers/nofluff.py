@@ -226,17 +226,23 @@ def _extract_location(raw: dict[str, Any]) -> str | None:
     if isinstance(location, dict):
         places = location.get("places") or location.get("cities")
         if isinstance(places, list):
-            names = [_place_name(place) for place in places]
-            names = [name for name in names if name]
-            if names:
-                return ", ".join(names)
+            location_names: list[str] = []
+            for place in places:
+                name = _place_name(place)
+                if name is not None:
+                    location_names.append(name)
+            if location_names:
+                return ", ".join(location_names)
 
     places = raw.get("places")
     if isinstance(places, list):
-        names = [_place_name(place) for place in places]
-        names = [name for name in names if name]
-        if names:
-            return ", ".join(names)
+        top_level_place_names: list[str] = []
+        for place in places:
+            name = _place_name(place)
+            if name is not None:
+                top_level_place_names.append(name)
+        if top_level_place_names:
+            return ", ".join(top_level_place_names)
 
     city = raw.get("city") or raw.get("location")
     if isinstance(city, str) and city:
