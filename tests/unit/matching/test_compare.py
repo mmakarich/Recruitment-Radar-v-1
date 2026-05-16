@@ -164,3 +164,17 @@ class TestScoreMatch:
         result = score_match(our, theirs)
 
         assert result.salary_delta is None
+
+    def test_empty_tech_stacks_do_not_get_bonus(self) -> None:
+        our = JDParsed(
+            title="Backend Developer",
+            tech_stack=(),
+        )
+        theirs = _offer(
+            title="Backend Developer",
+            tech_stack=(),
+        )
+
+        result = score_match(our, theirs)
+
+        assert result.tech_overlap == 0.0

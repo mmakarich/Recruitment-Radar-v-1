@@ -79,8 +79,6 @@ def _tech_overlap(ours: tuple[str, ...], theirs: tuple[str, ...]) -> float:
     our_set = {_normalize(item) for item in ours if item}
     their_set = {_normalize(item) for item in theirs if item}
 
-    if not our_set and not their_set:
-        return 1.0
     if not our_set or not their_set:
         return 0.0
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+from threading import Thread
 from typing import Any
 
 from anthropic import APIError, AsyncAnthropic
@@ -10,7 +11,7 @@ from pydantic import ValidationError
 from src.config import settings
 from src.parser.models import JDParsed
 
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-sonnet-4-6"
 MAX_INPUT_CHARS = 8_000
 
 SYSTEM_PROMPT = """Jesteś parserem ogłoszeń o pracę. Wyciągasz ze wklejonego tekstu
@@ -83,7 +84,31 @@ async def parse_jd(text: str, client: AsyncAnthropic | Any | None = None) -> JDP
 
 
 def parse_jd_sync(text: str) -> JDParsed:
-    return asyncio.run(parse_jd(text))
+    try:
+        asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(parse_jd(text))
+
+    value_box: list[JDParsed] = []
+    error_box: list[BaseException] = []
+
+    def _runner() -> None:
+        try:
+            value_box.append(asyncio.run(parse_jd(text)))
+        except BaseException as exc:
+            error_box.append(exc)
+
+    thread = Thread(target=_runner, daemon=True)
+    thread.start()
+    thread.join()
+
+    if error_box:
+        raise error_box[0]
+
+    if not value_box:
+        raise JDParserError("JD parser thread did not return a result")
+
+    return value_box[0]
 
 
 def _truncate_text(text: str) -> str:
