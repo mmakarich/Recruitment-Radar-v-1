@@ -15,6 +15,7 @@ from src.scrapers.base import (
 from src.scrapers.justjoin import JustJoinScraper
 from src.scrapers.nofluff import NoFluffScraper
 from src.scrapers.rocketjobs import RocketJobsScraper
+from src.scrapers.theprotocol import TheProtocolScraper
 
 __all__ = [
     "BaseScraper",
@@ -23,6 +24,7 @@ __all__ = [
     "JustJoinScraper",
     "NoFluffScraper",
     "RocketJobsScraper",
+    "TheProtocolScraper",
     "SalaryPeriod",
     "SalaryRange",
     "ScraperError",
