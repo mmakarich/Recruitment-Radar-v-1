@@ -1,0 +1,46 @@
+{
+  "snapshot_date": "2026-05-18",
+  "started_at": "2026-05-18T09:39:04.285312+00:00",
+  "keywords": [
+    "python",
+    "javascript",
+    "react",
+    "java",
+    "devops"
+  ],
+  "limit_per_portal": 200,
+  "portals": {
+    "justjoin": {
+      "count": 0,
+      "elapsed_s": 3.562,
+      "file": null
+    },
+    "nofluff": {
+      "count": 200,
+      "elapsed_s": 0.581,
+      "file": "nofluff.parquet"
+    },
+    "rocketjobs": {
+      "count": 0,
+      "elapsed_s": 3.37,
+      "file": null
+    },
+    "theprotocol": {
+      "count": 0,
+      "elapsed_s": 3.316,
+      "file": null
+    },
+    "pracuj": {
+      "count": 50,
+      "elapsed_s": 6.262,
+      "file": "pracuj.parquet"
+    }
+  },
+  "errors": {
+    "justjoin": "ScraperHTTPError: 404 z https://api.justjoin.it/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
+    "rocketjobs": "ScraperHTTPError: 404 z https://api.rocketjobs.pl/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
+    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
+  },
+  "total_count": 250,
+  "finished_at": "2026-05-18T09:39:04.316996+00:00"
+}
