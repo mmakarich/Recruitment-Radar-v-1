@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-05-19",
-  "started_at": "2026-05-19T08:55:47.306549+00:00",
+  "started_at": "2026-05-19T08:58:38.726331+00:00",
   "keywords": [
     "python",
     "javascript",
@@ -8,31 +8,31 @@
     "java",
     "devops"
   ],
-  "limit_per_portal": 250,
+  "limit_per_portal": 1000,
   "portals": {
     "justjoin": {
       "count": 0,
-      "elapsed_s": 3.522,
+      "elapsed_s": 3.43,
       "file": null
     },
     "nofluff": {
-      "count": 250,
-      "elapsed_s": 0.608,
+      "count": 1000,
+      "elapsed_s": 1.143,
       "file": "nofluff.parquet"
     },
     "rocketjobs": {
       "count": 0,
-      "elapsed_s": 3.377,
+      "elapsed_s": 3.294,
       "file": null
     },
     "theprotocol": {
       "count": 0,
-      "elapsed_s": 3.257,
+      "elapsed_s": 3.241,
       "file": null
     },
     "pracuj": {
       "count": 50,
-      "elapsed_s": 5.75,
+      "elapsed_s": 6.069,
       "file": "pracuj.parquet"
     }
   },
@@ -41,6 +41,6 @@
     "rocketjobs": "ScraperHTTPError: 404 z https://api.rocketjobs.pl/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
     "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
   },
-  "total_count": 300,
-  "finished_at": "2026-05-19T08:55:47.343296+00:00"
+  "total_count": 1050,
+  "finished_at": "2026-05-19T08:58:38.820702+00:00"
 }
