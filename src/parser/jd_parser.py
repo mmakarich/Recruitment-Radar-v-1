@@ -56,6 +56,12 @@ async def parse_jd(text: str, client: AsyncAnthropic | Any | None = None) -> JDP
     if not source_text.strip():
         raise JDParserError("JD text cannot be empty")
 
+    if client is None and not settings.ANTHROPIC_API_KEY:
+        raise JDParserError(
+            "ANTHROPIC_API_KEY is not configured. "
+            "Add it in Streamlit Cloud secrets to enable JD parsing."
+        )
+
     anthropic_client = client or AsyncAnthropic(api_key=settings.ANTHROPIC_API_KEY)
     user_prompt = _build_user_prompt(source_text)
 
