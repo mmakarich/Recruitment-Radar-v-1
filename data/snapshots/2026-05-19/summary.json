@@ -1,46 +1,42 @@
 {
   "snapshot_date": "2026-05-19",
-  "started_at": "2026-05-19T08:58:38.726331+00:00",
+  "started_at": "2026-05-19T09:57:34.149631+00:00",
   "keywords": [
-    "python",
-    "javascript",
-    "react",
-    "java",
-    "devops"
+    "PMO"
   ],
-  "limit_per_portal": 1000,
+  "limit_per_portal": 200,
   "portals": {
     "justjoin": {
       "count": 0,
-      "elapsed_s": 3.43,
+      "elapsed_s": 3.447,
       "file": null
     },
     "nofluff": {
-      "count": 1000,
-      "elapsed_s": 1.143,
+      "count": 200,
+      "elapsed_s": 0.463,
       "file": "nofluff.parquet"
     },
     "rocketjobs": {
       "count": 0,
-      "elapsed_s": 3.294,
+      "elapsed_s": 3.471,
       "file": null
     },
     "theprotocol": {
       "count": 0,
-      "elapsed_s": 3.241,
+      "elapsed_s": 3.213,
       "file": null
     },
     "pracuj": {
       "count": 50,
-      "elapsed_s": 6.069,
+      "elapsed_s": 6.004,
       "file": "pracuj.parquet"
     }
   },
   "errors": {
-    "justjoin": "ScraperHTTPError: 404 z https://api.justjoin.it/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
-    "rocketjobs": "ScraperHTTPError: 404 z https://api.rocketjobs.pl/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
-    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
+    "justjoin": "ScraperHTTPError: 404 z https://api.justjoin.it/v2/user-panel/offers?keyword=PMO&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=PMO&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
+    "rocketjobs": "ScraperHTTPError: 404 z https://api.rocketjobs.pl/v2/user-panel/offers?keyword=PMO&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=PMO&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
+    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/pmo;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
   },
-  "total_count": 1050,
-  "finished_at": "2026-05-19T08:58:38.820702+00:00"
+  "total_count": 250,
+  "finished_at": "2026-05-19T09:57:34.179085+00:00"
 }
