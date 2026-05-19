@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from src.parser.jd_parser import JDParserError, parse_jd
+from src.parser.jd_parser import JDParserError, parse_jd, parse_jd_sync
 from src.parser.models import JDParsed, SalaryRange
 
 
@@ -230,3 +230,10 @@ async def test_invalid_after_retry_raises() -> None:
 async def test_empty_text_raises() -> None:
     with pytest.raises(JDParserError):
         await parse_jd("   ", client=_MockClient([]))
+
+
+def test_missing_anthropic_api_key_raises_parser_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("src.parser.jd_parser.settings.ANTHROPIC_API_KEY", "")
+
+    with pytest.raises(JDParserError, match="ANTHROPIC_API_KEY is not configured"):
+        parse_jd_sync("Senior Python Developer")
