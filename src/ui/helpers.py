@@ -7,6 +7,8 @@ jednostkowo bez uruchamiania aplikacji webowej.
 from __future__ import annotations
 
 import json
+import tomllib
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -169,10 +171,31 @@ def _summary_status(summary: dict[str, Any]) -> str:
     return "success"
 
 
+def list_keyword_profiles(
+    config_path: Path = Path("config/scraping_keywords.toml"),
+) -> tuple[str, ...]:
+    if not config_path.exists():
+        return ("consulting",)
+
+    try:
+        with config_path.open("rb") as file:
+            payload = tomllib.load(file)
+    except (OSError, tomllib.TOMLDecodeError):
+        return ("consulting",)
+
+    profiles = payload.get("profiles")
+    if not isinstance(profiles, dict):
+        return ("consulting",)
+
+    names = tuple(str(name) for name in profiles if isinstance(name, str))
+    return names or ("consulting",)
+
+
 def trigger_refresh(
     repo_full_name: str = "mmakarich/Recruitment-Radar-v-1",
     workflow_file: str = "scrape-weekly.yml",
     ref: str = "main",
+    inputs: Mapping[str, str] | None = None,
     github_client: Any | None = None,
 ) -> str:
     """Uruchamia workflow_dispatch w GitHub Actions.
@@ -190,6 +213,6 @@ def trigger_refresh(
 
     repo = client.get_repo(repo_full_name)
     workflow = repo.get_workflow(workflow_file)
-    workflow.create_dispatch(ref=ref)
+    workflow.create_dispatch(ref=ref, inputs=dict(inputs or {}))
 
     return f"{repo_full_name}/{workflow_file}@{ref}"
