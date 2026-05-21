@@ -10,6 +10,7 @@ from src.ui.helpers import (
     UnauthorizedError,
     find_latest_snapshot_dir,
     is_authorized_email,
+    list_keyword_profiles,
     load_latest_snapshot,
     parse_allowed_emails,
     require_authorized_email,
@@ -140,9 +141,11 @@ def test_snapshot_status_reads_summary_health(tmp_path: Path) -> None:
 class _FakeWorkflow:
     def __init__(self) -> None:
         self.refs: list[str] = []
+        self.inputs: list[dict[str, str]] = []
 
-    def create_dispatch(self, ref: str) -> None:
+    def create_dispatch(self, ref: str, inputs: dict[str, str] | None = None) -> None:
         self.refs.append(ref)
+        self.inputs.append(inputs or {})
 
 
 class _FakeRepo:
@@ -173,3 +176,50 @@ def test_trigger_refresh_uses_injected_client() -> None:
     assert result == "mmakarich/Recruitment-Radar-v-1/scrape-weekly.yml@main"
     assert client.requested_repos == ["mmakarich/Recruitment-Radar-v-1"]
     assert workflow.refs == ["main"]
+    assert workflow.inputs == [{}]
+
+
+def test_trigger_refresh_passes_workflow_inputs() -> None:
+    workflow = _FakeWorkflow()
+    client = _FakeGithub(workflow)
+
+    trigger_refresh(
+        github_client=client,
+        inputs={
+            "keywords": "PMO Specialist",
+            "keyword_profile": "consulting",
+            "portals": "justjoin,rocketjobs",
+            "limit_per_portal": "20",
+            "limit_per_keyword": "20",
+        },
+    )
+
+    assert workflow.inputs == [
+        {
+            "keywords": "PMO Specialist",
+            "keyword_profile": "consulting",
+            "portals": "justjoin,rocketjobs",
+            "limit_per_portal": "20",
+            "limit_per_keyword": "20",
+        }
+    ]
+
+
+def test_list_keyword_profiles_reads_config(tmp_path: Path) -> None:
+    config_path = tmp_path / "keywords.toml"
+    config_path.write_text(
+        """
+[profiles.consulting]
+description = "Default"
+
+[profiles.erp]
+description = "ERP"
+""",
+        encoding="utf-8",
+    )
+
+    assert list_keyword_profiles(config_path) == ("consulting", "erp")
+
+
+def test_list_keyword_profiles_fallback_for_missing_config(tmp_path: Path) -> None:
+    assert list_keyword_profiles(tmp_path / "missing.toml") == ("consulting",)

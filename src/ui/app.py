@@ -28,6 +28,7 @@ from src.parser.models import JDParsed as ParserJDParsed
 from src.scrapers.base import ContractKind, JobOffer, SalaryPeriod, SalaryRange
 from src.ui.helpers import (
     UnauthorizedError,
+    list_keyword_profiles,
     load_latest_snapshot,
     parse_allowed_emails,
     require_authorized_email,
@@ -36,6 +37,14 @@ from src.ui.helpers import (
 )
 
 APP_TITLE = "Recruitment Radar"
+SCRAPING_PORTAL_OPTIONS = {
+    "justjoin": "JustJoin",
+    "nofluff": "NoFluffJobs",
+    "rocketjobs": "RocketJobs",
+    "pracuj": "Pracuj",
+    "theprotocol": "TheProtocol",
+}
+DEFAULT_SCRAPING_PORTALS = ("justjoin", "nofluff", "rocketjobs", "pracuj")
 
 
 def _get_streamlit_user() -> Any | None:
@@ -303,12 +312,70 @@ def _render_sidebar() -> dict[str, Any]:
     st.sidebar.caption(_snapshot_status_caption())
     _render_snapshot_health()
 
-    if st.sidebar.button("🔄 Odśwież teraz"):
-        try:
-            workflow_id = trigger_refresh(repo_full_name=settings.GITHUB_REPO_FULL_NAME)
-            st.sidebar.success(f"Uruchomiono workflow: {workflow_id}")
-        except Exception as exc:
-            st.sidebar.error(f"Nie udało się uruchomić workflow: {exc}")
+    with st.sidebar.expander("Odśwież dane", expanded=False):
+        keyword_profiles = list_keyword_profiles()
+        profile_index = (
+            keyword_profiles.index("consulting") if "consulting" in keyword_profiles else 0
+        )
+        keyword_profile = st.selectbox(
+            "Profil keywordów",
+            keyword_profiles,
+            index=profile_index,
+        )
+        manual_keywords = st.text_input(
+            "Ręczne keywordy",
+            value="",
+            placeholder="np. PMO Specialist,SAP",
+        )
+        scraping_portals = st.multiselect(
+            "Portale do scrapingu",
+            list(SCRAPING_PORTAL_OPTIONS),
+            default=list(DEFAULT_SCRAPING_PORTALS),
+            format_func=lambda key: SCRAPING_PORTAL_OPTIONS.get(key, key),
+        )
+        limit_per_portal = int(
+            st.number_input(
+                "Limit ofert per portal",
+                min_value=1,
+                max_value=5000,
+                value=200,
+                step=50,
+            )
+        )
+        limit_per_keyword = int(
+            st.number_input(
+                "Limit ofert per keyword",
+                min_value=1,
+                max_value=500,
+                value=50,
+                step=10,
+            )
+        )
+
+        if st.button("🔄 Odśwież teraz"):
+            if not scraping_portals:
+                st.error("Wybierz co najmniej jeden portal.")
+            else:
+                portals_arg = (
+                    "all"
+                    if tuple(scraping_portals) == DEFAULT_SCRAPING_PORTALS
+                    else ",".join(scraping_portals)
+                )
+                workflow_inputs = {
+                    "keywords": manual_keywords.strip(),
+                    "keyword_profile": str(keyword_profile),
+                    "portals": portals_arg,
+                    "limit_per_portal": str(limit_per_portal),
+                    "limit_per_keyword": str(limit_per_keyword),
+                }
+                try:
+                    workflow_id = trigger_refresh(
+                        repo_full_name=settings.GITHUB_REPO_FULL_NAME,
+                        inputs=workflow_inputs,
+                    )
+                    st.sidebar.success(f"Uruchomiono workflow: {workflow_id}")
+                except Exception as exc:
+                    st.sidebar.error(f"Nie udało się uruchomić workflow: {exc}")
 
     return {
         "selected_portals": selected_portals,

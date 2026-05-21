@@ -137,6 +137,12 @@ Workflow można uruchomić ręcznie z GitHub UI:
 Actions → Weekly scraping → Run workflow
 ```
 
+Te same parametry można też wysłać z aplikacji Streamlit w sidebarze:
+
+```text
+Dane → Odśwież dane
+```
+
 Dostępne parametry:
 
 - `keyword_profile` — profil fraz z `config/scraping_keywords.toml`, domyślnie `consulting`
