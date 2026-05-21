@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T18:59:58.424023+00:00",
+  "started_at": "2026-05-21T19:37:47.706015+00:00",
   "keywords": [
     "python",
     "javascript",
@@ -11,36 +11,24 @@
   "limit_per_portal": 200,
   "portals": {
     "justjoin": {
-      "count": 0,
-      "elapsed_s": 3.438,
-      "file": null
-    },
-    "nofluff": {
-      "count": 200,
-      "elapsed_s": 0.602,
-      "file": "nofluff.parquet"
+      "count": 100,
+      "elapsed_s": 6.783,
+      "file": "justjoin.parquet"
     },
     "rocketjobs": {
       "count": 0,
-      "elapsed_s": 3.368,
+      "elapsed_s": 4.938,
       "file": null
-    },
-    "theprotocol": {
-      "count": 0,
-      "elapsed_s": 3.237,
-      "file": null
-    },
-    "pracuj": {
-      "count": 50,
-      "elapsed_s": 6.174,
-      "file": "pracuj.parquet"
     }
   },
   "errors": {
-    "justjoin": "ScraperHTTPError: 404 z https://api.justjoin.it/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
-    "rocketjobs": "ScraperHTTPError: 404 z https://api.rocketjobs.pl/v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1: {\"statusCode\":404,\"message\":\"Cannot GET /v2/user-panel/offers?keyword=python+javascript+react+java+devops&orderBy=DESC&sortBy=newest&page=1\",\"error\":\"Not Found\"}",
-    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
+    "rocketjobs": "ScraperHTTPError: 404 z https://rocketjobs.pl/oferty-pracy/wszystkie-lokalizacje/python: <!DOCTYPE html><html id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-"
   },
-  "total_count": 250,
-  "finished_at": "2026-05-21T18:59:58.454940+00:00"
+  "failed_portals": [
+    "rocketjobs"
+  ],
+  "empty_portals": [],
+  "total_count": 100,
+  "finished_at": "2026-05-21T19:37:47.723910+00:00",
+  "status": "degraded"
 }
