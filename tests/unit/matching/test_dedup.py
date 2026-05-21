@@ -14,16 +14,20 @@ def _offer(
     url: str = "https://example.com/job",
     salary: SalaryRange | None = None,
     published_at: datetime | None = None,
+    location: str | None = "Warszawa",
+    work_mode: str | None = "remote",
+    seniority: str | None = "senior",
+    tech_stack: tuple[str, ...] = ("Python", "FastAPI"),
 ) -> JobOffer:
     return JobOffer(
         title=title,
         company=company,
         portal=portal,
         url=url,
-        location="Warszawa",
-        work_mode="remote",
-        seniority="senior",
-        tech_stack=("Python", "FastAPI"),
+        location=location,
+        work_mode=work_mode,  # type: ignore[arg-type]
+        seniority=seniority,  # type: ignore[arg-type]
+        tech_stack=tech_stack,
         salary=salary,
         published_at=published_at or datetime(2026, 1, 1, tzinfo=UTC),
         scraped_at=datetime(2026, 1, 2, tzinfo=UTC),
@@ -157,3 +161,55 @@ class TestDeduplicate:
             _salary(20000, 25000),
             _salary(22000, 28000),
         )
+
+    def test_same_company_title_different_seniority_not_merged(self) -> None:
+        first = _offer(
+            title="Python Developer",
+            company="Acme",
+            seniority="junior",
+        )
+        second = _offer(
+            title="Python Developer",
+            company="Acme",
+            seniority="senior",
+        )
+
+        result = deduplicate([first, second], threshold=85)
+
+        assert len(result) == 2
+
+    def test_same_company_title_different_onsite_locations_not_merged(self) -> None:
+        first = _offer(
+            title="Python Developer",
+            company="Acme",
+            location="Warszawa",
+            work_mode="onsite",
+        )
+        second = _offer(
+            title="Python Developer",
+            company="Acme",
+            location="Kraków",
+            work_mode="onsite",
+        )
+
+        result = deduplicate([first, second], threshold=85)
+
+        assert len(result) == 2
+
+    def test_remote_multilocation_offer_can_still_merge(self) -> None:
+        first = _offer(
+            title="Python Developer",
+            company="Acme",
+            location="Warszawa, Kraków",
+            work_mode="remote",
+        )
+        second = _offer(
+            title="Python Developer",
+            company="Acme Sp. z o.o.",
+            location="Kraków",
+            work_mode="remote",
+        )
+
+        result = deduplicate([first, second], threshold=85)
+
+        assert len(result) == 1
