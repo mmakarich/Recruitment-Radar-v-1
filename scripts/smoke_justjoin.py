@@ -17,6 +17,11 @@ sys.path.insert(0, ".")
 from src.scrapers import JustJoinScraper, SearchParams  # noqa: E402
 
 
+def _configure_stdout() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+
 async def main() -> int:
     scraper = JustJoinScraper()
     offers = await scraper.fetch(SearchParams(keywords=("python",), limit=10))
@@ -41,4 +46,5 @@ async def main() -> int:
 
 
 if __name__ == "__main__":
+    _configure_stdout()
     sys.exit(asyncio.run(main()))

@@ -11,7 +11,7 @@ import respx
 
 from src.scrapers import JobOffer, RocketJobsScraper, SalaryRange, SearchParams
 from src.scrapers.base import ScraperHTTPError, ScraperTimeoutError
-from src.scrapers.rocketjobs import API_URL
+from src.scrapers.rocketjobs import API_URL, _extract_offers_from_frontend_html
 
 
 @pytest.fixture()
@@ -168,7 +168,29 @@ class TestFetch:
         respx.get(host="api.rocketjobs.pl").mock(return_value=httpx.Response(404))
 
         with pytest.raises(ScraperHTTPError):
-            await RocketJobsScraper().fetch(SearchParams(limit=10))
+            await RocketJobsScraper(enable_frontend_fallback=False).fetch(SearchParams(limit=10))
+
+    @respx.mock
+    async def test_fetch_falls_back_to_frontend_payload(
+        self,
+        rocketjobs_full_offer: dict[str, Any],
+    ) -> None:
+        api_route = respx.get(host="api.rocketjobs.pl").mock(return_value=httpx.Response(404))
+        payload = {"pages": [{"data": [rocketjobs_full_offer]}], "pageParams": [None]}
+        escaped_payload = json.dumps(payload, ensure_ascii=False).replace('"', r"\"")
+        frontend_route = respx.get(host="rocketjobs.pl").mock(
+            return_value=httpx.Response(
+                200,
+                text=f'<script>self.__next_f.push([1,"{escaped_payload}"])</script>',
+            )
+        )
+
+        offers = await RocketJobsScraper().fetch(SearchParams(keywords=("marketing",), limit=10))
+
+        assert api_route.called
+        assert frontend_route.called
+        assert len(offers) == 1
+        assert offers[0].location == "Warszawa"
 
     @respx.mock
     async def test_fetch_builds_query_with_seniority_and_keywords(
@@ -215,3 +237,16 @@ class TestFetch:
         offers = await RocketJobsScraper().fetch(SearchParams(limit=10))
 
         assert len(offers) == 3
+
+    def test_extract_offers_from_frontend_html(
+        self,
+        rocketjobs_full_offer: dict[str, Any],
+    ) -> None:
+        payload = {"pages": [{"data": [rocketjobs_full_offer]}], "pageParams": [None]}
+        escaped_payload = json.dumps(payload, ensure_ascii=False).replace('"', r"\"")
+        html = f'<script>self.__next_f.push([1,"{escaped_payload}"])</script>'
+
+        offers = _extract_offers_from_frontend_html(html)
+
+        assert len(offers) == 1
+        assert offers[0]["title"] == "Marketing Automation Specialist"
