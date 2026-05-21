@@ -67,7 +67,7 @@ def _payload(
 
 @pytest.mark.asyncio
 async def test_parse_polish_jd_with_salary() -> None:
-    sample = Path("tests/fixtures/jd_samples/python_senior_pl.txt").read_text()
+    sample = Path("tests/fixtures/jd_samples/python_senior_pl.txt").read_text(encoding="utf-8")
     client = _MockClient(
         [
             _payload(
@@ -103,7 +103,7 @@ async def test_parse_polish_jd_with_salary() -> None:
 
 @pytest.mark.asyncio
 async def test_parse_english_jd_remote() -> None:
-    sample = Path("tests/fixtures/jd_samples/react_mid_en.txt").read_text()
+    sample = Path("tests/fixtures/jd_samples/react_mid_en.txt").read_text(encoding="utf-8")
     client = _MockClient(
         [
             _payload(

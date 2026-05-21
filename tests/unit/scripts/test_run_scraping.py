@@ -130,7 +130,7 @@ async def test_run_scraping_writes_summary_json(tmp_path: Path) -> None:
 
     summary_path = tmp_path / "2026-05-16" / "summary.json"
     assert summary_path.exists()
-    content = summary_path.read_text()
+    content = summary_path.read_text(encoding="utf-8")
     assert "ok" in content
     assert "empty" in content
 
