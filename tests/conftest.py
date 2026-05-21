@@ -53,7 +53,7 @@ def mock_httpx() -> Any:
 
 @pytest.fixture()
 def justjoin_sample() -> dict[str, Any]:
-    return json.loads(Path("tests/fixtures/justjoin_sample.json").read_text())
+    return json.loads(Path("tests/fixtures/justjoin_sample.json").read_text(encoding="utf-8"))
 
 
 @pytest.fixture()

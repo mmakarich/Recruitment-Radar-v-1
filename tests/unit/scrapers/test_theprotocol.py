@@ -18,12 +18,12 @@ from src.scrapers.theprotocol import (
 
 @pytest.fixture()
 def theprotocol_next_data() -> dict[str, Any]:
-    return json.loads(Path("tests/fixtures/theprotocol_sample.json").read_text())
+    return json.loads(Path("tests/fixtures/theprotocol_sample.json").read_text(encoding="utf-8"))
 
 
 @pytest.fixture()
 def theprotocol_html() -> str:
-    return Path("tests/fixtures/theprotocol_sample.html").read_text()
+    return Path("tests/fixtures/theprotocol_sample.html").read_text(encoding="utf-8")
 
 
 @pytest.fixture()

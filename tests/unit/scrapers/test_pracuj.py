@@ -57,7 +57,7 @@ class TestParseSalaryString:
 
 class TestExtractOffersFromHtml:
     def test_extract_offers_from_fixture_html(self) -> None:
-        html = Path("tests/fixtures/pracuj_sample.html").read_text()
+        html = Path("tests/fixtures/pracuj_sample.html").read_text(encoding="utf-8")
 
         offers = extract_offers_from_html(html)
 

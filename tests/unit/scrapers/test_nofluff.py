@@ -15,7 +15,7 @@ from src.scrapers.nofluff import API_URL
 
 @pytest.fixture()
 def nofluff_sample() -> dict[str, Any]:
-    return json.loads(Path("tests/fixtures/nofluff_sample.json").read_text())
+    return json.loads(Path("tests/fixtures/nofluff_sample.json").read_text(encoding="utf-8"))
 
 
 @pytest.fixture()
