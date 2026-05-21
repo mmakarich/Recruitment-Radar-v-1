@@ -186,6 +186,28 @@ class TestFetch:
         assert offers[0].location == "Wrocław"
 
     @respx.mock
+    async def test_fetch_frontend_fallback_uses_keyword_query(
+        self,
+        justjoin_full_offer: dict[str, Any],
+    ) -> None:
+        respx.get(host="api.justjoin.it").mock(return_value=httpx.Response(404))
+        payload = {"pages": [{"data": [justjoin_full_offer]}], "pageParams": [None]}
+        escaped_payload = json.dumps(payload, ensure_ascii=False).replace('"', r"\"")
+        keyword_frontend_route = respx.get(
+            "https://justjoin.it/job-offers/all-locations?keyword=pmo%20specialist"
+        ).mock(
+            return_value=httpx.Response(
+                200,
+                text=f'<script>self.__next_f.push([1,"{escaped_payload}"])</script>',
+            )
+        )
+
+        offers = await JustJoinScraper().fetch(SearchParams(keywords=("PMO Specialist",), limit=10))
+
+        assert keyword_frontend_route.called
+        assert len(offers) == 1
+
+    @respx.mock
     async def test_fetch_builds_query_with_seniority_and_keywords(
         self, justjoin_sample: dict[str, Any]
     ) -> None:

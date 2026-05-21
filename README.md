@@ -139,9 +139,11 @@ Actions → Weekly scraping → Run workflow
 
 Dostępne parametry:
 
-- `keywords` — lista fraz po przecinku, np. `python,javascript,react`
+- `keyword_profile` — profil fraz z `config/scraping_keywords.toml`, domyślnie `consulting`
+- `keywords` — opcjonalna lista fraz po przecinku, np. `PMO Specialist,SAP`; jeśli ustawiona, nadpisuje `keyword_profile`
 - `portals` — lista portali po przecinku albo `all`
 - `limit_per_portal` — maksymalna liczba ofert na portal
+- `limit_per_keyword` — maksymalna liczba ofert pobierana dla jednej frazy przed lokalnym filtrowaniem
 
 ### Wyniki
 
@@ -164,8 +166,16 @@ Jeśli jeden scraper zakończy się błędem, pozostałe scrapery nadal działaj
 ### Lokalny smoke run
 
 ```bash
-python scripts/run_scraping.py --keywords "python" --portals "justjoin,nofluff" --limit-per-portal 10
+python scripts/run_scraping.py --keyword-profile consulting --portals "justjoin,nofluff" --limit-per-portal 100
+python scripts/run_scraping.py --keywords "PMO Specialist" --portals "rocketjobs,pracuj" --limit-per-portal 20
 ```
+
+`keyword_profile` służy do szerokiego radaru consultingowego: software, data,
+cloud/devops, ERP/CRM, delivery/PMO i role biznesowo-operacyjne. Skrypt odpala
+scraping per fraza, deduplikuje wyniki po URL i filtruje lokalnie po tytule,
+tech stacku oraz surowym payloadzie portalu. Dzięki temu szeroki profil może
+pobierać wiele obszarów rynku, a ręczna fraza typu `PMO Specialist` nie zapisuje
+losowych ofert z ogólnego listingu portalu.
 
 ## Deployment Streamlit Cloud
 

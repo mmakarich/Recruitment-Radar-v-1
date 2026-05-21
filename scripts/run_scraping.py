@@ -10,7 +10,10 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import re
 import sys
+import tomllib
+import unicodedata
 from dataclasses import asdict
 from datetime import UTC, date, datetime
 from pathlib import Path
@@ -30,6 +33,9 @@ from src.scrapers import (
 from src.scrapers.base import JobOffer, SalaryRange
 
 DEFAULT_KEYWORDS = ("python", "javascript", "react", "java", "devops")
+DEFAULT_KEYWORD_PROFILE = "consulting"
+DEFAULT_KEYWORD_CONFIG = Path("config/scraping_keywords.toml")
+DEFAULT_LIMIT_PER_KEYWORD = 50
 DEFAULT_PORTALS = ("justjoin", "nofluff", "rocketjobs", "pracuj")
 OPTIONAL_PORTALS = ("theprotocol",)
 
@@ -48,14 +54,33 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run Recruitment Radar scraping pipeline")
     parser.add_argument(
         "--keywords",
-        default=",".join(DEFAULT_KEYWORDS),
-        help="Comma-separated keywords",
+        default="",
+        help="Comma-separated keywords. When provided, they override --keyword-profile.",
+    )
+    parser.add_argument(
+        "--keyword-profile",
+        default=DEFAULT_KEYWORD_PROFILE,
+        help=(
+            "Keyword profile name from config/scraping_keywords.toml. "
+            "Ignored when --keywords is set."
+        ),
+    )
+    parser.add_argument(
+        "--keyword-config",
+        default=str(DEFAULT_KEYWORD_CONFIG),
+        help="Path to TOML keyword profile config.",
     )
     parser.add_argument(
         "--limit-per-portal",
         type=int,
         default=200,
         help="Maximum offers per portal",
+    )
+    parser.add_argument(
+        "--limit-per-keyword",
+        type=int,
+        default=DEFAULT_LIMIT_PER_KEYWORD,
+        help="Maximum offers fetched per keyword before local filtering and deduplication.",
     )
     parser.add_argument(
         "--portals",
@@ -75,6 +100,66 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def _split_csv(value: str) -> tuple[str, ...]:
     return tuple(item.strip() for item in value.split(",") if item.strip())
+
+
+def _dedupe_strings(values: tuple[str, ...]) -> tuple[str, ...]:
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for value in values:
+        normalized = " ".join(value.strip().split())
+        key = normalized.casefold()
+        if normalized and key not in seen:
+            seen.add(key)
+            deduped.append(normalized)
+    return tuple(deduped)
+
+
+def _selected_keywords(
+    *,
+    keywords_arg: str,
+    keyword_profile: str | None,
+    keyword_config_path: Path,
+) -> tuple[str, ...]:
+    explicit_keywords = _split_csv(keywords_arg)
+    if explicit_keywords:
+        return _dedupe_strings(explicit_keywords)
+
+    profile_name = (keyword_profile or "").strip()
+    if profile_name:
+        return _load_keyword_profile(profile_name, keyword_config_path)
+
+    return DEFAULT_KEYWORDS
+
+
+def _load_keyword_profile(profile_name: str, config_path: Path) -> tuple[str, ...]:
+    try:
+        with config_path.open("rb") as file:
+            data = tomllib.load(file)
+    except FileNotFoundError as exc:
+        raise ValueError(f"Keyword profile config not found: {config_path}") from exc
+    except tomllib.TOMLDecodeError as exc:
+        raise ValueError(f"Invalid keyword profile config: {config_path}") from exc
+
+    profiles = data.get("profiles")
+    if not isinstance(profiles, dict) or profile_name not in profiles:
+        raise ValueError(f"Unknown keyword profile: {profile_name}")
+
+    keywords = _collect_keywords(profiles[profile_name])
+    if not keywords:
+        raise ValueError(f"Keyword profile has no keywords: {profile_name}")
+    return _dedupe_strings(tuple(keywords))
+
+
+def _collect_keywords(value: object) -> list[str]:
+    if isinstance(value, dict):
+        collected: list[str] = []
+        for key, nested in value.items():
+            if key == "keywords" and isinstance(nested, list):
+                collected.extend(item for item in nested if isinstance(item, str))
+            elif isinstance(nested, dict):
+                collected.extend(_collect_keywords(nested))
+        return collected
+    return []
 
 
 def _selected_portals(value: str) -> tuple[str, ...]:
@@ -122,15 +207,36 @@ async def _run_single_scraper(
     portal: str,
     keywords: tuple[str, ...],
     limit: int,
+    limit_per_keyword: int,
 ) -> tuple[str, list[JobOffer], str | None, float]:
     started = perf_counter()
     scraper_cls = SCRAPER_REGISTRY[portal]
     scraper = scraper_cls()
-    params = SearchParams(keywords=keywords, limit=limit)
 
+    offers: list[JobOffer] = []
+    errors: list[str] = []
+    keyword_batches = keywords or ("",)
     try:
-        offers = await scraper.fetch(params)
-        return portal, offers, None, perf_counter() - started
+        for keyword in keyword_batches:
+            params = SearchParams(
+                keywords=(keyword,) if keyword else (),
+                limit=min(limit, limit_per_keyword),
+            )
+            try:
+                batch = await scraper.fetch(params)
+            except Exception as exc:
+                errors.append(f"{keyword or '<empty>'}: {type(exc).__name__}: {exc}")
+                continue
+
+            offers.extend(
+                offer for offer in batch if not keyword or _offer_matches_keyword(offer, keyword)
+            )
+            offers = _dedupe_offers(offers)
+            if len(offers) >= limit:
+                break
+
+        error = "; ".join(errors[:3]) if errors and not offers else None
+        return portal, offers[:limit], error, perf_counter() - started
     except Exception as exc:
         return portal, [], f"{type(exc).__name__}: {exc}", perf_counter() - started
 
@@ -141,14 +247,21 @@ async def run_scraping(
     portals: tuple[str, ...],
     limit_per_portal: int,
     output_base_dir: Path,
+    limit_per_keyword: int = DEFAULT_LIMIT_PER_KEYWORD,
     snapshot_date: date | None = None,
+    keyword_profile: str | None = None,
 ) -> dict[str, Any]:
     snapshot_day = snapshot_date or datetime.now(UTC).date()
     snapshot_dir = output_base_dir / snapshot_day.isoformat()
     snapshot_dir.mkdir(parents=True, exist_ok=True)
 
     tasks = [
-        _run_single_scraper(portal=portal, keywords=keywords, limit=limit_per_portal)
+        _run_single_scraper(
+            portal=portal,
+            keywords=keywords,
+            limit=limit_per_portal,
+            limit_per_keyword=limit_per_keyword,
+        )
         for portal in portals
     ]
     results = await asyncio.gather(*tasks)
@@ -156,8 +269,11 @@ async def run_scraping(
     summary: dict[str, Any] = {
         "snapshot_date": snapshot_day.isoformat(),
         "started_at": datetime.now(UTC).isoformat(),
+        "keyword_profile": keyword_profile,
         "keywords": list(keywords),
+        "keyword_count": len(keywords),
         "limit_per_portal": limit_per_portal,
+        "limit_per_keyword": limit_per_keyword,
         "portals": {},
         "errors": {},
         "failed_portals": [],
@@ -205,11 +321,78 @@ def _summary_status(summary: dict[str, Any]) -> ScrapingStatus:
     return "success"
 
 
+def _dedupe_offers(offers: list[JobOffer]) -> list[JobOffer]:
+    seen: set[str] = set()
+    deduped: list[JobOffer] = []
+    for offer in offers:
+        key = _offer_identity(offer)
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(offer)
+    return deduped
+
+
+def _offer_identity(offer: JobOffer) -> str:
+    if offer.url:
+        return f"url:{offer.url.strip().casefold()}"
+    return "|".join(
+        (
+            "fallback",
+            offer.portal.casefold(),
+            offer.title.casefold(),
+            offer.company.casefold(),
+            (offer.location or "").casefold(),
+        )
+    )
+
+
+def _offer_matches_keyword(offer: JobOffer, keyword: str) -> bool:
+    normalized_keyword = _normalize_search_text(keyword)
+    if not normalized_keyword:
+        return True
+
+    haystack = _normalize_search_text(
+        " ".join(
+            (
+                offer.title,
+                offer.company,
+                offer.location or "",
+                " ".join(offer.tech_stack),
+                json.dumps(offer.raw, ensure_ascii=False, default=str),
+            )
+        )
+    )
+    if normalized_keyword in haystack:
+        return True
+
+    terms = tuple(term for term in normalized_keyword.split() if term)
+    if len(terms) > 1:
+        return all(_term_matches_haystack(term, haystack) for term in terms)
+    return _term_matches_haystack(normalized_keyword, haystack)
+
+
+def _term_matches_haystack(term: str, haystack: str) -> bool:
+    if re.fullmatch(r"[a-z0-9]+", term):
+        return re.search(rf"(?<![a-z0-9]){re.escape(term)}(?![a-z0-9])", haystack) is not None
+    return term in haystack
+
+
+def _normalize_search_text(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value.casefold())
+    ascii_text = "".join(char for char in normalized if not unicodedata.combining(char))
+    return re.sub(r"\s+", " ", ascii_text).strip()
+
+
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
 
     try:
-        keywords = _split_csv(args.keywords)
+        keywords = _selected_keywords(
+            keywords_arg=args.keywords,
+            keyword_profile=args.keyword_profile,
+            keyword_config_path=Path(args.keyword_config),
+        )
         portals = _selected_portals(args.portals)
     except ValueError as exc:
         print(json.dumps({"level": "error", "message": str(exc)}), file=sys.stderr)
@@ -220,7 +403,9 @@ def main(argv: list[str] | None = None) -> int:
             keywords=keywords,
             portals=portals,
             limit_per_portal=args.limit_per_portal,
+            limit_per_keyword=args.limit_per_keyword,
             output_base_dir=Path(args.output_dir),
+            keyword_profile=None if args.keywords else args.keyword_profile,
         )
     )
 

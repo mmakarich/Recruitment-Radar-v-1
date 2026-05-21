@@ -10,16 +10,22 @@ from scripts import run_scraping
 from src.scrapers.base import JobOffer, SalaryRange, SearchParams
 
 
-def _offer(portal: str = "justjoin.it") -> JobOffer:
+def _offer(
+    portal: str = "justjoin.it",
+    *,
+    title: str = "Senior Python Developer",
+    tech_stack: tuple[str, ...] = ("Python", "FastAPI"),
+    url_suffix: str | None = None,
+) -> JobOffer:
     return JobOffer(
-        title="Senior Python Developer",
+        title=title,
         company="Acme",
         portal=portal,
-        url=f"https://example.com/{portal}",
+        url=f"https://example.com/{url_suffix or portal}",
         location="Warszawa",
         work_mode="remote",
         seniority="senior",
-        tech_stack=("Python", "FastAPI"),
+        tech_stack=tech_stack,
         salary=SalaryRange(
             min=20000,
             max=28000,
@@ -52,6 +58,27 @@ class _FailingScraper:
 
     async def fetch(self, params: SearchParams) -> list[JobOffer]:
         raise RuntimeError("boom")
+
+
+class _MixedScraper:
+    portal_name = "mixed"
+
+    async def fetch(self, params: SearchParams) -> list[JobOffer]:
+        keyword = params.keywords[0] if params.keywords else "empty"
+        return [
+            _offer(
+                "mixed.pl",
+                title=f"{keyword.title()} Consultant",
+                tech_stack=(keyword,),
+                url_suffix=f"match-{keyword}",
+            ),
+            _offer(
+                "mixed.pl",
+                title="Random Accountant",
+                tech_stack=("accounting",),
+                url_suffix=f"noise-{keyword}",
+            ),
+        ]
 
 
 @pytest.fixture(autouse=True)
@@ -92,6 +119,36 @@ def test_selected_portals_unknown_raises() -> None:
         run_scraping._selected_portals("missing")
 
 
+def test_selected_keywords_explicit_overrides_profile(tmp_path: Path) -> None:
+    missing_config = tmp_path / "missing.toml"
+
+    result = run_scraping._selected_keywords(
+        keywords_arg="PMO Specialist, SAP, pmo specialist",
+        keyword_profile="consulting",
+        keyword_config_path=missing_config,
+    )
+
+    assert result == ("PMO Specialist", "SAP")
+
+
+def test_load_keyword_profile_reads_nested_groups(tmp_path: Path) -> None:
+    config = tmp_path / "keywords.toml"
+    config.write_text(
+        """
+[profiles.consulting.groups.delivery]
+keywords = ["PMO Specialist", "Project Manager"]
+
+[profiles.consulting.groups.erp]
+keywords = ["SAP", "SAP"]
+""",
+        encoding="utf-8",
+    )
+
+    result = run_scraping._load_keyword_profile("consulting", config)
+
+    assert result == ("PMO Specialist", "Project Manager", "SAP")
+
+
 @pytest.mark.asyncio
 async def test_run_scraping_invokes_selected_scrapers(tmp_path: Path) -> None:
     summary = await run_scraping.run_scraping(
@@ -112,6 +169,30 @@ async def test_run_scraping_invokes_selected_scrapers(tmp_path: Path) -> None:
     df = pd.read_parquet(output_file)
     assert len(df) == 1
     assert df.iloc[0]["title"] == "Senior Python Developer"
+
+
+@pytest.mark.asyncio
+async def test_run_scraping_batches_keywords_and_filters_results(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(run_scraping, "SCRAPER_REGISTRY", {"mixed": _MixedScraper})
+
+    summary = await run_scraping.run_scraping(
+        keywords=("pmo specialist", "sap"),
+        portals=("mixed",),
+        limit_per_portal=10,
+        limit_per_keyword=5,
+        output_base_dir=tmp_path,
+        snapshot_date=date(2026, 5, 16),
+        keyword_profile=None,
+    )
+
+    assert summary["total_count"] == 2
+    assert summary["keyword_count"] == 2
+
+    df = pd.read_parquet(tmp_path / "2026-05-16" / "mixed.parquet")
+    assert set(df["title"]) == {"Pmo Specialist Consultant", "Sap Consultant"}
 
 
 @pytest.mark.asyncio
