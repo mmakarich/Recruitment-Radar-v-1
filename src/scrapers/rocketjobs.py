@@ -42,7 +42,8 @@ from src.scrapers.base import (
 )
 
 API_URL = "https://api.rocketjobs.pl/v2/user-panel/offers"
-FRONTEND_URL_TEMPLATE = "https://rocketjobs.pl/oferty-pracy/wszystkie-lokalizacje/{keyword}"
+FRONTEND_URL = "https://rocketjobs.pl/oferty-pracy/wszystkie-lokalizacje"
+FRONTEND_URL_TEMPLATE = f"{FRONTEND_URL}/{{keyword}}"
 OFFER_URL_TEMPLATE = "https://rocketjobs.pl/oferta-pracy/{slug}"
 
 _USER_AGENT = (
@@ -76,6 +77,22 @@ _CONTRACT_MAP: dict[str, ContractKind] = {
     "b2b": "b2b",
     "permanent": "uop",
     "employment_contract": "uop",
+}
+
+_FRONTEND_CATEGORY_SLUGS = {
+    "administracja",
+    "analiza",
+    "bpo-ssc",
+    "customer-service",
+    "design",
+    "ecommerce",
+    "finanse",
+    "hr",
+    "marketing",
+    "prawo",
+    "praca-fizyczna",
+    "project-management",
+    "sprzedaz",
 }
 
 
@@ -118,8 +135,11 @@ class RocketJobsScraper(BaseScraper):
         client: httpx.AsyncClient,
         params: SearchParams,
     ) -> list[dict[str, Any]]:
-        keyword = params.keywords[0] if params.keywords else "all"
-        url = FRONTEND_URL_TEMPLATE.format(keyword=quote(keyword.strip().lower()))
+        keyword = params.keywords[0].strip().lower() if params.keywords else ""
+        if keyword in _FRONTEND_CATEGORY_SLUGS:
+            url = FRONTEND_URL_TEMPLATE.format(keyword=quote(keyword))
+        else:
+            url = FRONTEND_URL
         try:
             response = await client.get(url, headers={**_HEADERS, "Accept": "text/html"})
         except httpx.TimeoutException as exc:
