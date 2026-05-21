@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T19:45:31.138224+00:00",
+  "started_at": "2026-05-21T19:47:46.220190+00:00",
   "keywords": [
     "python",
     "javascript",
@@ -8,23 +8,42 @@
     "java",
     "devops"
   ],
-  "limit_per_portal": 200,
+  "limit_per_portal": 2000,
   "portals": {
     "justjoin": {
       "count": 100,
-      "elapsed_s": 5.674,
+      "elapsed_s": 5.14,
       "file": "justjoin.parquet"
+    },
+    "nofluff": {
+      "count": 2000,
+      "elapsed_s": 2.086,
+      "file": "nofluff.parquet"
     },
     "rocketjobs": {
       "count": 100,
-      "elapsed_s": 5.62,
+      "elapsed_s": 5.088,
       "file": "rocketjobs.parquet"
+    },
+    "theprotocol": {
+      "count": 0,
+      "elapsed_s": 3.237,
+      "file": null
+    },
+    "pracuj": {
+      "count": 50,
+      "elapsed_s": 5.445,
+      "file": "pracuj.parquet"
     }
   },
-  "errors": {},
-  "failed_portals": [],
+  "errors": {
+    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
+  },
+  "failed_portals": [
+    "theprotocol"
+  ],
   "empty_portals": [],
-  "total_count": 200,
-  "finished_at": "2026-05-21T19:45:31.164163+00:00",
-  "status": "success"
+  "total_count": 2250,
+  "finished_at": "2026-05-21T19:47:46.405240+00:00",
+  "status": "degraded"
 }
