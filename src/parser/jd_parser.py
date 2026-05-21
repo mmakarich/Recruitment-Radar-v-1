@@ -11,9 +11,6 @@ from pydantic import ValidationError
 from src.config import settings
 from src.parser.models import JDParsed
 
-MODEL = "claude-sonnet-4-6"
-MAX_INPUT_CHARS = 8_000
-
 SYSTEM_PROMPT = """Jesteś parserem ogłoszeń o pracę. Wyciągasz ze wklejonego tekstu
 DOKŁADNIE następujące dane jako JSON.
 
@@ -70,7 +67,7 @@ async def parse_jd(text: str, client: AsyncAnthropic | Any | None = None) -> JDP
     for attempt in range(2):
         try:
             response = await anthropic_client.messages.create(
-                model=MODEL,
+                model=settings.ANTHROPIC_MODEL,
                 max_tokens=1024,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": user_prompt}],
@@ -118,7 +115,7 @@ def parse_jd_sync(text: str) -> JDParsed:
 
 
 def _truncate_text(text: str) -> str:
-    return text[:MAX_INPUT_CHARS]
+    return text[: settings.JD_PARSER_MAX_INPUT_CHARS]
 
 
 def _build_user_prompt(text: str) -> str:

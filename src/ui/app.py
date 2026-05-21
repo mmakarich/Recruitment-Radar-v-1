@@ -36,7 +36,6 @@ from src.ui.helpers import (
 )
 
 APP_TITLE = "Recruitment Radar"
-REPO_FULL_NAME = "mmakarich/Recruitment-Radar-v-1"
 
 
 def _get_streamlit_user() -> Any | None:
@@ -306,7 +305,7 @@ def _render_sidebar() -> dict[str, Any]:
 
     if st.sidebar.button("🔄 Odśwież teraz"):
         try:
-            workflow_id = trigger_refresh(repo_full_name=REPO_FULL_NAME)
+            workflow_id = trigger_refresh(repo_full_name=settings.GITHUB_REPO_FULL_NAME)
             st.sidebar.success(f"Uruchomiono workflow: {workflow_id}")
         except Exception as exc:
             st.sidebar.error(f"Nie udało się uruchomić workflow: {exc}")
