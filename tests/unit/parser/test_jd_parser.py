@@ -99,6 +99,7 @@ async def test_parse_polish_jd_with_salary() -> None:
         contract="b2b",
     )
     assert parsed.language == "pl"
+    assert client.messages.calls[0]["model"] == "claude-sonnet-4-6"
 
 
 @pytest.mark.asyncio
@@ -237,3 +238,23 @@ def test_missing_anthropic_api_key_raises_parser_error(monkeypatch: pytest.Monke
 
     with pytest.raises(JDParserError, match="ANTHROPIC_API_KEY is not configured"):
         parse_jd_sync("Senior Python Developer")
+
+
+@pytest.mark.asyncio
+async def test_uses_configured_model(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("src.parser.jd_parser.settings.ANTHROPIC_MODEL", "claude-test-model")
+    client = _MockClient([_payload()])
+
+    await parse_jd("Senior Python Developer", client=client)
+
+    assert client.messages.calls[0]["model"] == "claude-test-model"
+
+
+@pytest.mark.asyncio
+async def test_truncates_input_with_configured_limit(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("src.parser.jd_parser.settings.JD_PARSER_MAX_INPUT_CHARS", 5)
+    client = _MockClient([_payload()])
+
+    await parse_jd("1234567890", client=client)
+
+    assert client.messages.calls[0]["messages"][0]["content"].endswith("12345")
