@@ -93,6 +93,7 @@ async def test_run_scraping_invokes_selected_scrapers(tmp_path: Path) -> None:
 
     assert summary["total_count"] == 1
     assert summary["errors"] == {}
+    assert summary["status"] == "success"
 
     output_file = tmp_path / "2026-05-16" / "ok.parquet"
     assert output_file.exists()
@@ -114,6 +115,8 @@ async def test_run_scraping_continues_on_single_scraper_error(tmp_path: Path) ->
 
     assert summary["total_count"] == 1
     assert "failing" in summary["errors"]
+    assert summary["failed_portals"] == ["failing"]
+    assert summary["status"] == "degraded"
     assert (tmp_path / "2026-05-16" / "ok.parquet").exists()
     assert (tmp_path / "2026-05-16" / "summary.json").exists()
 
@@ -133,6 +136,7 @@ async def test_run_scraping_writes_summary_json(tmp_path: Path) -> None:
     content = summary_path.read_text(encoding="utf-8")
     assert "ok" in content
     assert "empty" in content
+    assert '"status": "success"' in content
 
 
 def test_main_returns_error_code_when_any_scraper_fails(
@@ -159,7 +163,7 @@ def test_main_returns_two_for_unknown_portal(tmp_path: Path) -> None:
     assert code == 2
 
 
-def test_main_returns_zero_when_at_least_one_scraper_succeeds(tmp_path: Path) -> None:
+def test_main_returns_one_when_any_scraper_fails(tmp_path: Path) -> None:
     code = run_scraping.main(
         [
             "--keywords",
@@ -171,5 +175,5 @@ def test_main_returns_zero_when_at_least_one_scraper_succeeds(tmp_path: Path) ->
         ]
     )
 
-    assert code == 0
+    assert code == 1
     assert any(tmp_path.iterdir())

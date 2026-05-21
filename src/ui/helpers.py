@@ -6,7 +6,8 @@ jednostkowo bez uruchamiania aplikacji webowej.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import json
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +21,11 @@ class SnapshotInfo:
     snapshot_dir: Path | None
     snapshot_date: str | None
     offer_count: int
+    status: str = "unknown"
+    portal_counts: dict[str, int] = field(default_factory=dict)
+    errors: dict[str, str] = field(default_factory=dict)
+    failed_portals: tuple[str, ...] = ()
+    empty_portals: tuple[str, ...] = ()
 
 
 class UnauthorizedError(Exception):
@@ -93,12 +99,74 @@ def snapshot_status(base_dir: Path = Path("data/snapshots")) -> SnapshotInfo:
     if latest_dir is None:
         return SnapshotInfo(snapshot_dir=None, snapshot_date=None, offer_count=0)
 
+    summary = _load_summary(latest_dir)
+    if summary:
+        portal_counts = _portal_counts(summary)
+        errors = _summary_errors(summary)
+        return SnapshotInfo(
+            snapshot_dir=latest_dir,
+            snapshot_date=str(summary.get("snapshot_date") or latest_dir.name),
+            offer_count=int(summary.get("total_count") or sum(portal_counts.values())),
+            status=_summary_status(summary),
+            portal_counts=portal_counts,
+            errors=errors,
+            failed_portals=tuple(str(portal) for portal in summary.get("failed_portals", errors)),
+            empty_portals=tuple(str(portal) for portal in summary.get("empty_portals", ())),
+        )
+
     df = load_latest_snapshot(base_dir)
     return SnapshotInfo(
         snapshot_dir=latest_dir,
         snapshot_date=latest_dir.name,
         offer_count=len(df),
+        status="unknown",
     )
+
+
+def _load_summary(snapshot_dir: Path) -> dict[str, Any]:
+    summary_path = snapshot_dir / "summary.json"
+    if not summary_path.exists():
+        return {}
+
+    try:
+        payload = json.loads(summary_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+    return payload if isinstance(payload, dict) else {}
+
+
+def _portal_counts(summary: dict[str, Any]) -> dict[str, int]:
+    portals = summary.get("portals", {})
+    if not isinstance(portals, dict):
+        return {}
+
+    counts: dict[str, int] = {}
+    for portal, info in portals.items():
+        if isinstance(info, dict):
+            counts[str(portal)] = int(info.get("count") or 0)
+    return counts
+
+
+def _summary_errors(summary: dict[str, Any]) -> dict[str, str]:
+    errors = summary.get("errors", {})
+    if not isinstance(errors, dict):
+        return {}
+    return {str(portal): str(error) for portal, error in errors.items()}
+
+
+def _summary_status(summary: dict[str, Any]) -> str:
+    status = summary.get("status")
+    if isinstance(status, str) and status:
+        return status
+
+    errors = _summary_errors(summary)
+    total_count = int(summary.get("total_count") or 0)
+    if errors and total_count == 0:
+        return "failed"
+    if errors:
+        return "degraded"
+    return "success"
 
 
 def trigger_refresh(
