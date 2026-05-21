@@ -193,6 +193,28 @@ class TestFetch:
         assert offers[0].location == "Warszawa"
 
     @respx.mock
+    async def test_fetch_frontend_fallback_uses_default_url_for_unknown_category(
+        self,
+        rocketjobs_full_offer: dict[str, Any],
+    ) -> None:
+        respx.get(host="api.rocketjobs.pl").mock(return_value=httpx.Response(404))
+        payload = {"pages": [{"data": [rocketjobs_full_offer]}], "pageParams": [None]}
+        escaped_payload = json.dumps(payload, ensure_ascii=False).replace('"', r"\"")
+        default_frontend_route = respx.get(
+            "https://rocketjobs.pl/oferty-pracy/wszystkie-lokalizacje"
+        ).mock(
+            return_value=httpx.Response(
+                200,
+                text=f'<script>self.__next_f.push([1,"{escaped_payload}"])</script>',
+            )
+        )
+
+        offers = await RocketJobsScraper().fetch(SearchParams(keywords=("python",), limit=10))
+
+        assert default_frontend_route.called
+        assert len(offers) == 1
+
+    @respx.mock
     async def test_fetch_builds_query_with_seniority_and_keywords(
         self,
         rocketjobs_sample: dict[str, Any],
