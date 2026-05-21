@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T10:46:55.905854+00:00",
+  "started_at": "2026-05-21T18:32:17.941660+00:00",
   "keywords": [
     "python",
     "javascript",
@@ -12,27 +12,27 @@
   "portals": {
     "justjoin": {
       "count": 0,
-      "elapsed_s": 3.572,
+      "elapsed_s": 3.622,
       "file": null
     },
     "nofluff": {
       "count": 200,
-      "elapsed_s": 0.573,
+      "elapsed_s": 0.86,
       "file": "nofluff.parquet"
     },
     "rocketjobs": {
       "count": 0,
-      "elapsed_s": 3.475,
+      "elapsed_s": 3.555,
       "file": null
     },
     "theprotocol": {
       "count": 0,
-      "elapsed_s": 3.337,
+      "elapsed_s": 3.441,
       "file": null
     },
     "pracuj": {
       "count": 50,
-      "elapsed_s": 5.826,
+      "elapsed_s": 4.998,
       "file": "pracuj.parquet"
     }
   },
@@ -42,5 +42,5 @@
     "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
   },
   "total_count": 250,
-  "finished_at": "2026-05-21T10:46:55.936456+00:00"
+  "finished_at": "2026-05-21T18:32:17.972496+00:00"
 }
