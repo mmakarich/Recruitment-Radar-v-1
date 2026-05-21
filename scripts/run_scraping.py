@@ -40,6 +40,8 @@ SCRAPER_REGISTRY = {
     "pracuj": PracujScraper,
 }
 
+ScrapingStatus = str
+
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run Recruitment Radar scraping pipeline")
@@ -154,6 +156,8 @@ async def run_scraping(
         "limit_per_portal": limit_per_portal,
         "portals": {},
         "errors": {},
+        "failed_portals": [],
+        "empty_portals": [],
         "total_count": 0,
     }
 
@@ -174,12 +178,27 @@ async def run_scraping(
 
         if error is not None:
             summary["errors"][portal] = error
+            summary["failed_portals"].append(portal)
+        elif not rows:
+            summary["empty_portals"].append(portal)
 
     summary["finished_at"] = datetime.now(UTC).isoformat()
+    summary["status"] = _summary_status(summary)
     summary_path = snapshot_dir / "summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     return summary
+
+
+def _summary_status(summary: dict[str, Any]) -> ScrapingStatus:
+    errors = summary.get("errors", {})
+    total_count = int(summary.get("total_count", 0))
+
+    if errors and total_count == 0:
+        return "failed"
+    if errors:
+        return "degraded"
+    return "success"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -203,7 +222,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print(json.dumps(summary, ensure_ascii=False, default=str))
 
-    if summary["total_count"] == 0 and summary["errors"]:
+    if summary["status"] != "success":
         return 1
 
     return 0

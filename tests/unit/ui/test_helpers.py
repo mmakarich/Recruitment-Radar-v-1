@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -104,6 +105,36 @@ def test_snapshot_status_counts_latest_snapshot(tmp_path: Path) -> None:
     assert status.snapshot_dir == new_dir
     assert status.snapshot_date == "2026-05-15"
     assert status.offer_count == 2
+    assert status.status == "unknown"
+
+
+def test_snapshot_status_reads_summary_health(tmp_path: Path) -> None:
+    base = tmp_path / "snapshots"
+    new_dir = base / "2026-05-15"
+    new_dir.mkdir(parents=True)
+    summary = {
+        "snapshot_date": "2026-05-15",
+        "status": "degraded",
+        "total_count": 10,
+        "portals": {
+            "ok": {"count": 10},
+            "failing": {"count": 0},
+        },
+        "errors": {"failing": "RuntimeError: boom"},
+        "failed_portals": ["failing"],
+        "empty_portals": [],
+    }
+    (new_dir / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
+
+    status = snapshot_status(base)
+
+    assert status.snapshot_dir == new_dir
+    assert status.snapshot_date == "2026-05-15"
+    assert status.offer_count == 10
+    assert status.status == "degraded"
+    assert status.portal_counts == {"ok": 10, "failing": 0}
+    assert status.errors == {"failing": "RuntimeError: boom"}
+    assert status.failed_portals == ("failing",)
 
 
 class _FakeWorkflow:

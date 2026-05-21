@@ -21,6 +21,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: weekly-scraping-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -48,10 +52,13 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          set +e
           python scripts/run_scraping.py \
             --keywords "${{ github.event.inputs.keywords || 'python,javascript,react,java,devops' }}" \
             --portals "${{ github.event.inputs.portals || 'all' }}" \
             --limit-per-portal "${{ github.event.inputs.limit_per_portal || '200' }}"
+          echo "$?" > scraping_exit_code.txt
+          exit 0
 
       - name: Commit snapshots
         run: |
@@ -66,3 +73,8 @@ jobs:
         with:
           name: scraping-summary-${{ github.run_id }}
           path: data/snapshots/*/summary.json
+
+      - name: Fail if scraping was degraded
+        run: |
+          exit_code="$(cat scraping_exit_code.txt 2>/dev/null || echo 1)"
+          exit "$exit_code"

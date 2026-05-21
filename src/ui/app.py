@@ -103,7 +103,32 @@ def _snapshot_status_caption() -> str:
     info = snapshot_status()
     if info.snapshot_date is None:
         return "Brak snapshotów danych."
-    return f"Ostatnie dane: {info.snapshot_date}, liczba ofert: {info.offer_count}"
+    return (
+        f"Ostatnie dane: {info.snapshot_date}, liczba ofert: {info.offer_count}, "
+        f"status: {info.status}"
+    )
+
+
+def _render_snapshot_health() -> None:
+    info = snapshot_status()
+    if info.snapshot_date is None:
+        return
+
+    if info.status == "failed":
+        st.sidebar.error("Ostatni scraping nie zebrał danych.")
+    elif info.status == "degraded":
+        failed = ", ".join(info.failed_portals) or "nieznane portale"
+        st.sidebar.warning(f"Dane częściowe. Błędy: {failed}.")
+    elif info.status == "success":
+        st.sidebar.success("Ostatni scraping zakończył się sukcesem.")
+
+    if info.portal_counts:
+        st.sidebar.caption(
+            "Oferty per portal: "
+            + ", ".join(
+                f"{portal}: {count}" for portal, count in sorted(info.portal_counts.items())
+            )
+        )
 
 
 def _salary_from_row(row: pd.Series) -> SalaryRange | None:
@@ -277,6 +302,7 @@ def _render_sidebar() -> dict[str, Any]:
 
     st.sidebar.header("Dane")
     st.sidebar.caption(_snapshot_status_caption())
+    _render_snapshot_health()
 
     if st.sidebar.button("🔄 Odśwież teraz"):
         try:
