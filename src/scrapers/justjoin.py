@@ -45,7 +45,8 @@ from src.scrapers.base import (
 )
 
 API_URL = "https://api.justjoin.it/v2/user-panel/offers"
-FRONTEND_URL_TEMPLATE = "https://justjoin.it/job-offers/all-locations/{keyword}"
+FRONTEND_URL = "https://justjoin.it/job-offers/all-locations"
+FRONTEND_URL_TEMPLATE = f"{FRONTEND_URL}?keyword={{keyword}}"
 OFFER_URL_TEMPLATE = "https://justjoin.it/job-offer/{slug}"
 
 # Realistyczny UA — justjoin.it odrzuca pusty/python-httpx/* z 403.
@@ -124,8 +125,12 @@ class JustJoinScraper(BaseScraper):
         client: httpx.AsyncClient,
         params: SearchParams,
     ) -> list[dict[str, Any]]:
-        keyword = params.keywords[0] if params.keywords else "all"
-        url = FRONTEND_URL_TEMPLATE.format(keyword=quote(keyword.strip().lower()))
+        keyword = params.keywords[0].strip().lower() if params.keywords else ""
+        url = (
+            FRONTEND_URL_TEMPLATE.format(keyword=quote(keyword, safe=""))
+            if keyword
+            else FRONTEND_URL
+        )
         try:
             response = await client.get(url, headers={**_HEADERS, "Accept": "text/html"})
         except httpx.TimeoutException as exc:

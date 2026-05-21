@@ -6,9 +6,13 @@ on:
   workflow_dispatch:
     inputs:
       keywords:
-        description: "Comma-separated keywords"
+        description: "Optional comma-separated keywords. When set, overrides keyword_profile."
         required: false
-        default: "python,javascript,react,java,devops"
+        default: ""
+      keyword_profile:
+        description: "Keyword profile from config/scraping_keywords.toml"
+        required: false
+        default: "consulting"
       portals:
         description: "Comma-separated portals or 'all' stable defaults; include theprotocol explicitly for diagnostics"
         required: false
@@ -17,6 +21,10 @@ on:
         description: "Maximum offers per portal"
         required: false
         default: "200"
+      limit_per_keyword:
+        description: "Maximum offers fetched per keyword before filtering"
+        required: false
+        default: "50"
 
 permissions:
   contents: write
@@ -54,9 +62,11 @@ jobs:
         run: |
           set +e
           python scripts/run_scraping.py \
-            --keywords "${{ github.event.inputs.keywords || 'python,javascript,react,java,devops' }}" \
+            --keywords "${{ github.event.inputs.keywords || '' }}" \
+            --keyword-profile "${{ github.event.inputs.keyword_profile || 'consulting' }}" \
             --portals "${{ github.event.inputs.portals || 'all' }}" \
-            --limit-per-portal "${{ github.event.inputs.limit_per_portal || '200' }}"
+            --limit-per-portal "${{ github.event.inputs.limit_per_portal || '200' }}" \
+            --limit-per-keyword "${{ github.event.inputs.limit_per_keyword || '50' }}"
           echo "$?" > scraping_exit_code.txt
           exit 0
 
