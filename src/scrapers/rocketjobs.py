@@ -14,9 +14,10 @@ Decyzja Prompt 3:
 
 from __future__ import annotations
 
+import json
 from datetime import UTC, datetime
 from typing import Any, cast
-from urllib.parse import urlencode
+from urllib.parse import quote, urlencode
 
 import httpx
 from tenacity import (
@@ -41,6 +42,7 @@ from src.scrapers.base import (
 )
 
 API_URL = "https://api.rocketjobs.pl/v2/user-panel/offers"
+FRONTEND_URL_TEMPLATE = "https://rocketjobs.pl/oferty-pracy/wszystkie-lokalizacje/{keyword}"
 OFFER_URL_TEMPLATE = "https://rocketjobs.pl/oferta-pracy/{slug}"
 
 _USER_AGENT = (
@@ -80,8 +82,14 @@ _CONTRACT_MAP: dict[str, ContractKind] = {
 class RocketJobsScraper(BaseScraper):
     portal_name = "rocketjobs.pl"
 
-    def __init__(self, client: httpx.AsyncClient | None = None) -> None:
+    def __init__(
+        self,
+        client: httpx.AsyncClient | None = None,
+        *,
+        enable_frontend_fallback: bool = True,
+    ) -> None:
         self._client = client
+        self._enable_frontend_fallback = enable_frontend_fallback
 
     async def fetch(self, params: SearchParams) -> list[JobOffer]:
         query = self._build_query(params)
@@ -93,12 +101,34 @@ class RocketJobsScraper(BaseScraper):
             headers=_HEADERS,
         )
         try:
-            raw_offers = await self._fetch_paginated(client, url, params.limit)
+            try:
+                raw_offers = await self._fetch_paginated(client, url, params.limit)
+            except ScraperHTTPError:
+                if not self._enable_frontend_fallback:
+                    raise
+                raw_offers = await self._fetch_frontend(client, params)
         finally:
             if owns_client:
                 await client.aclose()
 
         return [self.normalize(raw) for raw in raw_offers[: params.limit]]
+
+    async def _fetch_frontend(
+        self,
+        client: httpx.AsyncClient,
+        params: SearchParams,
+    ) -> list[dict[str, Any]]:
+        keyword = params.keywords[0] if params.keywords else "all"
+        url = FRONTEND_URL_TEMPLATE.format(keyword=quote(keyword.strip().lower()))
+        try:
+            response = await client.get(url, headers={**_HEADERS, "Accept": "text/html"})
+        except httpx.TimeoutException as exc:
+            raise ScraperTimeoutError(f"Timeout pobierając {url}") from exc
+
+        if response.status_code >= 400:
+            raise ScraperHTTPError(f"{response.status_code} z {url}: {response.text[:200]}")
+
+        return _extract_offers_from_frontend_html(response.text)
 
     async def _fetch_paginated(
         self,
@@ -192,6 +222,35 @@ def _extract_offers(payload: dict[str, Any] | list[dict[str, Any]]) -> list[dict
         if isinstance(data, list):
             return cast("list[dict[str, Any]]", data)
     return []
+
+
+def _extract_offers_from_frontend_html(html: str) -> list[dict[str, Any]]:
+    decoded = html.replace(r"\"", '"')
+    marker_index = decoded.find('"pages"')
+    if marker_index == -1:
+        return []
+
+    start_index = decoded.rfind("{", 0, marker_index)
+    if start_index == -1:
+        return []
+
+    try:
+        payload, _ = json.JSONDecoder().raw_decode(decoded[start_index:])
+    except json.JSONDecodeError:
+        return []
+
+    pages = payload.get("pages") if isinstance(payload, dict) else None
+    if not isinstance(pages, list):
+        return []
+
+    offers: list[dict[str, Any]] = []
+    for page in pages:
+        if not isinstance(page, dict):
+            continue
+        data = page.get("data")
+        if isinstance(data, list):
+            offers.extend(item for item in data if isinstance(item, dict))
+    return offers
 
 
 def _extract_location(raw: dict[str, Any]) -> str | None:
