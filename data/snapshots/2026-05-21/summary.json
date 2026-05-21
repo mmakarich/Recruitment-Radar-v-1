@@ -1,40 +1,29 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T19:56:55.811613+00:00",
+  "started_at": "2026-05-21T20:15:01.675130+00:00",
+  "keyword_profile": null,
   "keywords": [
-    "python",
-    "javascript",
-    "react",
-    "java",
-    "devops"
+    "PMO Specialist"
   ],
-  "limit_per_portal": 2000,
+  "keyword_count": 1,
+  "limit_per_portal": 20,
+  "limit_per_keyword": 20,
   "portals": {
     "justjoin": {
-      "count": 100,
-      "elapsed_s": 5.307,
+      "count": 6,
+      "elapsed_s": 5.176,
       "file": "justjoin.parquet"
     },
-    "nofluff": {
-      "count": 2000,
-      "elapsed_s": 0.976,
-      "file": "nofluff.parquet"
-    },
     "rocketjobs": {
-      "count": 100,
-      "elapsed_s": 5.134,
+      "count": 2,
+      "elapsed_s": 5.447,
       "file": "rocketjobs.parquet"
-    },
-    "pracuj": {
-      "count": 50,
-      "elapsed_s": 5.012,
-      "file": "pracuj.parquet"
     }
   },
   "errors": {},
   "failed_portals": [],
   "empty_portals": [],
-  "total_count": 2250,
-  "finished_at": "2026-05-21T19:56:56.001864+00:00",
+  "total_count": 8,
+  "finished_at": "2026-05-21T20:15:01.689292+00:00",
   "status": "success"
 }
