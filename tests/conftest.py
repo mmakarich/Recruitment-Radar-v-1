@@ -79,6 +79,7 @@ def make_matched_offer(job_offer: JobOffer, score: int = 75) -> MatchedOffer:
         total=score,
         title_score=score,
         company_score=0,
+        salary_score=0,
         tech_overlap=0.5,
         seniority_match=True,
         location_match=True,

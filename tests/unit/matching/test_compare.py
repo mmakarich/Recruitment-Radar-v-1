@@ -61,6 +61,7 @@ class TestScoreMatch:
         assert result.total >= 95
         assert result.title_score == 100
         assert result.company_score == 100
+        assert result.salary_score >= 60
         assert result.tech_overlap == 1.0
         assert result.seniority_match is True
         assert result.location_match is True
@@ -91,6 +92,7 @@ class TestScoreMatch:
 
         assert result.total < 30
         assert result.company_score == 0
+        assert result.salary_score == 0
         assert result.tech_overlap == 0.0
         assert result.seniority_match is False
         assert result.location_match is False
@@ -136,6 +138,39 @@ class TestScoreMatch:
         result = score_match(our, theirs)
 
         assert result.salary_delta == 4000
+
+    def test_company_score_normalizes_legal_suffixes(self) -> None:
+        our = JDParsed(
+            title="Senior Python Developer",
+            company="Acme Sp. z o.o.",
+        )
+        theirs = _offer(company="Acme")
+
+        result = score_match(our, theirs)
+
+        assert result.company_score == 100
+
+    def test_salary_score_rewards_overlapping_ranges(self) -> None:
+        our = JDParsed(
+            title="Senior Python Developer",
+            salary=_salary(20000, 26000),
+        )
+        theirs = _offer(salary=_salary(22000, 28000))
+
+        result = score_match(our, theirs)
+
+        assert result.salary_score > 0
+
+    def test_salary_score_zero_for_disjoint_ranges(self) -> None:
+        our = JDParsed(
+            title="Senior Python Developer",
+            salary=_salary(20000, 26000),
+        )
+        theirs = _offer(salary=_salary(10000, 14000))
+
+        result = score_match(our, theirs)
+
+        assert result.salary_score == 0
 
     def test_salary_none_when_either_missing(self) -> None:
         our = JDParsed(
