@@ -72,8 +72,19 @@ def test_selected_portals_all() -> None:
     assert run_scraping._selected_portals("all") == ("ok", "empty", "failing")
 
 
+def test_selected_portals_all_excludes_optional_portals(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(run_scraping, "DEFAULT_PORTALS", ("ok", "empty"))
+    monkeypatch.setattr(run_scraping, "OPTIONAL_PORTALS", ("failing",))
+
+    assert run_scraping._selected_portals("all") == ("ok", "empty")
+
+
 def test_selected_portals_filters_arg() -> None:
     assert run_scraping._selected_portals("ok,empty") == ("ok", "empty")
+
+
+def test_selected_portals_allows_optional_portal_when_explicit() -> None:
+    assert run_scraping._selected_portals("failing") == ("failing",)
 
 
 def test_selected_portals_unknown_raises() -> None:
