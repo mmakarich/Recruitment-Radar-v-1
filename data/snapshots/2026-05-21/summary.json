@@ -1,49 +1,47 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T19:47:46.220190+00:00",
+  "started_at": "2026-05-21T19:53:09.607702+00:00",
   "keywords": [
-    "python",
-    "javascript",
-    "react",
-    "java",
-    "devops"
+    "PMO specialist"
   ],
-  "limit_per_portal": 2000,
+  "limit_per_portal": 500,
   "portals": {
     "justjoin": {
-      "count": 100,
-      "elapsed_s": 5.14,
-      "file": "justjoin.parquet"
+      "count": 0,
+      "elapsed_s": 4.38,
+      "file": null
     },
     "nofluff": {
-      "count": 2000,
-      "elapsed_s": 2.086,
+      "count": 500,
+      "elapsed_s": 0.634,
       "file": "nofluff.parquet"
     },
     "rocketjobs": {
       "count": 100,
-      "elapsed_s": 5.088,
+      "elapsed_s": 5.55,
       "file": "rocketjobs.parquet"
     },
     "theprotocol": {
       "count": 0,
-      "elapsed_s": 3.237,
+      "elapsed_s": 3.266,
       "file": null
     },
     "pracuj": {
-      "count": 50,
-      "elapsed_s": 5.445,
+      "count": 7,
+      "elapsed_s": 4.5,
       "file": "pracuj.parquet"
     }
   },
   "errors": {
-    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/python;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
+    "justjoin": "ScraperHTTPError: 404 z https://justjoin.it/job-offers/all-locations/pmo%20specialist: <!DOCTYPE html><html id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-",
+    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/pmo%20specialist;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
   },
   "failed_portals": [
+    "justjoin",
     "theprotocol"
   ],
   "empty_portals": [],
-  "total_count": 2250,
-  "finished_at": "2026-05-21T19:47:46.405240+00:00",
+  "total_count": 607,
+  "finished_at": "2026-05-21T19:53:09.669370+00:00",
   "status": "degraded"
 }
