@@ -1,47 +1,40 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T19:53:09.607702+00:00",
+  "started_at": "2026-05-21T19:56:55.811613+00:00",
   "keywords": [
-    "PMO specialist"
+    "python",
+    "javascript",
+    "react",
+    "java",
+    "devops"
   ],
-  "limit_per_portal": 500,
+  "limit_per_portal": 2000,
   "portals": {
     "justjoin": {
-      "count": 0,
-      "elapsed_s": 4.38,
-      "file": null
+      "count": 100,
+      "elapsed_s": 5.307,
+      "file": "justjoin.parquet"
     },
     "nofluff": {
-      "count": 500,
-      "elapsed_s": 0.634,
+      "count": 2000,
+      "elapsed_s": 0.976,
       "file": "nofluff.parquet"
     },
     "rocketjobs": {
       "count": 100,
-      "elapsed_s": 5.55,
+      "elapsed_s": 5.134,
       "file": "rocketjobs.parquet"
     },
-    "theprotocol": {
-      "count": 0,
-      "elapsed_s": 3.266,
-      "file": null
-    },
     "pracuj": {
-      "count": 7,
-      "elapsed_s": 4.5,
+      "count": 50,
+      "elapsed_s": 5.012,
       "file": "pracuj.parquet"
     }
   },
-  "errors": {
-    "justjoin": "ScraperHTTPError: 404 z https://justjoin.it/job-offers/all-locations/pmo%20specialist: <!DOCTYPE html><html id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-",
-    "theprotocol": "ScraperHTTPError: 403 z https://theprotocol.it/filtry/pmo%20specialist;t: <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
-  },
-  "failed_portals": [
-    "justjoin",
-    "theprotocol"
-  ],
+  "errors": {},
+  "failed_portals": [],
   "empty_portals": [],
-  "total_count": 607,
-  "finished_at": "2026-05-21T19:53:09.669370+00:00",
-  "status": "degraded"
+  "total_count": 2250,
+  "finished_at": "2026-05-21T19:56:56.001864+00:00",
+  "status": "success"
 }
