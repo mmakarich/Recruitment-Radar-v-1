@@ -1,29 +1,41 @@
 {
   "snapshot_date": "2026-05-21",
-  "started_at": "2026-05-21T20:15:01.675130+00:00",
+  "started_at": "2026-05-21T20:32:41.228519+00:00",
   "keyword_profile": null,
   "keywords": [
-    "PMO Specialist"
+    "PMO"
   ],
   "keyword_count": 1,
-  "limit_per_portal": 20,
-  "limit_per_keyword": 20,
+  "limit_per_portal": 200,
+  "limit_per_keyword": 200,
   "portals": {
     "justjoin": {
-      "count": 6,
-      "elapsed_s": 5.176,
+      "count": 39,
+      "elapsed_s": 5.084,
       "file": "justjoin.parquet"
     },
+    "nofluff": {
+      "count": 0,
+      "elapsed_s": 0.731,
+      "file": null
+    },
     "rocketjobs": {
-      "count": 2,
-      "elapsed_s": 5.447,
+      "count": 11,
+      "elapsed_s": 4.927,
       "file": "rocketjobs.parquet"
+    },
+    "pracuj": {
+      "count": 10,
+      "elapsed_s": 4.848,
+      "file": "pracuj.parquet"
     }
   },
   "errors": {},
   "failed_portals": [],
-  "empty_portals": [],
-  "total_count": 8,
-  "finished_at": "2026-05-21T20:15:01.689292+00:00",
+  "empty_portals": [
+    "nofluff"
+  ],
+  "total_count": 60,
+  "finished_at": "2026-05-21T20:32:41.250439+00:00",
   "status": "success"
 }
