@@ -10,7 +10,7 @@ on:
         required: false
         default: "python,javascript,react,java,devops"
       portals:
-        description: "Comma-separated portals or 'all'"
+        description: "Comma-separated portals or 'all' stable defaults; include theprotocol explicitly for diagnostics"
         required: false
         default: "all"
       limit_per_portal:

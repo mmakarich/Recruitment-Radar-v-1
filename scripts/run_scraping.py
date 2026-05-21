@@ -30,7 +30,8 @@ from src.scrapers import (
 from src.scrapers.base import JobOffer, SalaryRange
 
 DEFAULT_KEYWORDS = ("python", "javascript", "react", "java", "devops")
-DEFAULT_PORTALS = ("justjoin", "nofluff", "rocketjobs", "theprotocol", "pracuj")
+DEFAULT_PORTALS = ("justjoin", "nofluff", "rocketjobs", "pracuj")
+OPTIONAL_PORTALS = ("theprotocol",)
 
 SCRAPER_REGISTRY = {
     "justjoin": JustJoinScraper,
@@ -59,7 +60,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--portals",
         default="all",
-        help="Comma-separated portals or 'all'",
+        help=(
+            "Comma-separated portals or 'all'. "
+            "'all' runs stable default portals; optional portals must be listed explicitly."
+        ),
     )
     parser.add_argument(
         "--output-dir",
