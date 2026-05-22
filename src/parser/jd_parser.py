@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import asyncio
 import json
+from functools import lru_cache
+from pathlib import Path
 from threading import Thread
 from typing import Any
 
@@ -11,37 +13,7 @@ from pydantic import ValidationError
 from src.config import settings
 from src.parser.models import JDParsed
 
-SYSTEM_PROMPT = """Jesteś parserem ogłoszeń o pracę. Wyciągasz ze wklejonego tekstu
-DOKŁADNIE następujące dane jako JSON.
-
-Schemat:
-{
-  "title": "string",
-  "seniority": "junior|mid|senior|lead|expert|null",
-  "tech_stack": ["string"],
-  "location": "string|null",
-  "work_mode": "remote|hybrid|onsite|null",
-  "salary": {
-    "min": 0,
-    "max": 0,
-    "currency": "PLN|EUR|USD",
-    "period": "month|hour",
-    "contract": "b2b|uop"
-  } | null,
-  "keywords": ["string"],
-  "language": "pl|en",
-  "raw_text": "oryginalny tekst"
-}
-
-Zasady:
-- Jeśli czegoś nie ma w ogłoszeniu, zwróć null albo pustą listę.
-- Nie halucynuj danych.
-- Tech stack normalizuj: "py" -> "Python", "JS" -> "JavaScript", "k8s" -> "Kubernetes".
-- Salary: jeśli widełki podane bez waluty, zakładaj PLN.
-- Stawki godzinowe typu "120-150 PLN/h" ustaw jako period="hour" i zwykle contract="b2b".
-- Wynagrodzenie miesięczne brutto bez jasnego kontraktu ustaw jako contract="uop".
-- OUTPUT: tylko JSON, bez markdown code fences, bez komentarzy.
-"""
+PROMPT_PATH = Path(__file__).resolve().parents[2] / "prompts" / "jd_parser.md"
 
 
 class JDParserError(Exception):
@@ -69,7 +41,7 @@ async def parse_jd(text: str, client: AsyncAnthropic | Any | None = None) -> JDP
             response = await anthropic_client.messages.create(
                 model=settings.ANTHROPIC_MODEL,
                 max_tokens=1024,
-                system=SYSTEM_PROMPT,
+                system=_system_prompt(),
                 messages=[{"role": "user", "content": user_prompt}],
             )
             payload = json.loads(_response_text(response))
@@ -118,8 +90,21 @@ def _truncate_text(text: str) -> str:
     return text[: settings.JD_PARSER_MAX_INPUT_CHARS]
 
 
+@lru_cache(maxsize=1)
+def _system_prompt() -> str:
+    try:
+        return PROMPT_PATH.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise JDParserError(f"JD parser prompt file is missing: {PROMPT_PATH}") from exc
+
+
 def _build_user_prompt(text: str) -> str:
-    return f"Przeparsuj poniższe ogłoszenie do JSON zgodnego ze schematem:\n\n{text}"
+    return (
+        "Przeparsuj poniższe ogłoszenie do JSON zgodnego ze schematem. "
+        "Dla długich JD umieść w tech_stack tylko kluczowe wymagania, a technologie "
+        "opcjonalne lub poboczne przenieś do keywords.\n\n"
+        f"{text}"
+    )
 
 
 def _build_retry_prompt(text: str, error: str) -> str:

@@ -251,6 +251,19 @@ async def test_uses_configured_model(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 @pytest.mark.asyncio
+async def test_uses_prompt_file_with_long_jd_guidance() -> None:
+    client = _MockClient([_payload()])
+
+    await parse_jd("Senior Node.js Developer", client=client)
+
+    system_prompt = client.messages.calls[0]["system"]
+    user_prompt = client.messages.calls[0]["messages"][0]["content"]
+    assert "must-have" in system_prompt
+    assert "nice-to-have" in system_prompt
+    assert "Dla długich JD" in user_prompt
+
+
+@pytest.mark.asyncio
 async def test_truncates_input_with_configured_limit(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr("src.parser.jd_parser.settings.JD_PARSER_MAX_INPUT_CHARS", 5)
     client = _MockClient([_payload()])
