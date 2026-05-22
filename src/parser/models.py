@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, field_validator, model_validator
@@ -31,6 +32,18 @@ _TECH_ALIASES = {
     "fastapi": "FastAPI",
     "django": "Django",
     "docker": "Docker",
+    "java": "Java",
+    "spring": "Spring",
+    "spring boot": "Spring Boot",
+    "springboot": "Spring Boot",
+    "hibernate": "Hibernate",
+    "openapi": "OpenAPI",
+    "asyncapi": "AsyncAPI",
+    "jms": "JMS",
+    "mq": "MQ",
+    "git": "Git",
+    "ci/cd": "CI/CD",
+    "cicd": "CI/CD",
     "node": "Node.js",
     "nodejs": "Node.js",
     "node.js": "Node.js",
@@ -39,6 +52,27 @@ _TECH_ALIASES = {
     "nest.js": "Nest.js",
     "nest js": "Nest.js",
 }
+
+_KEYWORD_BLOCKLIST = {
+    "account management",
+    "calculation engine",
+    "customer facing reports",
+    "financial",
+    "investment",
+    "pension",
+    "savings",
+    "taxation",
+    "upgrade",
+}
+
+_ROLE_KEYWORD_RE = re.compile(
+    r"\b("
+    r"architect|backend|consultant|developer|devops|engineer|frontend|fullstack|"
+    r"full stack|junior|lead|manager|mid|pmo|product|project|qa|senior|"
+    r"specialist|tester"
+    r")\b",
+    re.IGNORECASE,
+)
 
 
 class SalaryRange(BaseModel):
@@ -114,7 +148,7 @@ class JDParsed(BaseModel):
         seen: set[str] = set()
 
         for item in raw_items:
-            cleaned = " ".join(item.strip().split())
+            cleaned = _normalize_keyword(item)
             key = cleaned.lower()
             if cleaned and key not in seen:
                 normalized.append(cleaned)
@@ -130,3 +164,26 @@ def _normalize_technology(value: str) -> str:
 
     alias = _TECH_ALIASES.get(cleaned.lower())
     return alias if alias is not None else cleaned
+
+
+def _normalize_keyword(value: str) -> str:
+    cleaned = " ".join(value.strip().split())
+    if not cleaned:
+        return ""
+
+    lowered = cleaned.lower()
+    if lowered in _KEYWORD_BLOCKLIST:
+        return ""
+
+    without_version = re.sub(r"\s+\d+(?:[.\-\w+x]*)?$", "", cleaned).strip()
+    canonical = _normalize_technology(without_version)
+    if canonical.lower() in _TECH_ALIASES or canonical != without_version:
+        return canonical
+
+    if _ROLE_KEYWORD_RE.search(cleaned):
+        return cleaned
+
+    if lowered in _TECH_ALIASES:
+        return _normalize_technology(cleaned)
+
+    return ""

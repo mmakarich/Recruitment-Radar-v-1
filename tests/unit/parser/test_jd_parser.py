@@ -220,6 +220,47 @@ async def test_normalizes_tech_stack() -> None:
 
 
 @pytest.mark.asyncio
+async def test_filters_keywords_to_job_search_terms() -> None:
+    client = _MockClient(
+        [
+            _payload(
+                keywords=[
+                    "Java 17",
+                    "Java 21",
+                    "Spring Boot 3.3.x",
+                    "taxation",
+                    "pension",
+                    "savings",
+                    "investment",
+                    "PostgreSQL",
+                    "JMS",
+                    "MQ",
+                    "OpenAPI",
+                    "AsyncAPI",
+                    "CI/CD",
+                    "upgrade",
+                    "calculation engine",
+                    "financial",
+                ],
+            )
+        ]
+    )
+
+    parsed = await parse_jd("Senior Java Developer", client=client)
+
+    assert parsed.keywords == (
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "JMS",
+        "MQ",
+        "OpenAPI",
+        "AsyncAPI",
+        "CI/CD",
+    )
+
+
+@pytest.mark.asyncio
 async def test_invalid_after_retry_raises() -> None:
     client = _MockClient(["not json", "also not json"])
 

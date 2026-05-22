@@ -147,6 +147,37 @@ def _snapshot_matches_parsed_jd(parsed: ParserJDParsed) -> bool:
     return bool(snapshot_terms & parsed_terms or snapshot_tokens & parsed_tokens)
 
 
+def _render_refresh_for_parsed_jd(parsed: ParserJDParsed, *, warn_on_mismatch: bool) -> None:
+    refresh_keywords = _keywords_for_parsed_jd(parsed)
+    if not refresh_keywords:
+        return
+
+    if warn_on_mismatch:
+        st.warning(
+            "Ostatni snapshot był zebrany dla innych keywordów. "
+            f"Uruchom scraping dla: {refresh_keywords}."
+        )
+    else:
+        st.caption(f"Keywordy do nowego snapshotu: {refresh_keywords}")
+
+    if st.button("Odśwież dane dla tej oferty"):
+        workflow_inputs = {
+            "keywords": refresh_keywords,
+            "keyword_profile": "consulting",
+            "portals": "all",
+            "limit_per_portal": "200",
+            "limit_per_keyword": "50",
+        }
+        try:
+            workflow_id = trigger_refresh(
+                repo_full_name=settings.GITHUB_REPO_FULL_NAME,
+                inputs=workflow_inputs,
+            )
+            st.success(f"Uruchomiono workflow: {workflow_id}")
+        except Exception as exc:
+            st.error(f"Nie udało się uruchomić workflow: {exc}")
+
+
 def _render_snapshot_health() -> None:
     info = snapshot_status()
     if info.snapshot_date is None:
@@ -469,28 +500,10 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
         st.markdown("### Sparsowana oferta")
         st.json(parsed_jd.model_dump())
 
-        if not _snapshot_matches_parsed_jd(parsed_jd):
-            refresh_keywords = _keywords_for_parsed_jd(parsed_jd)
-            st.warning(
-                "Ostatni snapshot był zebrany dla innych keywordów. "
-                f"Uruchom scraping dla: {refresh_keywords}."
-            )
-            if st.button("Odśwież dane dla tej oferty"):
-                workflow_inputs = {
-                    "keywords": refresh_keywords,
-                    "keyword_profile": "consulting",
-                    "portals": "all",
-                    "limit_per_portal": "200",
-                    "limit_per_keyword": "50",
-                }
-                try:
-                    workflow_id = trigger_refresh(
-                        repo_full_name=settings.GITHUB_REPO_FULL_NAME,
-                        inputs=workflow_inputs,
-                    )
-                    st.success(f"Uruchomiono workflow: {workflow_id}")
-                except Exception as exc:
-                    st.error(f"Nie udało się uruchomić workflow: {exc}")
+        _render_refresh_for_parsed_jd(
+            parsed_jd,
+            warn_on_mismatch=not _snapshot_matches_parsed_jd(parsed_jd),
+        )
 
         if st.button("Znajdź podobne oferty"):
             df = _load_snapshot_cached(latest_snapshot_cache_key())

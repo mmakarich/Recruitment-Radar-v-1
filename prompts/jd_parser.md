@@ -33,8 +33,17 @@ Zasady dla długich JD:
   core stack albo technologie powtarzające się w tytule i głównych wymaganiach.
 - Nie wrzucaj do `tech_stack` całej listy narzędzi z sekcji nice-to-have, benefitów,
   środowiska, procesów albo technologii wspomnianych marginalnie.
-- Technologie opcjonalne, narzędzia, domeny biznesowe i alternatywne hasła wpisuj
-  do `keywords`, jeśli mogą pomóc w szerszym wyszukiwaniu rynku.
+- `keywords` to frazy do wyszukiwania ofert na portalach pracy, nie tagi opisujące
+  produkt ani domenę biznesową.
+- W `keywords` umieszczaj maksymalnie 8 fraz: warianty tytułu roli, główne technologie,
+  główne frameworki, specjalizację typu Backend/Frontend/DevOps/Data oraz seniority.
+- Nie wpisuj do `keywords` domen biznesowych, nazw procesów, benefitów, obowiązków,
+  produktów, wersji technologii ani pojedynczych ogólnych rzeczowników.
+- Przykład: dla Java/Spring Boot w finansach dobre keywords to ["Java Developer",
+  "Spring Boot Developer", "Backend Developer", "Java", "Spring Boot"], a złe keywords
+  to ["taxation", "pension", "savings", "investment", "upgrade", "financial"].
+- Technologie opcjonalne i narzędzia poboczne wpisuj do `keywords` tylko wtedy, gdy są
+  realnymi frazami wyszukiwania ofert, np. "Kafka", "Kubernetes", "AWS".
 - Jeśli tekst rozdziela "must have" i "nice to have", traktuj tylko "must have" jako
   `tech_stack`; "nice to have" przenieś do `keywords`.
 - Jeśli tekst jest bardzo krótki, np. "Senior Node.js Developer", wyciągnij tytuł,
