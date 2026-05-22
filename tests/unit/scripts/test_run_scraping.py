@@ -166,6 +166,20 @@ keywords = ["SAP", "SAP"]
     assert result == ("PMO Specialist", "Project Manager", "SAP")
 
 
+def test_load_keyword_profile_unknown_explains_keywords_field(tmp_path: Path) -> None:
+    config = tmp_path / "keywords.toml"
+    config.write_text(
+        """
+[profiles.consulting]
+description = "Default"
+""",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match='--keywords "Pm"'):
+        run_scraping._load_keyword_profile("Pm", config)
+
+
 @pytest.mark.asyncio
 async def test_run_scraping_invokes_selected_scrapers(tmp_path: Path) -> None:
     summary = await run_scraping.run_scraping(

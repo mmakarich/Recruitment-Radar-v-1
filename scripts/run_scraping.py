@@ -161,7 +161,15 @@ def _load_keyword_profile(profile_name: str, config_path: Path) -> tuple[str, ..
 
     profiles = data.get("profiles")
     if not isinstance(profiles, dict) or profile_name not in profiles:
-        raise ValueError(f"Unknown keyword profile: {profile_name}")
+        available = (
+            ", ".join(sorted(str(name) for name in profiles))
+            if isinstance(profiles, dict)
+            else "none"
+        )
+        raise ValueError(
+            f"Unknown keyword profile: {profile_name}. Available profiles: {available}. "
+            f'If you meant a search phrase, pass it via --keywords "{profile_name}".'
+        )
 
     keywords = _collect_keywords(profiles[profile_name])
     if not keywords:
