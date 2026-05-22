@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-05-22",
-  "started_at": "2026-05-22T09:57:35.442203+00:00",
+  "started_at": "2026-05-22T10:30:14.551745+00:00",
   "keyword_profile": null,
   "keywords": [
     "Java Developer"
@@ -11,7 +11,7 @@
   "portals": {
     "justjoin": {
       "count": 50,
-      "elapsed_s": 5.676,
+      "elapsed_s": 5.897,
       "file": "justjoin.parquet",
       "keyword_metrics": [
         {
@@ -21,13 +21,13 @@
           "added_count": 50,
           "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.676
+          "elapsed_s": 5.897
         }
       ]
     },
     "nofluff": {
       "count": 0,
-      "elapsed_s": 0.628,
+      "elapsed_s": 0.569,
       "file": null,
       "keyword_metrics": [
         {
@@ -37,13 +37,13 @@
           "added_count": 0,
           "filtered_count": 50,
           "duplicate_count": 0,
-          "elapsed_s": 0.628
+          "elapsed_s": 0.569
         }
       ]
     },
     "rocketjobs": {
       "count": 10,
-      "elapsed_s": 4.635,
+      "elapsed_s": 4.201,
       "file": "rocketjobs.parquet",
       "keyword_metrics": [
         {
@@ -53,23 +53,23 @@
           "added_count": 10,
           "filtered_count": 4,
           "duplicate_count": 0,
-          "elapsed_s": 4.635
+          "elapsed_s": 4.201
         }
       ]
     },
     "pracuj": {
-      "count": 26,
-      "elapsed_s": 5.362,
+      "count": 36,
+      "elapsed_s": 4.608,
       "file": "pracuj.parquet",
       "keyword_metrics": [
         {
           "keyword": "Java Developer",
           "fetched_count": 50,
-          "matched_count": 26,
-          "added_count": 26,
-          "filtered_count": 24,
+          "matched_count": 36,
+          "added_count": 36,
+          "filtered_count": 14,
           "duplicate_count": 0,
-          "elapsed_s": 5.362
+          "elapsed_s": 4.608
         }
       ]
     }
@@ -78,9 +78,9 @@
     "Java Developer": {
       "keyword": "Java Developer",
       "fetched_count": 164,
-      "matched_count": 86,
-      "added_count": 86,
-      "filtered_count": 78,
+      "matched_count": 96,
+      "added_count": 96,
+      "filtered_count": 68,
       "duplicate_count": 0,
       "errors": {},
       "portals": {
@@ -90,7 +90,7 @@
           "added_count": 50,
           "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.676
+          "elapsed_s": 5.897
         },
         "nofluff": {
           "fetched_count": 50,
@@ -98,7 +98,7 @@
           "added_count": 0,
           "filtered_count": 50,
           "duplicate_count": 0,
-          "elapsed_s": 0.628
+          "elapsed_s": 0.569
         },
         "rocketjobs": {
           "fetched_count": 14,
@@ -106,15 +106,15 @@
           "added_count": 10,
           "filtered_count": 4,
           "duplicate_count": 0,
-          "elapsed_s": 4.635
+          "elapsed_s": 4.201
         },
         "pracuj": {
           "fetched_count": 50,
-          "matched_count": 26,
-          "added_count": 26,
-          "filtered_count": 24,
+          "matched_count": 36,
+          "added_count": 36,
+          "filtered_count": 14,
           "duplicate_count": 0,
-          "elapsed_s": 5.362
+          "elapsed_s": 4.608
         }
       }
     }
@@ -124,7 +124,7 @@
   "empty_portals": [
     "nofluff"
   ],
-  "total_count": 86,
-  "finished_at": "2026-05-22T09:57:35.463365+00:00",
+  "total_count": 96,
+  "finished_at": "2026-05-22T10:30:14.573031+00:00",
   "status": "success"
 }
