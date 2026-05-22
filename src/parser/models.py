@@ -31,6 +31,13 @@ _TECH_ALIASES = {
     "fastapi": "FastAPI",
     "django": "Django",
     "docker": "Docker",
+    "node": "Node.js",
+    "nodejs": "Node.js",
+    "node.js": "Node.js",
+    "node js": "Node.js",
+    "nestjs": "Nest.js",
+    "nest.js": "Nest.js",
+    "nest js": "Nest.js",
 }
 
 
