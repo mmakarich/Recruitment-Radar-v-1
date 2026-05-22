@@ -138,9 +138,10 @@ def _render_snapshot_health() -> None:
             )
         )
 
-    if info.keyword_metrics:
+    keyword_metrics = getattr(info, "keyword_metrics", {})
+    if keyword_metrics:
         top_keywords = sorted(
-            info.keyword_metrics.items(),
+            keyword_metrics.items(),
             key=lambda item: int(item[1].get("added_count") or 0),
             reverse=True,
         )[:5]
