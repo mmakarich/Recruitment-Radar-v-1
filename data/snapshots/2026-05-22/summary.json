@@ -1,96 +1,96 @@
 {
   "snapshot_date": "2026-05-22",
-  "started_at": "2026-05-22T08:37:51.071837+00:00",
+  "started_at": "2026-05-22T08:45:10.031506+00:00",
   "keyword_profile": null,
   "keywords": [
-    "Java Developer"
+    "Senior Node.js Developer"
   ],
   "keyword_count": 1,
   "limit_per_portal": 200,
   "limit_per_keyword": 50,
   "portals": {
     "justjoin": {
-      "count": 50,
-      "elapsed_s": 5.836,
+      "count": 35,
+      "elapsed_s": 4.949,
       "file": "justjoin.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Java Developer",
+          "keyword": "Senior Node.js Developer",
           "fetched_count": 50,
-          "matched_count": 50,
-          "added_count": 50,
-          "filtered_count": 0,
+          "matched_count": 35,
+          "added_count": 35,
+          "filtered_count": 15,
           "duplicate_count": 0,
-          "elapsed_s": 5.836
+          "elapsed_s": 4.949
         }
       ]
     },
     "nofluff": {
       "count": 0,
-      "elapsed_s": 0.633,
+      "elapsed_s": 0.629,
       "file": null,
       "keyword_metrics": [
         {
-          "keyword": "Java Developer",
+          "keyword": "Senior Node.js Developer",
           "fetched_count": 50,
           "matched_count": 0,
           "added_count": 0,
           "filtered_count": 50,
           "duplicate_count": 0,
-          "elapsed_s": 0.633
+          "elapsed_s": 0.629
         }
       ]
     },
     "rocketjobs": {
-      "count": 10,
-      "elapsed_s": 5.212,
+      "count": 2,
+      "elapsed_s": 4.589,
       "file": "rocketjobs.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Java Developer",
-          "fetched_count": 14,
-          "matched_count": 10,
-          "added_count": 10,
-          "filtered_count": 4,
+          "keyword": "Senior Node.js Developer",
+          "fetched_count": 2,
+          "matched_count": 2,
+          "added_count": 2,
+          "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.212
+          "elapsed_s": 4.589
         }
       ]
     },
     "pracuj": {
-      "count": 36,
-      "elapsed_s": 5.576,
+      "count": 7,
+      "elapsed_s": 6.047,
       "file": "pracuj.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Java Developer",
-          "fetched_count": 50,
-          "matched_count": 36,
-          "added_count": 36,
-          "filtered_count": 14,
+          "keyword": "Senior Node.js Developer",
+          "fetched_count": 25,
+          "matched_count": 7,
+          "added_count": 7,
+          "filtered_count": 18,
           "duplicate_count": 0,
-          "elapsed_s": 5.576
+          "elapsed_s": 6.047
         }
       ]
     }
   },
   "keyword_metrics": {
-    "Java Developer": {
-      "keyword": "Java Developer",
-      "fetched_count": 164,
-      "matched_count": 96,
-      "added_count": 96,
-      "filtered_count": 68,
+    "Senior Node.js Developer": {
+      "keyword": "Senior Node.js Developer",
+      "fetched_count": 127,
+      "matched_count": 44,
+      "added_count": 44,
+      "filtered_count": 83,
       "duplicate_count": 0,
       "errors": {},
       "portals": {
         "justjoin": {
           "fetched_count": 50,
-          "matched_count": 50,
-          "added_count": 50,
-          "filtered_count": 0,
+          "matched_count": 35,
+          "added_count": 35,
+          "filtered_count": 15,
           "duplicate_count": 0,
-          "elapsed_s": 5.836
+          "elapsed_s": 4.949
         },
         "nofluff": {
           "fetched_count": 50,
@@ -98,23 +98,23 @@
           "added_count": 0,
           "filtered_count": 50,
           "duplicate_count": 0,
-          "elapsed_s": 0.633
+          "elapsed_s": 0.629
         },
         "rocketjobs": {
-          "fetched_count": 14,
-          "matched_count": 10,
-          "added_count": 10,
-          "filtered_count": 4,
+          "fetched_count": 2,
+          "matched_count": 2,
+          "added_count": 2,
+          "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.212
+          "elapsed_s": 4.589
         },
         "pracuj": {
-          "fetched_count": 50,
-          "matched_count": 36,
-          "added_count": 36,
-          "filtered_count": 14,
+          "fetched_count": 25,
+          "matched_count": 7,
+          "added_count": 7,
+          "filtered_count": 18,
           "duplicate_count": 0,
-          "elapsed_s": 5.576
+          "elapsed_s": 6.047
         }
       }
     }
@@ -124,7 +124,7 @@
   "empty_portals": [
     "nofluff"
   ],
-  "total_count": 96,
-  "finished_at": "2026-05-22T08:37:51.095965+00:00",
+  "total_count": 44,
+  "finished_at": "2026-05-22T08:45:10.051606+00:00",
   "status": "success"
 }
