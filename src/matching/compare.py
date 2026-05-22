@@ -91,13 +91,13 @@ def _company_score(our_company: str | None, their_company: str) -> int:
 
 
 def _tech_overlap(ours: tuple[str, ...], theirs: tuple[str, ...]) -> float:
-    our_set = {_normalize(item) for item in ours if item}
-    their_set = {_normalize(item) for item in theirs if item}
+    our_set = {_normalize_tech(item) for item in ours if item}
+    their_set = {_normalize_tech(item) for item in theirs if item}
 
     if not our_set or not their_set:
         return 0.0
 
-    return len(our_set & their_set) / len(our_set | their_set)
+    return len(our_set & their_set) / len(our_set)
 
 
 def _location_match(our_location: str | None, their_location: str | None) -> bool:
@@ -152,3 +152,23 @@ def _normalize_company(value: str) -> str:
 
 def _normalize(value: str) -> str:
     return " ".join(value.lower().strip().split())
+
+
+def _normalize_tech(value: str) -> str:
+    normalized = _normalize(value)
+    compact = re.sub(r"[^a-z0-9+#]+", "", normalized)
+    aliases = {
+        "node": "nodejs",
+        "nodejs": "nodejs",
+        "node.js": "nodejs",
+        "nodej.s": "nodejs",
+        "javascript": "javascript",
+        "js": "javascript",
+        "typescript": "typescript",
+        "ts": "typescript",
+        "postgres": "postgresql",
+        "postgresql": "postgresql",
+        "k8s": "kubernetes",
+        "kubernetes": "kubernetes",
+    }
+    return aliases.get(normalized, aliases.get(compact, normalized))

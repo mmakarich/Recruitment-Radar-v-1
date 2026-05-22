@@ -209,14 +209,14 @@ async def test_normalizes_tech_stack() -> None:
     client = _MockClient(
         [
             _payload(
-                tech_stack=["py", "JS", "k8s", "Python"],
+                tech_stack=["py", "JS", "k8s", "Python", "nodejs"],
             )
         ]
     )
 
     parsed = await parse_jd("Python JS k8s", client=client)
 
-    assert parsed.tech_stack == ("Python", "JavaScript", "Kubernetes")
+    assert parsed.tech_stack == ("Python", "JavaScript", "Kubernetes", "Node.js")
 
 
 @pytest.mark.asyncio

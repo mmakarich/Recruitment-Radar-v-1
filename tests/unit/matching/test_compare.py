@@ -128,6 +128,30 @@ class TestScoreMatch:
         assert result.work_mode_match is True
         assert result.salary_delta is None
 
+    def test_tech_overlap_rewards_required_stack_coverage(self) -> None:
+        our = JDParsed(
+            title="Senior Node.js Developer",
+            seniority="senior",
+            tech_stack=("Node.js",),
+        )
+        theirs = _offer(
+            title="Senior Node Developer",
+            tech_stack=(
+                "TypeScript",
+                "NodeJS",
+                "Nest.js",
+                "AWS",
+                "PostgreSQL",
+                "Docker",
+            ),
+            seniority="senior",
+        )
+
+        result = score_match(our, theirs)
+
+        assert result.tech_overlap == 1.0
+        assert result.total >= 60
+
     def test_salary_delta_calculation(self) -> None:
         our = JDParsed(
             title="Senior Python Developer",
