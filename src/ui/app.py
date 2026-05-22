@@ -317,6 +317,24 @@ def _matching_jd_from_parser(parsed: ParserJDParsed) -> MatchingJDParsed:
     )
 
 
+def _coerce_parsed_jd(value: Any) -> ParserJDParsed | None:
+    if isinstance(value, ParserJDParsed):
+        parsed = ParserJDParsed.model_validate(value.model_dump())
+        if parsed != value:
+            st.session_state["parsed_jd"] = parsed
+        return parsed
+
+    if isinstance(value, dict):
+        try:
+            parsed = ParserJDParsed.model_validate(value)
+        except ValueError:
+            return None
+        st.session_state["parsed_jd"] = parsed
+        return parsed
+
+    return None
+
+
 def _matched_to_dataframe(matched: list[MatchedOffer]) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for item in matched:
@@ -495,8 +513,8 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
             except JDParserError as exc:
                 st.error(f"Błąd parsera JD: {exc}")
 
-    parsed_jd = st.session_state.get("parsed_jd")
-    if isinstance(parsed_jd, ParserJDParsed):
+    parsed_jd = _coerce_parsed_jd(st.session_state.get("parsed_jd"))
+    if parsed_jd is not None:
         st.markdown("### Sparsowana oferta")
         st.json(parsed_jd.model_dump())
 

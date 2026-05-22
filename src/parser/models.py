@@ -55,14 +55,55 @@ _TECH_ALIASES = {
 
 _KEYWORD_BLOCKLIST = {
     "account management",
+    "asyncapi",
     "calculation engine",
+    "ci/cd",
+    "cicd",
     "customer facing reports",
+    "design patterns",
     "financial",
+    "git",
     "investment",
+    "jms",
+    "mq",
+    "oop",
+    "openapi",
     "pension",
     "savings",
+    "sql",
     "taxation",
     "upgrade",
+}
+
+_KEYWORD_TECH_ALLOWLIST = {
+    "aws",
+    "azure",
+    "django",
+    "docker",
+    "fastapi",
+    "hibernate",
+    "java",
+    "javascript",
+    "k8s",
+    "kubernetes",
+    "nest.js",
+    "nestjs",
+    "node",
+    "node js",
+    "node.js",
+    "nodejs",
+    "postgres",
+    "postgresql",
+    "py",
+    "py3",
+    "python",
+    "python3",
+    "react",
+    "spring",
+    "spring boot",
+    "springboot",
+    "ts",
+    "typescript",
 }
 
 _ROLE_KEYWORD_RE = re.compile(
@@ -176,8 +217,12 @@ def _normalize_keyword(value: str) -> str:
         return ""
 
     without_version = re.sub(r"\s+\d+(?:[.\-\w+x]*)?$", "", cleaned).strip()
+    lowered_without_version = without_version.lower()
+    if lowered_without_version in _KEYWORD_BLOCKLIST:
+        return ""
+
     canonical = _normalize_technology(without_version)
-    if canonical.lower() in _TECH_ALIASES or canonical != without_version:
+    if lowered_without_version in _KEYWORD_TECH_ALLOWLIST:
         return canonical
 
     if _ROLE_KEYWORD_RE.search(cleaned):
