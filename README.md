@@ -163,6 +163,7 @@ data/snapshots/{YYYY-MM-DD}/summary.json
 `summary.json` zawiera:
 
 - liczbę ofert per portal,
+- skuteczność keywordów (`fetched_count`, `matched_count`, `added_count`, `filtered_count`),
 - czas wykonania per portal,
 - błędy per portal,
 - łączną liczbę ofert.

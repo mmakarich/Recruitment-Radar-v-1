@@ -124,6 +124,15 @@ def test_snapshot_status_reads_summary_health(tmp_path: Path) -> None:
         "errors": {"failing": "RuntimeError: boom"},
         "failed_portals": ["failing"],
         "empty_portals": [],
+        "keyword_metrics": {
+            "python": {
+                "fetched_count": 12,
+                "matched_count": 10,
+                "added_count": 10,
+                "filtered_count": 2,
+                "duplicate_count": 0,
+            }
+        },
     }
     (new_dir / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
 
@@ -136,6 +145,8 @@ def test_snapshot_status_reads_summary_health(tmp_path: Path) -> None:
     assert status.portal_counts == {"ok": 10, "failing": 0}
     assert status.errors == {"failing": "RuntimeError: boom"}
     assert status.failed_portals == ("failing",)
+    assert status.keyword_metrics["python"]["added_count"] == 10
+    assert status.keyword_metrics["python"]["filtered_count"] == 2
 
 
 class _FakeWorkflow:

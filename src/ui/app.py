@@ -138,6 +138,20 @@ def _render_snapshot_health() -> None:
             )
         )
 
+    if info.keyword_metrics:
+        top_keywords = sorted(
+            info.keyword_metrics.items(),
+            key=lambda item: int(item[1].get("added_count") or 0),
+            reverse=True,
+        )[:5]
+        st.sidebar.caption(
+            "Top keywordy: "
+            + ", ".join(
+                f"{keyword}: {int(metric.get('added_count') or 0)}"
+                for keyword, metric in top_keywords
+            )
+        )
+
 
 def _salary_from_row(row: pd.Series) -> SalaryRange | None:
     try:

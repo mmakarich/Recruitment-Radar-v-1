@@ -81,6 +81,23 @@ class _MixedScraper:
         ]
 
 
+class _PartiallyFailingKeywordScraper:
+    portal_name = "partial"
+
+    async def fetch(self, params: SearchParams) -> list[JobOffer]:
+        keyword = params.keywords[0]
+        if keyword == "broken":
+            raise RuntimeError("keyword boom")
+        return [
+            _offer(
+                "partial.pl",
+                title=f"{keyword.title()} Consultant",
+                tech_stack=(keyword,),
+                url_suffix=f"partial-{keyword}",
+            )
+        ]
+
+
 @pytest.fixture(autouse=True)
 def patch_registry(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(
@@ -190,9 +207,45 @@ async def test_run_scraping_batches_keywords_and_filters_results(
 
     assert summary["total_count"] == 2
     assert summary["keyword_count"] == 2
+    assert summary["keyword_metrics"]["pmo specialist"]["fetched_count"] == 2
+    assert summary["keyword_metrics"]["pmo specialist"]["matched_count"] == 1
+    assert summary["keyword_metrics"]["pmo specialist"]["added_count"] == 1
+    assert summary["keyword_metrics"]["pmo specialist"]["filtered_count"] == 1
+    assert summary["keyword_metrics"]["sap"]["added_count"] == 1
+    assert summary["portals"]["mixed"]["keyword_metrics"][0]["keyword"] == "pmo specialist"
+    assert summary["portals"]["mixed"]["keyword_metrics"][0]["duplicate_count"] == 0
 
     df = pd.read_parquet(tmp_path / "2026-05-16" / "mixed.parquet")
     assert set(df["title"]) == {"Pmo Specialist Consultant", "Sap Consultant"}
+
+
+@pytest.mark.asyncio
+async def test_run_scraping_records_keyword_errors_without_degrading_when_offers_exist(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        run_scraping,
+        "SCRAPER_REGISTRY",
+        {"partial": _PartiallyFailingKeywordScraper},
+    )
+
+    summary = await run_scraping.run_scraping(
+        keywords=("python", "broken"),
+        portals=("partial",),
+        limit_per_portal=10,
+        limit_per_keyword=5,
+        output_base_dir=tmp_path,
+        snapshot_date=date(2026, 5, 16),
+    )
+
+    assert summary["status"] == "success"
+    assert summary["total_count"] == 1
+    assert summary["errors"] == {}
+    assert summary["keyword_metrics"]["python"]["added_count"] == 1
+    assert summary["keyword_metrics"]["broken"]["errors"]["partial"] == "RuntimeError: keyword boom"
+    broken_metric = summary["portals"]["partial"]["keyword_metrics"][1]
+    assert broken_metric["error"] == "RuntimeError: keyword boom"
 
 
 @pytest.mark.asyncio
