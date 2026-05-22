@@ -128,6 +128,25 @@ class TestScoreMatch:
         assert result.work_mode_match is True
         assert result.salary_delta is None
 
+    def test_short_jd_is_not_capped_by_missing_optional_fields(self) -> None:
+        our = JDParsed(
+            title="Java Developer",
+            tech_stack=("Java",),
+        )
+        theirs = _offer(
+            title="Java Developer",
+            tech_stack=("Java", "Spring Boot", "PostgreSQL"),
+            seniority=None,
+            location=None,
+            work_mode=None,
+            salary=None,
+        )
+
+        result = score_match(our, theirs)
+
+        assert result.total == 100
+        assert result.tech_overlap == 1.0
+
     def test_tech_overlap_rewards_required_stack_coverage(self) -> None:
         our = JDParsed(
             title="Senior Node.js Developer",
