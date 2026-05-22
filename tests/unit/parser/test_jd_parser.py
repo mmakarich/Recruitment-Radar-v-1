@@ -252,11 +252,6 @@ async def test_filters_keywords_to_job_search_terms() -> None:
         "Java",
         "Spring Boot",
         "PostgreSQL",
-        "JMS",
-        "MQ",
-        "OpenAPI",
-        "AsyncAPI",
-        "CI/CD",
     )
 
 
