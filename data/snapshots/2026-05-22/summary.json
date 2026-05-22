@@ -1,9 +1,9 @@
 {
   "snapshot_date": "2026-05-22",
-  "started_at": "2026-05-22T08:19:42.180688+00:00",
+  "started_at": "2026-05-22T08:37:51.071837+00:00",
   "keyword_profile": null,
   "keywords": [
-    "Python"
+    "Java Developer"
   ],
   "keyword_count": 1,
   "limit_per_portal": 200,
@@ -11,76 +11,76 @@
   "portals": {
     "justjoin": {
       "count": 50,
-      "elapsed_s": 5.569,
+      "elapsed_s": 5.836,
       "file": "justjoin.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Python",
+          "keyword": "Java Developer",
           "fetched_count": 50,
           "matched_count": 50,
           "added_count": 50,
           "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.569
+          "elapsed_s": 5.836
         }
       ]
     },
     "nofluff": {
-      "count": 5,
-      "elapsed_s": 0.603,
-      "file": "nofluff.parquet",
+      "count": 0,
+      "elapsed_s": 0.633,
+      "file": null,
       "keyword_metrics": [
         {
-          "keyword": "Python",
+          "keyword": "Java Developer",
           "fetched_count": 50,
-          "matched_count": 5,
-          "added_count": 5,
-          "filtered_count": 45,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
           "duplicate_count": 0,
-          "elapsed_s": 0.603
+          "elapsed_s": 0.633
         }
       ]
     },
     "rocketjobs": {
-      "count": 50,
-      "elapsed_s": 5.006,
+      "count": 10,
+      "elapsed_s": 5.212,
       "file": "rocketjobs.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Python",
-          "fetched_count": 50,
-          "matched_count": 50,
-          "added_count": 50,
-          "filtered_count": 0,
+          "keyword": "Java Developer",
+          "fetched_count": 14,
+          "matched_count": 10,
+          "added_count": 10,
+          "filtered_count": 4,
           "duplicate_count": 0,
-          "elapsed_s": 5.006
+          "elapsed_s": 5.212
         }
       ]
     },
     "pracuj": {
-      "count": 50,
-      "elapsed_s": 5.829,
+      "count": 36,
+      "elapsed_s": 5.576,
       "file": "pracuj.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Python",
+          "keyword": "Java Developer",
           "fetched_count": 50,
-          "matched_count": 50,
-          "added_count": 50,
-          "filtered_count": 0,
+          "matched_count": 36,
+          "added_count": 36,
+          "filtered_count": 14,
           "duplicate_count": 0,
-          "elapsed_s": 5.829
+          "elapsed_s": 5.576
         }
       ]
     }
   },
   "keyword_metrics": {
-    "Python": {
-      "keyword": "Python",
-      "fetched_count": 200,
-      "matched_count": 155,
-      "added_count": 155,
-      "filtered_count": 45,
+    "Java Developer": {
+      "keyword": "Java Developer",
+      "fetched_count": 164,
+      "matched_count": 96,
+      "added_count": 96,
+      "filtered_count": 68,
       "duplicate_count": 0,
       "errors": {},
       "portals": {
@@ -90,39 +90,41 @@
           "added_count": 50,
           "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.569
+          "elapsed_s": 5.836
         },
         "nofluff": {
           "fetched_count": 50,
-          "matched_count": 5,
-          "added_count": 5,
-          "filtered_count": 45,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
           "duplicate_count": 0,
-          "elapsed_s": 0.603
+          "elapsed_s": 0.633
         },
         "rocketjobs": {
-          "fetched_count": 50,
-          "matched_count": 50,
-          "added_count": 50,
-          "filtered_count": 0,
+          "fetched_count": 14,
+          "matched_count": 10,
+          "added_count": 10,
+          "filtered_count": 4,
           "duplicate_count": 0,
-          "elapsed_s": 5.006
+          "elapsed_s": 5.212
         },
         "pracuj": {
           "fetched_count": 50,
-          "matched_count": 50,
-          "added_count": 50,
-          "filtered_count": 0,
+          "matched_count": 36,
+          "added_count": 36,
+          "filtered_count": 14,
           "duplicate_count": 0,
-          "elapsed_s": 5.829
+          "elapsed_s": 5.576
         }
       }
     }
   },
   "errors": {},
   "failed_portals": [],
-  "empty_portals": [],
-  "total_count": 155,
-  "finished_at": "2026-05-22T08:19:42.209218+00:00",
+  "empty_portals": [
+    "nofluff"
+  ],
+  "total_count": 96,
+  "finished_at": "2026-05-22T08:37:51.095965+00:00",
   "status": "success"
 }
