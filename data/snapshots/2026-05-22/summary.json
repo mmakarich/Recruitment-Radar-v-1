@@ -1,72 +1,120 @@
 {
   "snapshot_date": "2026-05-22",
-  "started_at": "2026-05-22T08:17:36.990146+00:00",
+  "started_at": "2026-05-22T08:19:42.180688+00:00",
   "keyword_profile": null,
   "keywords": [
-    "Pm"
+    "Python"
   ],
   "keyword_count": 1,
-  "limit_per_portal": 5,
-  "limit_per_keyword": 10,
+  "limit_per_portal": 200,
+  "limit_per_keyword": 50,
   "portals": {
     "justjoin": {
-      "count": 5,
-      "elapsed_s": 4.823,
+      "count": 50,
+      "elapsed_s": 5.569,
       "file": "justjoin.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Pm",
-          "fetched_count": 5,
-          "matched_count": 5,
-          "added_count": 5,
+          "keyword": "Python",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
           "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 4.823
+          "elapsed_s": 5.569
+        }
+      ]
+    },
+    "nofluff": {
+      "count": 5,
+      "elapsed_s": 0.603,
+      "file": "nofluff.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "Python",
+          "fetched_count": 50,
+          "matched_count": 5,
+          "added_count": 5,
+          "filtered_count": 45,
+          "duplicate_count": 0,
+          "elapsed_s": 0.603
         }
       ]
     },
     "rocketjobs": {
-      "count": 3,
-      "elapsed_s": 5.023,
+      "count": 50,
+      "elapsed_s": 5.006,
       "file": "rocketjobs.parquet",
       "keyword_metrics": [
         {
-          "keyword": "Pm",
-          "fetched_count": 5,
-          "matched_count": 3,
-          "added_count": 3,
-          "filtered_count": 2,
+          "keyword": "Python",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.023
+          "elapsed_s": 5.006
+        }
+      ]
+    },
+    "pracuj": {
+      "count": 50,
+      "elapsed_s": 5.829,
+      "file": "pracuj.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "Python",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.829
         }
       ]
     }
   },
   "keyword_metrics": {
-    "Pm": {
-      "keyword": "Pm",
-      "fetched_count": 10,
-      "matched_count": 8,
-      "added_count": 8,
-      "filtered_count": 2,
+    "Python": {
+      "keyword": "Python",
+      "fetched_count": 200,
+      "matched_count": 155,
+      "added_count": 155,
+      "filtered_count": 45,
       "duplicate_count": 0,
       "errors": {},
       "portals": {
         "justjoin": {
-          "fetched_count": 5,
-          "matched_count": 5,
-          "added_count": 5,
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
           "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 4.823
+          "elapsed_s": 5.569
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 5,
+          "added_count": 5,
+          "filtered_count": 45,
+          "duplicate_count": 0,
+          "elapsed_s": 0.603
         },
         "rocketjobs": {
-          "fetched_count": 5,
-          "matched_count": 3,
-          "added_count": 3,
-          "filtered_count": 2,
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 5.023
+          "elapsed_s": 5.006
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.829
         }
       }
     }
@@ -74,7 +122,7 @@
   "errors": {},
   "failed_portals": [],
   "empty_portals": [],
-  "total_count": 8,
-  "finished_at": "2026-05-22T08:17:37.004726+00:00",
+  "total_count": 155,
+  "finished_at": "2026-05-22T08:19:42.209218+00:00",
   "status": "success"
 }
