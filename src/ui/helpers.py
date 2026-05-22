@@ -97,6 +97,31 @@ def load_latest_snapshot(base_dir: Path = Path("data/snapshots")) -> pd.DataFram
     return pd.concat(frames, ignore_index=True)
 
 
+def latest_snapshot_cache_key(base_dir: Path = Path("data/snapshots")) -> str:
+    latest_dir = find_latest_snapshot_dir(base_dir)
+    if latest_dir is None:
+        return "missing"
+
+    parts = [latest_dir.name]
+    summary = _load_summary(latest_dir)
+    if summary:
+        parts.append(f"finished_at={summary.get('finished_at') or ''}")
+        parts.append(f"total_count={summary.get('total_count') or 0}")
+        keywords = ",".join(str(keyword) for keyword in summary.get("keywords", []))
+        parts.append(f"keywords={keywords}")
+
+    for path in sorted([latest_dir / "summary.json", *latest_dir.glob("*.parquet")]):
+        if not path.exists():
+            continue
+        try:
+            stat = path.stat()
+        except OSError:
+            continue
+        parts.append(f"{path.name}:{stat.st_mtime_ns}:{stat.st_size}")
+
+    return "|".join(parts)
+
+
 def snapshot_status(base_dir: Path = Path("data/snapshots")) -> SnapshotInfo:
     latest_dir = find_latest_snapshot_dir(base_dir)
     if latest_dir is None:

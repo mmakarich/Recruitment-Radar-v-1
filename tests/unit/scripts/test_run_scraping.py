@@ -203,6 +203,24 @@ async def test_run_scraping_invokes_selected_scrapers(tmp_path: Path) -> None:
 
 
 @pytest.mark.asyncio
+async def test_run_scraping_clears_stale_parquet_files(tmp_path: Path) -> None:
+    snapshot_dir = tmp_path / "2026-05-16"
+    snapshot_dir.mkdir()
+    pd.DataFrame([{"title": "Old PM"}]).to_parquet(snapshot_dir / "old.parquet")
+
+    await run_scraping.run_scraping(
+        keywords=("python",),
+        portals=("ok",),
+        limit_per_portal=10,
+        output_base_dir=tmp_path,
+        snapshot_date=date(2026, 5, 16),
+    )
+
+    assert not (snapshot_dir / "old.parquet").exists()
+    assert (snapshot_dir / "ok.parquet").exists()
+
+
+@pytest.mark.asyncio
 async def test_run_scraping_batches_keywords_and_filters_results(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
