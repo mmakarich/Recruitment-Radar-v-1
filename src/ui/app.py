@@ -312,6 +312,22 @@ def _matched_to_dataframe(matched: list[MatchedOffer]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _filter_by_tech_overlap(
+    matched: list[MatchedOffer],
+    jd: MatchingJDParsed,
+) -> list[MatchedOffer]:
+    if not jd.tech_stack:
+        return matched
+
+    return [
+        item
+        for item in matched
+        if item.match_score is None
+        or not item.deduped.primary.tech_stack
+        or item.match_score.tech_overlap > 0
+    ]
+
+
 def _download_exports(matched: list[MatchedOffer], jd: MatchingJDParsed | None) -> None:
     if not matched:
         return
@@ -495,8 +511,8 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
                 our_offer=matching_jd,
                 dedup_threshold=filters["dedup_threshold"],
                 min_match_score=min_score,
-                require_tech_overlap=bool(matching_jd.tech_stack),
             )
+            matched = _filter_by_tech_overlap(matched, matching_jd)
             st.session_state["matched_offers"] = matched
             st.session_state["matching_jd"] = matching_jd
             st.session_state["matching_message"] = (
