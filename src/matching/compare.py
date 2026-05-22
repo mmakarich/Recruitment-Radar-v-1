@@ -50,17 +50,22 @@ def score_match(our: JDParsed, theirs: JobOffer) -> MatchScore:
     salary_score = _salary_score(our.salary, theirs.salary)
     salary_delta = _salary_delta(our.salary, theirs.salary)
 
-    total = int(
-        round(
-            title_score * TITLE_WEIGHT
-            + tech_overlap * 100 * TECH_WEIGHT
-            + int(seniority_match) * 100 * SENIORITY_WEIGHT
-            + int(location_match) * 100 * LOCATION_WEIGHT
-            + int(work_mode_match) * 100 * WORK_MODE_WEIGHT
-            + company_score * COMPANY_WEIGHT
-            + salary_score * SALARY_WEIGHT
-        )
-    )
+    weighted_scores: list[tuple[float, float]] = [(TITLE_WEIGHT, float(title_score))]
+    if our.tech_stack and theirs.tech_stack:
+        weighted_scores.append((TECH_WEIGHT, tech_overlap * 100))
+    if our.seniority is not None and theirs.seniority is not None:
+        weighted_scores.append((SENIORITY_WEIGHT, int(seniority_match) * 100))
+    if our.location is not None and theirs.location is not None:
+        weighted_scores.append((LOCATION_WEIGHT, int(location_match) * 100))
+    if our.work_mode is not None and theirs.work_mode is not None:
+        weighted_scores.append((WORK_MODE_WEIGHT, int(work_mode_match) * 100))
+    if our.company is not None:
+        weighted_scores.append((COMPANY_WEIGHT, company_score))
+    if our.salary is not None and theirs.salary is not None:
+        weighted_scores.append((SALARY_WEIGHT, salary_score))
+
+    weight_sum = sum(weight for weight, _ in weighted_scores)
+    total = int(round(sum(weight * score for weight, score in weighted_scores) / weight_sum))
 
     return MatchScore(
         total=max(0, min(100, total)),
