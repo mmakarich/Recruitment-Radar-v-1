@@ -46,6 +46,7 @@ SCRAPING_PORTAL_OPTIONS = {
     "theprotocol": "TheProtocol",
 }
 DEFAULT_SCRAPING_PORTALS = ("justjoin", "nofluff", "rocketjobs", "pracuj")
+PARSED_JD_MIN_SCORE = 50
 
 
 def _get_streamlit_user() -> Any | None:
@@ -117,6 +118,33 @@ def _snapshot_status_caption() -> str:
         f"Ostatnie dane: {info.snapshot_date}, liczba ofert: {info.offer_count}, "
         f"status: {info.status}"
     )
+
+
+def _normalize_search_term(value: str) -> str:
+    return " ".join(value.lower().strip().split())
+
+
+def _keywords_for_parsed_jd(parsed: ParserJDParsed) -> str:
+    if parsed.title.strip():
+        return parsed.title.strip()
+
+    keywords = [*parsed.tech_stack, *parsed.keywords]
+    unique = dict.fromkeys(term.strip() for term in keywords if term.strip())
+    return ", ".join(unique)
+
+
+def _snapshot_matches_parsed_jd(parsed: ParserJDParsed) -> bool:
+    info = snapshot_status()
+    if not info.keyword_metrics:
+        return True
+
+    snapshot_terms = {_normalize_search_term(keyword) for keyword in info.keyword_metrics}
+    comparison_terms = parsed.tech_stack or (parsed.title, *parsed.keywords)
+    parsed_terms = {_normalize_search_term(term) for term in comparison_terms if term}
+    snapshot_tokens = {token for term in snapshot_terms for token in term.split()}
+    parsed_tokens = {token for term in parsed_terms for token in term.split()}
+
+    return bool(snapshot_terms & parsed_terms or snapshot_tokens & parsed_tokens)
 
 
 def _render_snapshot_health() -> None:
@@ -413,6 +441,9 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
             try:
                 parsed = parse_jd_sync(jd_text)
                 st.session_state["parsed_jd"] = parsed
+                st.session_state.pop("matched_offers", None)
+                st.session_state.pop("matching_jd", None)
+                st.session_state.pop("matching_message", None)
                 st.success("JD sparsowane.")
             except JDParserError as exc:
                 st.error(f"Błąd parsera JD: {exc}")
@@ -421,6 +452,29 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
     if isinstance(parsed_jd, ParserJDParsed):
         st.markdown("### Sparsowana oferta")
         st.json(parsed_jd.model_dump())
+
+        if not _snapshot_matches_parsed_jd(parsed_jd):
+            refresh_keywords = _keywords_for_parsed_jd(parsed_jd)
+            st.warning(
+                "Ostatni snapshot był zebrany dla innych keywordów. "
+                f"Uruchom scraping dla: {refresh_keywords}."
+            )
+            if st.button("Odśwież dane dla tej oferty"):
+                workflow_inputs = {
+                    "keywords": refresh_keywords,
+                    "keyword_profile": "consulting",
+                    "portals": "all",
+                    "limit_per_portal": "200",
+                    "limit_per_keyword": "50",
+                }
+                try:
+                    workflow_id = trigger_refresh(
+                        repo_full_name=settings.GITHUB_REPO_FULL_NAME,
+                        inputs=workflow_inputs,
+                    )
+                    st.success(f"Uruchomiono workflow: {workflow_id}")
+                except Exception as exc:
+                    st.error(f"Nie udało się uruchomić workflow: {exc}")
 
         if st.button("Znajdź podobne oferty"):
             df = _load_snapshot_cached(latest_snapshot_cache_key())
@@ -433,17 +487,27 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
 
             offers = _offers_from_dataframe(df)
             matching_jd = _matching_jd_from_parser(parsed_jd)
+            min_score = filters["min_score"]
+            if matching_jd.tech_stack:
+                min_score = max(min_score, PARSED_JD_MIN_SCORE)
             matched = run_matching(
                 offers,
                 our_offer=matching_jd,
                 dedup_threshold=filters["dedup_threshold"],
-                min_match_score=filters["min_score"],
+                min_match_score=min_score,
+                require_tech_overlap=bool(matching_jd.tech_stack),
             )
             st.session_state["matched_offers"] = matched
             st.session_state["matching_jd"] = matching_jd
+            st.session_state["matching_message"] = (
+                None
+                if matched
+                else "Brak podobnych ofert w aktualnym snapshotcie. Odśwież dane dla tej oferty."
+            )
 
     matched = st.session_state.get("matched_offers", [])
     stored_matching_jd = st.session_state.get("matching_jd")
+    matching_message = st.session_state.get("matching_message")
 
     if isinstance(matched, list) and matched:
         table = _matched_to_dataframe(matched)
@@ -456,6 +520,8 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
             matched,
             stored_matching_jd if isinstance(stored_matching_jd, MatchingJDParsed) else None,
         )
+    elif isinstance(matching_message, str):
+        st.info(matching_message)
 
 
 def _render_browse_tab(filters: dict[str, Any]) -> None:

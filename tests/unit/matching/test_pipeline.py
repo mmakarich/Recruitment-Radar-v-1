@@ -127,6 +127,34 @@ class TestRunMatching:
         assert result[0].match_score is not None
         assert result[0].match_score.total >= 80
 
+    def test_pipeline_can_require_tech_overlap(self) -> None:
+        offers = [
+            _offer(
+                title="Senior Python Developer",
+                company="Acme",
+                portal="justjoin.it",
+                url="https://justjoin.it/job/1",
+                tech_stack=("Python",),
+            ),
+            _offer(
+                title="Senior Java Developer",
+                company="Backend House",
+                portal="justjoin.it",
+                url="https://justjoin.it/job/2",
+                tech_stack=("Java", "Spring"),
+            ),
+        ]
+        our = JDParsed(
+            title="Senior Java Developer",
+            seniority="senior",
+            tech_stack=("Java",),
+        )
+
+        result = run_matching(offers, our_offer=our, require_tech_overlap=True)
+
+        assert len(result) == 1
+        assert result[0].deduped.primary.title == "Senior Java Developer"
+
     def test_pipeline_without_our_offer_returns_dedup_only(self) -> None:
         offers = [
             _offer(
