@@ -164,6 +164,7 @@ async def test_parse_missing_optional_fields() -> None:
     client = _MockClient(
         [
             _payload(
+                title="Backend Developer",
                 seniority=None,
                 tech_stack=[],
                 location=None,
@@ -181,7 +182,7 @@ async def test_parse_missing_optional_fields() -> None:
     assert parsed.location is None
     assert parsed.work_mode is None
     assert parsed.salary is None
-    assert parsed.keywords == ()
+    assert parsed.keywords == ("Backend Developer",)
 
 
 @pytest.mark.asyncio
@@ -224,6 +225,8 @@ async def test_filters_keywords_to_job_search_terms() -> None:
     client = _MockClient(
         [
             _payload(
+                title="Senior Java Developer",
+                tech_stack=["Java", "Spring Boot"],
                 keywords=[
                     "Java 17",
                     "Java 21",
@@ -249,6 +252,7 @@ async def test_filters_keywords_to_job_search_terms() -> None:
     parsed = await parse_jd("Senior Java Developer", client=client)
 
     assert parsed.keywords == (
+        "Senior Java Developer",
         "Java",
         "Spring Boot",
         "PostgreSQL",
