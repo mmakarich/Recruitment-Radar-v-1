@@ -28,6 +28,7 @@ from src.parser.models import JDParsed as ParserJDParsed
 from src.scrapers.base import ContractKind, JobOffer, SalaryPeriod, SalaryRange
 from src.ui.helpers import (
     UnauthorizedError,
+    latest_snapshot_cache_key,
     list_keyword_profiles,
     load_latest_snapshot,
     parse_allowed_emails,
@@ -103,7 +104,8 @@ def _guard_auth() -> None:
 
 
 @st.cache_data(ttl=600)
-def _load_snapshot_cached() -> pd.DataFrame:
+def _load_snapshot_cached(cache_key: str) -> pd.DataFrame:
+    del cache_key
     return load_latest_snapshot()
 
 
@@ -421,7 +423,7 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
         st.json(parsed_jd.model_dump())
 
         if st.button("Znajdź podobne oferty"):
-            df = _load_snapshot_cached()
+            df = _load_snapshot_cached(latest_snapshot_cache_key())
             if df.empty:
                 st.warning("Brak snapshotów do porównania.")
                 return
@@ -459,7 +461,7 @@ def _render_compare_tab(filters: dict[str, Any]) -> None:
 def _render_browse_tab(filters: dict[str, Any]) -> None:
     st.subheader("Przegląd ogłoszeń")
 
-    df = _load_snapshot_cached()
+    df = _load_snapshot_cached(latest_snapshot_cache_key())
     if df.empty:
         st.info("Brak snapshotów w data/snapshots.")
         return

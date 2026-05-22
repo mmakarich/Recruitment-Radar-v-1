@@ -330,6 +330,8 @@ async def run_scraping(
     snapshot_day = snapshot_date or datetime.now(UTC).date()
     snapshot_dir = output_base_dir / snapshot_day.isoformat()
     snapshot_dir.mkdir(parents=True, exist_ok=True)
+    for stale_file in snapshot_dir.glob("*.parquet"):
+        stale_file.unlink()
 
     tasks = [
         _run_single_scraper(

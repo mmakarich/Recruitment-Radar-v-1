@@ -10,6 +10,7 @@ from src.ui.helpers import (
     UnauthorizedError,
     find_latest_snapshot_dir,
     is_authorized_email,
+    latest_snapshot_cache_key,
     list_keyword_profiles,
     load_latest_snapshot,
     parse_allowed_emails,
@@ -84,6 +85,26 @@ def test_load_latest_snapshot_reads_parquet_files(tmp_path: Path) -> None:
 
     assert len(df) == 3
     assert set(df["title"]) == {"A", "B", "C"}
+
+
+def test_latest_snapshot_cache_key_changes_when_summary_changes(tmp_path: Path) -> None:
+    base = tmp_path / "snapshots"
+    new_dir = base / "2026-05-15"
+    new_dir.mkdir(parents=True)
+    pd.DataFrame([{"title": "PM"}]).to_parquet(new_dir / "offers.parquet")
+    summary_path = new_dir / "summary.json"
+    summary_path.write_text(
+        json.dumps({"finished_at": "first", "total_count": 1, "keywords": ["pm"]}),
+        encoding="utf-8",
+    )
+
+    first_key = latest_snapshot_cache_key(base)
+    summary_path.write_text(
+        json.dumps({"finished_at": "second", "total_count": 155, "keywords": ["python"]}),
+        encoding="utf-8",
+    )
+
+    assert latest_snapshot_cache_key(base) != first_key
 
 
 def test_snapshot_status_empty(tmp_path: Path) -> None:
