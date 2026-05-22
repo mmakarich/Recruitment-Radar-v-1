@@ -18,7 +18,7 @@ from dataclasses import asdict
 from datetime import UTC, date, datetime
 from pathlib import Path
 from time import perf_counter
-from typing import Any
+from typing import Any, TypedDict
 
 import pandas as pd
 
@@ -48,6 +48,25 @@ SCRAPER_REGISTRY = {
 }
 
 ScrapingStatus = str
+
+
+class KeywordMetric(TypedDict, total=False):
+    keyword: str
+    fetched_count: int
+    matched_count: int
+    added_count: int
+    filtered_count: int
+    duplicate_count: int
+    elapsed_s: float
+    error: str
+
+
+class ScraperRunResult(TypedDict):
+    portal: str
+    offers: list[JobOffer]
+    error: str | None
+    elapsed_s: float
+    keyword_metrics: list[KeywordMetric]
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -208,16 +227,18 @@ async def _run_single_scraper(
     keywords: tuple[str, ...],
     limit: int,
     limit_per_keyword: int,
-) -> tuple[str, list[JobOffer], str | None, float]:
+) -> ScraperRunResult:
     started = perf_counter()
     scraper_cls = SCRAPER_REGISTRY[portal]
     scraper = scraper_cls()
 
     offers: list[JobOffer] = []
     errors: list[str] = []
+    keyword_metrics: list[KeywordMetric] = []
     keyword_batches = keywords or ("",)
     try:
         for keyword in keyword_batches:
+            keyword_started = perf_counter()
             params = SearchParams(
                 keywords=(keyword,) if keyword else (),
                 limit=min(limit, limit_per_keyword),
@@ -225,20 +246,67 @@ async def _run_single_scraper(
             try:
                 batch = await scraper.fetch(params)
             except Exception as exc:
-                errors.append(f"{keyword or '<empty>'}: {type(exc).__name__}: {exc}")
+                error = f"{type(exc).__name__}: {exc}"
+                errors.append(f"{keyword or '<empty>'}: {error}")
+                keyword_metrics.append(
+                    {
+                        "keyword": keyword,
+                        "fetched_count": 0,
+                        "matched_count": 0,
+                        "added_count": 0,
+                        "filtered_count": 0,
+                        "duplicate_count": 0,
+                        "elapsed_s": round(perf_counter() - keyword_started, 3),
+                        "error": error,
+                    }
+                )
                 continue
 
-            offers.extend(
+            existing_keys = {_offer_identity(offer) for offer in offers}
+            matched = [
                 offer for offer in batch if not keyword or _offer_matches_keyword(offer, keyword)
+            ]
+            added: list[JobOffer] = []
+            duplicate_count = 0
+            for offer in matched:
+                key = _offer_identity(offer)
+                if key in existing_keys:
+                    duplicate_count += 1
+                    continue
+                existing_keys.add(key)
+                added.append(offer)
+
+            offers.extend(added)
+            keyword_metrics.append(
+                {
+                    "keyword": keyword,
+                    "fetched_count": len(batch),
+                    "matched_count": len(matched),
+                    "added_count": len(added),
+                    "filtered_count": len(batch) - len(matched),
+                    "duplicate_count": duplicate_count,
+                    "elapsed_s": round(perf_counter() - keyword_started, 3),
+                }
             )
-            offers = _dedupe_offers(offers)
             if len(offers) >= limit:
                 break
 
         error = "; ".join(errors[:3]) if errors and not offers else None
-        return portal, offers[:limit], error, perf_counter() - started
+        return {
+            "portal": portal,
+            "offers": offers[:limit],
+            "error": error,
+            "elapsed_s": perf_counter() - started,
+            "keyword_metrics": keyword_metrics,
+        }
     except Exception as exc:
-        return portal, [], f"{type(exc).__name__}: {exc}", perf_counter() - started
+        return {
+            "portal": portal,
+            "offers": [],
+            "error": f"{type(exc).__name__}: {exc}",
+            "elapsed_s": perf_counter() - started,
+            "keyword_metrics": keyword_metrics,
+        }
 
 
 async def run_scraping(
@@ -275,13 +343,19 @@ async def run_scraping(
         "limit_per_portal": limit_per_portal,
         "limit_per_keyword": limit_per_keyword,
         "portals": {},
+        "keyword_metrics": {keyword: _empty_keyword_summary(keyword) for keyword in keywords},
         "errors": {},
         "failed_portals": [],
         "empty_portals": [],
         "total_count": 0,
     }
 
-    for portal, offers, error, elapsed_s in results:
+    for result in results:
+        portal = result["portal"]
+        offers = result["offers"]
+        error = result["error"]
+        elapsed_s = result["elapsed_s"]
+        keyword_metrics = result["keyword_metrics"]
         rows = [_offer_to_row(offer) for offer in offers]
         df = pd.DataFrame(rows)
 
@@ -293,7 +367,9 @@ async def run_scraping(
             "count": len(rows),
             "elapsed_s": round(elapsed_s, 3),
             "file": f"{portal}.parquet" if rows else None,
+            "keyword_metrics": keyword_metrics,
         }
+        _merge_keyword_metrics(summary["keyword_metrics"], portal, keyword_metrics)
         summary["total_count"] += len(rows)
 
         if error is not None:
@@ -308,6 +384,47 @@ async def run_scraping(
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     return summary
+
+
+def _empty_keyword_summary(keyword: str) -> dict[str, Any]:
+    return {
+        "keyword": keyword,
+        "fetched_count": 0,
+        "matched_count": 0,
+        "added_count": 0,
+        "filtered_count": 0,
+        "duplicate_count": 0,
+        "errors": {},
+        "portals": {},
+    }
+
+
+def _merge_keyword_metrics(
+    summary: dict[str, dict[str, Any]],
+    portal: str,
+    metrics: list[KeywordMetric],
+) -> None:
+    for metric in metrics:
+        keyword = metric.get("keyword", "")
+        keyword_summary = summary.setdefault(keyword, _empty_keyword_summary(keyword))
+        portal_metric = {
+            "fetched_count": int(metric.get("fetched_count", 0)),
+            "matched_count": int(metric.get("matched_count", 0)),
+            "added_count": int(metric.get("added_count", 0)),
+            "filtered_count": int(metric.get("filtered_count", 0)),
+            "duplicate_count": int(metric.get("duplicate_count", 0)),
+            "elapsed_s": float(metric.get("elapsed_s", 0.0)),
+        }
+
+        for key, value in portal_metric.items():
+            if key != "elapsed_s":
+                keyword_summary[key] += value
+
+        keyword_summary["portals"][portal] = portal_metric
+
+        error = metric.get("error")
+        if error:
+            keyword_summary["errors"][portal] = error
 
 
 def _summary_status(summary: dict[str, Any]) -> ScrapingStatus:

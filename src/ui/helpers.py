@@ -28,6 +28,7 @@ class SnapshotInfo:
     errors: dict[str, str] = field(default_factory=dict)
     failed_portals: tuple[str, ...] = ()
     empty_portals: tuple[str, ...] = ()
+    keyword_metrics: dict[str, dict[str, Any]] = field(default_factory=dict)
 
 
 class UnauthorizedError(Exception):
@@ -114,6 +115,7 @@ def snapshot_status(base_dir: Path = Path("data/snapshots")) -> SnapshotInfo:
             errors=errors,
             failed_portals=tuple(str(portal) for portal in summary.get("failed_portals", errors)),
             empty_portals=tuple(str(portal) for portal in summary.get("empty_portals", ())),
+            keyword_metrics=_keyword_metrics(summary),
         )
 
     df = load_latest_snapshot(base_dir)
@@ -155,6 +157,26 @@ def _summary_errors(summary: dict[str, Any]) -> dict[str, str]:
     if not isinstance(errors, dict):
         return {}
     return {str(portal): str(error) for portal, error in errors.items()}
+
+
+def _keyword_metrics(summary: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    raw_metrics = summary.get("keyword_metrics", {})
+    if not isinstance(raw_metrics, dict):
+        return {}
+
+    metrics: dict[str, dict[str, Any]] = {}
+    for keyword, info in raw_metrics.items():
+        if not isinstance(info, dict):
+            continue
+        metrics[str(keyword)] = {
+            "fetched_count": int(info.get("fetched_count") or 0),
+            "matched_count": int(info.get("matched_count") or 0),
+            "added_count": int(info.get("added_count") or 0),
+            "filtered_count": int(info.get("filtered_count") or 0),
+            "duplicate_count": int(info.get("duplicate_count") or 0),
+            "errors": info.get("errors") if isinstance(info.get("errors"), dict) else {},
+        }
+    return metrics
 
 
 def _summary_status(summary: dict[str, Any]) -> str:
