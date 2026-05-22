@@ -44,7 +44,7 @@ Zasady dla długich JD:
   to ["taxation", "pension", "savings", "investment", "upgrade", "financial"].
 - Nie wpisuj do `keywords` ogólnych praktyk, narzędzi i protokołów typu "Git",
   "CI/CD", "OOP", "design patterns", "SQL", "JMS", "MQ", "OpenAPI", "AsyncAPI",
-  chyba że są częścią nazwy roli.
+  "messaging", "tax regulations", chyba że są częścią nazwy roli.
 - Technologie opcjonalne i narzędzia poboczne wpisuj do `keywords` tylko wtedy, gdy są
   realnymi i precyzyjnymi frazami wyszukiwania ofert, np. "Kubernetes", "AWS".
 - Jeśli tekst rozdziela "must have" i "nice to have", traktuj tylko "must have" jako

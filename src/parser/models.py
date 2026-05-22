@@ -65,6 +65,7 @@ _KEYWORD_BLOCKLIST = {
     "git",
     "investment",
     "jms",
+    "messaging",
     "mq",
     "oop",
     "openapi",
@@ -72,6 +73,7 @@ _KEYWORD_BLOCKLIST = {
     "savings",
     "sql",
     "taxation",
+    "tax regulations",
     "upgrade",
 }
 
@@ -196,6 +198,29 @@ class JDParsed(BaseModel):
                 seen.add(key)
 
         return tuple(normalized)
+
+    @model_validator(mode="after")
+    def derive_search_keywords(self) -> JDParsed:
+        keywords: list[str] = []
+        if self.title.strip():
+            keywords.append(self.title.strip())
+
+        keywords.extend(self.tech_stack)
+        keywords.extend(self.keywords)
+
+        normalized: list[str] = []
+        seen: set[str] = set()
+        for keyword in keywords:
+            cleaned = _normalize_keyword(keyword)
+            if not cleaned and keyword in self.tech_stack:
+                cleaned = keyword
+            key = cleaned.lower()
+            if cleaned and key not in seen:
+                normalized.append(cleaned)
+                seen.add(key)
+
+        object.__setattr__(self, "keywords", tuple(normalized[:8]))
+        return self
 
 
 def _normalize_technology(value: str) -> str:
