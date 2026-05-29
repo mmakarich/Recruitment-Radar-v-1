@@ -1,120 +1,532 @@
 {
   "snapshot_date": "2026-05-29",
-  "started_at": "2026-05-29T07:42:06.076858+00:00",
+  "started_at": "2026-05-29T12:57:22.404104+00:00",
   "keyword_profile": null,
   "keywords": [
-    "PMO junior"
+    "assistant",
+    "asystent",
+    "asystentka",
+    "Hr",
+    "operations",
+    "operacje"
   ],
-  "keyword_count": 1,
+  "keyword_count": 6,
   "limit_per_portal": 500,
-  "limit_per_keyword": 150,
+  "limit_per_keyword": 130,
   "portals": {
     "justjoin": {
-      "count": 2,
-      "elapsed_s": 4.744,
+      "count": 143,
+      "elapsed_s": 26.661,
       "file": "justjoin.parquet",
       "keyword_metrics": [
         {
-          "keyword": "PMO junior",
-          "fetched_count": 18,
-          "matched_count": 2,
-          "added_count": 2,
-          "filtered_count": 16,
+          "keyword": "assistant",
+          "fetched_count": 100,
+          "matched_count": 12,
+          "added_count": 12,
+          "filtered_count": 88,
           "duplicate_count": 0,
-          "elapsed_s": 4.744
+          "elapsed_s": 4.892
+        },
+        {
+          "keyword": "asystent",
+          "fetched_count": 5,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 4,
+          "duplicate_count": 0,
+          "elapsed_s": 3.975
+        },
+        {
+          "keyword": "asystentka",
+          "fetched_count": 1,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 1,
+          "elapsed_s": 4.045
+        },
+        {
+          "keyword": "Hr",
+          "fetched_count": 100,
+          "matched_count": 43,
+          "added_count": 43,
+          "filtered_count": 57,
+          "duplicate_count": 0,
+          "elapsed_s": 4.67
+        },
+        {
+          "keyword": "operations",
+          "fetched_count": 100,
+          "matched_count": 87,
+          "added_count": 87,
+          "filtered_count": 13,
+          "duplicate_count": 0,
+          "elapsed_s": 4.49
+        },
+        {
+          "keyword": "operacje",
+          "fetched_count": 100,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 100,
+          "duplicate_count": 0,
+          "elapsed_s": 4.59
         }
       ]
     },
     "nofluff": {
       "count": 0,
-      "elapsed_s": 0.734,
+      "elapsed_s": 3.255,
       "file": null,
       "keyword_metrics": [
         {
-          "keyword": "PMO junior",
-          "fetched_count": 150,
+          "keyword": "assistant",
+          "fetched_count": 130,
           "matched_count": 0,
           "added_count": 0,
-          "filtered_count": 150,
+          "filtered_count": 130,
           "duplicate_count": 0,
-          "elapsed_s": 0.734
+          "elapsed_s": 0.539
+        },
+        {
+          "keyword": "asystent",
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.517
+        },
+        {
+          "keyword": "asystentka",
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.548
+        },
+        {
+          "keyword": "Hr",
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.593
+        },
+        {
+          "keyword": "operations",
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.494
+        },
+        {
+          "keyword": "operacje",
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.564
         }
       ]
     },
     "rocketjobs": {
-      "count": 1,
-      "elapsed_s": 4.842,
+      "count": 247,
+      "elapsed_s": 28.88,
       "file": "rocketjobs.parquet",
       "keyword_metrics": [
         {
-          "keyword": "PMO junior",
-          "fetched_count": 3,
-          "matched_count": 1,
-          "added_count": 1,
-          "filtered_count": 2,
+          "keyword": "assistant",
+          "fetched_count": 100,
+          "matched_count": 59,
+          "added_count": 59,
+          "filtered_count": 41,
           "duplicate_count": 0,
-          "elapsed_s": 4.842
+          "elapsed_s": 4.702
+        },
+        {
+          "keyword": "asystent",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.548
+        },
+        {
+          "keyword": "asystentka",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.064
+        },
+        {
+          "keyword": "Hr",
+          "fetched_count": 100,
+          "matched_count": 100,
+          "added_count": 100,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.491
+        },
+        {
+          "keyword": "operations",
+          "fetched_count": 100,
+          "matched_count": 91,
+          "added_count": 87,
+          "filtered_count": 9,
+          "duplicate_count": 4,
+          "elapsed_s": 4.738
+        },
+        {
+          "keyword": "operacje",
+          "fetched_count": 100,
+          "matched_count": 2,
+          "added_count": 1,
+          "filtered_count": 98,
+          "duplicate_count": 1,
+          "elapsed_s": 4.336
         }
       ]
     },
     "pracuj": {
-      "count": 0,
-      "elapsed_s": 4.715,
-      "file": null,
+      "count": 59,
+      "elapsed_s": 30.085,
+      "file": "pracuj.parquet",
       "keyword_metrics": [
         {
-          "keyword": "PMO junior",
-          "fetched_count": 4,
+          "keyword": "assistant",
+          "fetched_count": 0,
           "matched_count": 0,
           "added_count": 0,
-          "filtered_count": 4,
+          "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 4.715
+          "elapsed_s": 6.006,
+          "error": "ValueError: invalid literal for int() with base 10: '31.40'"
+        },
+        {
+          "keyword": "asystent",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.56,
+          "error": "ValueError: invalid literal for int() with base 10: '31.40'"
+        },
+        {
+          "keyword": "asystentka",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.461,
+          "error": "ValueError: invalid literal for int() with base 10: '31.40'"
+        },
+        {
+          "keyword": "Hr",
+          "fetched_count": 50,
+          "matched_count": 9,
+          "added_count": 9,
+          "filtered_count": 41,
+          "duplicate_count": 0,
+          "elapsed_s": 4.508
+        },
+        {
+          "keyword": "operations",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.407
+        },
+        {
+          "keyword": "operacje",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.142,
+          "error": "ValueError: invalid literal for int() with base 10: '31.40'"
         }
       ]
     }
   },
   "keyword_metrics": {
-    "PMO junior": {
-      "keyword": "PMO junior",
-      "fetched_count": 175,
-      "matched_count": 3,
-      "added_count": 3,
-      "filtered_count": 172,
+    "assistant": {
+      "keyword": "assistant",
+      "fetched_count": 330,
+      "matched_count": 71,
+      "added_count": 71,
+      "filtered_count": 259,
+      "duplicate_count": 0,
+      "errors": {
+        "pracuj": "ValueError: invalid literal for int() with base 10: '31.40'"
+      },
+      "portals": {
+        "justjoin": {
+          "fetched_count": 100,
+          "matched_count": 12,
+          "added_count": 12,
+          "filtered_count": 88,
+          "duplicate_count": 0,
+          "elapsed_s": 4.892
+        },
+        "nofluff": {
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.539
+        },
+        "rocketjobs": {
+          "fetched_count": 100,
+          "matched_count": 59,
+          "added_count": 59,
+          "filtered_count": 41,
+          "duplicate_count": 0,
+          "elapsed_s": 4.702
+        },
+        "pracuj": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.006
+        }
+      }
+    },
+    "asystent": {
+      "keyword": "asystent",
+      "fetched_count": 135,
+      "matched_count": 1,
+      "added_count": 1,
+      "filtered_count": 134,
+      "duplicate_count": 0,
+      "errors": {
+        "pracuj": "ValueError: invalid literal for int() with base 10: '31.40'"
+      },
+      "portals": {
+        "justjoin": {
+          "fetched_count": 5,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 4,
+          "duplicate_count": 0,
+          "elapsed_s": 3.975
+        },
+        "nofluff": {
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.517
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.548
+        },
+        "pracuj": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.56
+        }
+      }
+    },
+    "asystentka": {
+      "keyword": "asystentka",
+      "fetched_count": 131,
+      "matched_count": 1,
+      "added_count": 0,
+      "filtered_count": 130,
+      "duplicate_count": 1,
+      "errors": {
+        "pracuj": "ValueError: invalid literal for int() with base 10: '31.40'"
+      },
+      "portals": {
+        "justjoin": {
+          "fetched_count": 1,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 1,
+          "elapsed_s": 4.045
+        },
+        "nofluff": {
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.548
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.064
+        },
+        "pracuj": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.461
+        }
+      }
+    },
+    "Hr": {
+      "keyword": "Hr",
+      "fetched_count": 380,
+      "matched_count": 152,
+      "added_count": 152,
+      "filtered_count": 228,
       "duplicate_count": 0,
       "errors": {},
       "portals": {
         "justjoin": {
-          "fetched_count": 18,
-          "matched_count": 2,
-          "added_count": 2,
-          "filtered_count": 16,
+          "fetched_count": 100,
+          "matched_count": 43,
+          "added_count": 43,
+          "filtered_count": 57,
           "duplicate_count": 0,
-          "elapsed_s": 4.744
+          "elapsed_s": 4.67
         },
         "nofluff": {
-          "fetched_count": 150,
+          "fetched_count": 130,
           "matched_count": 0,
           "added_count": 0,
-          "filtered_count": 150,
+          "filtered_count": 130,
           "duplicate_count": 0,
-          "elapsed_s": 0.734
+          "elapsed_s": 0.593
         },
         "rocketjobs": {
-          "fetched_count": 3,
-          "matched_count": 1,
-          "added_count": 1,
-          "filtered_count": 2,
+          "fetched_count": 100,
+          "matched_count": 100,
+          "added_count": 100,
+          "filtered_count": 0,
           "duplicate_count": 0,
-          "elapsed_s": 4.842
+          "elapsed_s": 5.491
         },
         "pracuj": {
-          "fetched_count": 4,
+          "fetched_count": 50,
+          "matched_count": 9,
+          "added_count": 9,
+          "filtered_count": 41,
+          "duplicate_count": 0,
+          "elapsed_s": 4.508
+        }
+      }
+    },
+    "operations": {
+      "keyword": "operations",
+      "fetched_count": 380,
+      "matched_count": 228,
+      "added_count": 224,
+      "filtered_count": 152,
+      "duplicate_count": 4,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 100,
+          "matched_count": 87,
+          "added_count": 87,
+          "filtered_count": 13,
+          "duplicate_count": 0,
+          "elapsed_s": 4.49
+        },
+        "nofluff": {
+          "fetched_count": 130,
           "matched_count": 0,
           "added_count": 0,
-          "filtered_count": 4,
+          "filtered_count": 130,
           "duplicate_count": 0,
-          "elapsed_s": 4.715
+          "elapsed_s": 0.494
+        },
+        "rocketjobs": {
+          "fetched_count": 100,
+          "matched_count": 91,
+          "added_count": 87,
+          "filtered_count": 9,
+          "duplicate_count": 4,
+          "elapsed_s": 4.738
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.407
+        }
+      }
+    },
+    "operacje": {
+      "keyword": "operacje",
+      "fetched_count": 330,
+      "matched_count": 2,
+      "added_count": 1,
+      "filtered_count": 328,
+      "duplicate_count": 1,
+      "errors": {
+        "pracuj": "ValueError: invalid literal for int() with base 10: '31.40'"
+      },
+      "portals": {
+        "justjoin": {
+          "fetched_count": 100,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 100,
+          "duplicate_count": 0,
+          "elapsed_s": 4.59
+        },
+        "nofluff": {
+          "fetched_count": 130,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 130,
+          "duplicate_count": 0,
+          "elapsed_s": 0.564
+        },
+        "rocketjobs": {
+          "fetched_count": 100,
+          "matched_count": 2,
+          "added_count": 1,
+          "filtered_count": 98,
+          "duplicate_count": 1,
+          "elapsed_s": 4.336
+        },
+        "pracuj": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.142
         }
       }
     }
@@ -122,10 +534,9 @@
   "errors": {},
   "failed_portals": [],
   "empty_portals": [
-    "nofluff",
-    "pracuj"
+    "nofluff"
   ],
-  "total_count": 3,
-  "finished_at": "2026-05-29T07:42:06.146142+00:00",
+  "total_count": 449,
+  "finished_at": "2026-05-29T12:57:22.442699+00:00",
   "status": "success"
 }
