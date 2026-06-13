@@ -1,0 +1,210 @@
+{
+  "snapshot_date": "2026-06-13",
+  "started_at": "2026-06-13T15:52:31.950856+00:00",
+  "keyword_profile": null,
+  "keywords": [
+    "PMO",
+    "PM"
+  ],
+  "keyword_count": 2,
+  "limit_per_portal": 200,
+  "limit_per_keyword": 200,
+  "portals": {
+    "justjoin": {
+      "count": 75,
+      "elapsed_s": 9.911,
+      "file": "justjoin.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "PMO",
+          "fetched_count": 100,
+          "matched_count": 27,
+          "added_count": 27,
+          "filtered_count": 73,
+          "duplicate_count": 0,
+          "elapsed_s": 5.337
+        },
+        {
+          "keyword": "PM",
+          "fetched_count": 100,
+          "matched_count": 50,
+          "added_count": 48,
+          "filtered_count": 50,
+          "duplicate_count": 2,
+          "elapsed_s": 4.574
+        }
+      ]
+    },
+    "nofluff": {
+      "count": 0,
+      "elapsed_s": 1.408,
+      "file": null,
+      "keyword_metrics": [
+        {
+          "keyword": "PMO",
+          "fetched_count": 200,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 200,
+          "duplicate_count": 0,
+          "elapsed_s": 0.721
+        },
+        {
+          "keyword": "PM",
+          "fetched_count": 200,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 200,
+          "duplicate_count": 0,
+          "elapsed_s": 0.687
+        }
+      ]
+    },
+    "rocketjobs": {
+      "count": 30,
+      "elapsed_s": 10.315,
+      "file": "rocketjobs.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "PMO",
+          "fetched_count": 100,
+          "matched_count": 7,
+          "added_count": 7,
+          "filtered_count": 93,
+          "duplicate_count": 0,
+          "elapsed_s": 5.106
+        },
+        {
+          "keyword": "PM",
+          "fetched_count": 64,
+          "matched_count": 24,
+          "added_count": 23,
+          "filtered_count": 40,
+          "duplicate_count": 1,
+          "elapsed_s": 5.209
+        }
+      ]
+    },
+    "pracuj": {
+      "count": 12,
+      "elapsed_s": 10.244,
+      "file": "pracuj.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "PMO",
+          "fetched_count": 50,
+          "matched_count": 10,
+          "added_count": 10,
+          "filtered_count": 40,
+          "duplicate_count": 0,
+          "elapsed_s": 5.493
+        },
+        {
+          "keyword": "PM",
+          "fetched_count": 50,
+          "matched_count": 3,
+          "added_count": 2,
+          "filtered_count": 47,
+          "duplicate_count": 1,
+          "elapsed_s": 4.751
+        }
+      ]
+    }
+  },
+  "keyword_metrics": {
+    "PMO": {
+      "keyword": "PMO",
+      "fetched_count": 450,
+      "matched_count": 44,
+      "added_count": 44,
+      "filtered_count": 406,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 100,
+          "matched_count": 27,
+          "added_count": 27,
+          "filtered_count": 73,
+          "duplicate_count": 0,
+          "elapsed_s": 5.337
+        },
+        "nofluff": {
+          "fetched_count": 200,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 200,
+          "duplicate_count": 0,
+          "elapsed_s": 0.721
+        },
+        "rocketjobs": {
+          "fetched_count": 100,
+          "matched_count": 7,
+          "added_count": 7,
+          "filtered_count": 93,
+          "duplicate_count": 0,
+          "elapsed_s": 5.106
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 10,
+          "added_count": 10,
+          "filtered_count": 40,
+          "duplicate_count": 0,
+          "elapsed_s": 5.493
+        }
+      }
+    },
+    "PM": {
+      "keyword": "PM",
+      "fetched_count": 414,
+      "matched_count": 77,
+      "added_count": 73,
+      "filtered_count": 337,
+      "duplicate_count": 4,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 100,
+          "matched_count": 50,
+          "added_count": 48,
+          "filtered_count": 50,
+          "duplicate_count": 2,
+          "elapsed_s": 4.574
+        },
+        "nofluff": {
+          "fetched_count": 200,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 200,
+          "duplicate_count": 0,
+          "elapsed_s": 0.687
+        },
+        "rocketjobs": {
+          "fetched_count": 64,
+          "matched_count": 24,
+          "added_count": 23,
+          "filtered_count": 40,
+          "duplicate_count": 1,
+          "elapsed_s": 5.209
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 3,
+          "added_count": 2,
+          "filtered_count": 47,
+          "duplicate_count": 1,
+          "elapsed_s": 4.751
+        }
+      }
+    }
+  },
+  "errors": {},
+  "failed_portals": [],
+  "empty_portals": [
+    "nofluff"
+  ],
+  "total_count": 117,
+  "finished_at": "2026-06-13T15:52:31.976073+00:00",
+  "status": "success"
+}
