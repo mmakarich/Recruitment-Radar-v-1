@@ -1,8 +1,8 @@
-name: Weekly scraping
+name: Daily scraping
 
 on:
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 6 * * 1-5"
   workflow_dispatch:
     inputs:
       keywords:
