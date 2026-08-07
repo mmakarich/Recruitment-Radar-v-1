@@ -1,0 +1,3338 @@
+{
+  "snapshot_date": "2026-08-07",
+  "started_at": "2026-08-07T07:27:11.377430+00:00",
+  "keyword_profile": "consulting",
+  "keywords": [
+    "python",
+    "java",
+    "javascript",
+    "typescript",
+    "react",
+    "angular",
+    "vue",
+    "node",
+    "node.js",
+    ".net",
+    "c#",
+    "php",
+    "go",
+    "golang",
+    "kotlin",
+    "scala",
+    "fullstack",
+    "frontend",
+    "backend",
+    "mobile",
+    "android",
+    "ios",
+    "qa",
+    "tester",
+    "automation tester",
+    "data engineer",
+    "data analyst",
+    "data scientist",
+    "machine learning",
+    "ai engineer",
+    "ml engineer",
+    "power bi",
+    "tableau",
+    "snowflake",
+    "databricks",
+    "spark",
+    "etl",
+    "sql",
+    "business intelligence",
+    "devops",
+    "sre",
+    "site reliability",
+    "cloud engineer",
+    "aws",
+    "azure",
+    "gcp",
+    "kubernetes",
+    "docker",
+    "terraform",
+    "ansible",
+    "linux",
+    "network engineer",
+    "security engineer",
+    "cybersecurity",
+    "sap",
+    "sap fi",
+    "sap co",
+    "sap fico",
+    "sap sd",
+    "sap mm",
+    "sap basis",
+    "abap",
+    "salesforce",
+    "dynamics 365",
+    "microsoft dynamics",
+    "servicenow",
+    "workday",
+    "pmo",
+    "pmo specialist",
+    "project manager",
+    "program manager",
+    "delivery manager",
+    "scrum master",
+    "product owner",
+    "product manager",
+    "business analyst",
+    "system analyst",
+    "process analyst",
+    "change manager",
+    "release manager",
+    "business consultant",
+    "it consultant",
+    "implementation consultant",
+    "solution architect",
+    "enterprise architect",
+    "technical architect",
+    "support engineer",
+    "application support",
+    "it support",
+    "service desk"
+  ],
+  "keyword_count": 90,
+  "limit_per_portal": 200,
+  "limit_per_keyword": 50,
+  "portals": {
+    "justjoin": {
+      "count": 200,
+      "elapsed_s": 37.894,
+      "file": "justjoin.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "python",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.331
+        },
+        {
+          "keyword": "java",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.682
+        },
+        {
+          "keyword": "javascript",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.529
+        },
+        {
+          "keyword": "typescript",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.899
+        },
+        {
+          "keyword": "react",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 48,
+          "filtered_count": 0,
+          "duplicate_count": 2,
+          "elapsed_s": 5.967
+        },
+        {
+          "keyword": "angular",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.487
+        }
+      ]
+    },
+    "nofluff": {
+      "count": 84,
+      "elapsed_s": 54.568,
+      "file": "nofluff.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "python",
+          "fetched_count": 50,
+          "matched_count": 18,
+          "added_count": 18,
+          "filtered_count": 32,
+          "duplicate_count": 0,
+          "elapsed_s": 0.683
+        },
+        {
+          "keyword": "java",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        },
+        {
+          "keyword": "javascript",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.541
+        },
+        {
+          "keyword": "typescript",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.717
+        },
+        {
+          "keyword": "react",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.792
+        },
+        {
+          "keyword": "angular",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.704
+        },
+        {
+          "keyword": "vue",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.506
+        },
+        {
+          "keyword": "node",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.627
+        },
+        {
+          "keyword": "node.js",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.933
+        },
+        {
+          "keyword": ".net",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.65
+        },
+        {
+          "keyword": "c#",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.84
+        },
+        {
+          "keyword": "php",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.561
+        },
+        {
+          "keyword": "go",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 49,
+          "filtered_count": 0,
+          "duplicate_count": 1,
+          "elapsed_s": 0.562
+        },
+        {
+          "keyword": "golang",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.602
+        },
+        {
+          "keyword": "kotlin",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.545
+        },
+        {
+          "keyword": "scala",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.736
+        },
+        {
+          "keyword": "fullstack",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.616
+        },
+        {
+          "keyword": "frontend",
+          "fetched_count": 50,
+          "matched_count": 12,
+          "added_count": 12,
+          "filtered_count": 38,
+          "duplicate_count": 0,
+          "elapsed_s": 0.591
+        },
+        {
+          "keyword": "backend",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.526
+        },
+        {
+          "keyword": "mobile",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.628
+        },
+        {
+          "keyword": "android",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.72
+        },
+        {
+          "keyword": "ios",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.64
+        },
+        {
+          "keyword": "qa",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.653
+        },
+        {
+          "keyword": "tester",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.554
+        },
+        {
+          "keyword": "automation tester",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.641
+        },
+        {
+          "keyword": "data engineer",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 49,
+          "duplicate_count": 1,
+          "elapsed_s": 0.545
+        },
+        {
+          "keyword": "data analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.792
+        },
+        {
+          "keyword": "data scientist",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.602
+        },
+        {
+          "keyword": "machine learning",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.524
+        },
+        {
+          "keyword": "ai engineer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.537
+        },
+        {
+          "keyword": "ml engineer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.518
+        },
+        {
+          "keyword": "power bi",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.796
+        },
+        {
+          "keyword": "tableau",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.496
+        },
+        {
+          "keyword": "snowflake",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.607
+        },
+        {
+          "keyword": "databricks",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.515
+        },
+        {
+          "keyword": "spark",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.594
+        },
+        {
+          "keyword": "etl",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.596
+        },
+        {
+          "keyword": "sql",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 49,
+          "duplicate_count": 1,
+          "elapsed_s": 0.556
+        },
+        {
+          "keyword": "business intelligence",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.676
+        },
+        {
+          "keyword": "devops",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.631
+        },
+        {
+          "keyword": "sre",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.56
+        },
+        {
+          "keyword": "site reliability",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.562
+        },
+        {
+          "keyword": "cloud engineer",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 49,
+          "duplicate_count": 1,
+          "elapsed_s": 0.529
+        },
+        {
+          "keyword": "aws",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.6
+        },
+        {
+          "keyword": "azure",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.507
+        },
+        {
+          "keyword": "gcp",
+          "fetched_count": 50,
+          "matched_count": 17,
+          "added_count": 0,
+          "filtered_count": 33,
+          "duplicate_count": 17,
+          "elapsed_s": 0.565
+        },
+        {
+          "keyword": "kubernetes",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.574
+        },
+        {
+          "keyword": "docker",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.588
+        },
+        {
+          "keyword": "terraform",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.514
+        },
+        {
+          "keyword": "ansible",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.951
+        },
+        {
+          "keyword": "linux",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.51
+        },
+        {
+          "keyword": "network engineer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.562
+        },
+        {
+          "keyword": "security engineer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.584
+        },
+        {
+          "keyword": "cybersecurity",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.513
+        },
+        {
+          "keyword": "sap",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.541
+        },
+        {
+          "keyword": "sap fi",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.599
+        },
+        {
+          "keyword": "sap co",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.609
+        },
+        {
+          "keyword": "sap fico",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.741
+        },
+        {
+          "keyword": "sap sd",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.699
+        },
+        {
+          "keyword": "sap mm",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.647
+        },
+        {
+          "keyword": "sap basis",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.567
+        },
+        {
+          "keyword": "abap",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.58
+        },
+        {
+          "keyword": "salesforce",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.548
+        },
+        {
+          "keyword": "dynamics 365",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.635
+        },
+        {
+          "keyword": "microsoft dynamics",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.639
+        },
+        {
+          "keyword": "servicenow",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.547
+        },
+        {
+          "keyword": "workday",
+          "fetched_count": 50,
+          "matched_count": 13,
+          "added_count": 0,
+          "filtered_count": 37,
+          "duplicate_count": 13,
+          "elapsed_s": 0.552
+        },
+        {
+          "keyword": "pmo",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.569
+        },
+        {
+          "keyword": "pmo specialist",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.53
+        },
+        {
+          "keyword": "project manager",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        },
+        {
+          "keyword": "program manager",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.616
+        },
+        {
+          "keyword": "delivery manager",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.909
+        },
+        {
+          "keyword": "scrum master",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.656
+        },
+        {
+          "keyword": "product owner",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.65
+        },
+        {
+          "keyword": "product manager",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.669
+        },
+        {
+          "keyword": "business analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.497
+        },
+        {
+          "keyword": "system analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        },
+        {
+          "keyword": "process analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.551
+        },
+        {
+          "keyword": "change manager",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.496
+        },
+        {
+          "keyword": "release manager",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.534
+        },
+        {
+          "keyword": "business consultant",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.551
+        },
+        {
+          "keyword": "it consultant",
+          "fetched_count": 50,
+          "matched_count": 17,
+          "added_count": 4,
+          "filtered_count": 33,
+          "duplicate_count": 13,
+          "elapsed_s": 0.543
+        },
+        {
+          "keyword": "implementation consultant",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.5
+        },
+        {
+          "keyword": "solution architect",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.5
+        },
+        {
+          "keyword": "enterprise architect",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.606
+        },
+        {
+          "keyword": "technical architect",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.583
+        },
+        {
+          "keyword": "support engineer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.599
+        },
+        {
+          "keyword": "application support",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.605
+        },
+        {
+          "keyword": "it support",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.611
+        },
+        {
+          "keyword": "service desk",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.511
+        }
+      ]
+    },
+    "rocketjobs": {
+      "count": 200,
+      "elapsed_s": 170.091,
+      "file": "rocketjobs.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "python",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.313
+        },
+        {
+          "keyword": "java",
+          "fetched_count": 50,
+          "matched_count": 7,
+          "added_count": 7,
+          "filtered_count": 43,
+          "duplicate_count": 0,
+          "elapsed_s": 6.921
+        },
+        {
+          "keyword": "javascript",
+          "fetched_count": 33,
+          "matched_count": 20,
+          "added_count": 20,
+          "filtered_count": 13,
+          "duplicate_count": 0,
+          "elapsed_s": 6.19
+        },
+        {
+          "keyword": "typescript",
+          "fetched_count": 9,
+          "matched_count": 6,
+          "added_count": 3,
+          "filtered_count": 3,
+          "duplicate_count": 3,
+          "elapsed_s": 6.428
+        },
+        {
+          "keyword": "react",
+          "fetched_count": 15,
+          "matched_count": 4,
+          "added_count": 0,
+          "filtered_count": 11,
+          "duplicate_count": 4,
+          "elapsed_s": 5.872
+        },
+        {
+          "keyword": "angular",
+          "fetched_count": 38,
+          "matched_count": 13,
+          "added_count": 10,
+          "filtered_count": 25,
+          "duplicate_count": 3,
+          "elapsed_s": 5.843
+        },
+        {
+          "keyword": "vue",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 8.184
+        },
+        {
+          "keyword": "node",
+          "fetched_count": 34,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 33,
+          "duplicate_count": 1,
+          "elapsed_s": 5.72
+        },
+        {
+          "keyword": "node.js",
+          "fetched_count": 4,
+          "matched_count": 2,
+          "added_count": 0,
+          "filtered_count": 2,
+          "duplicate_count": 2,
+          "elapsed_s": 5.867
+        },
+        {
+          "keyword": ".net",
+          "fetched_count": 50,
+          "matched_count": 2,
+          "added_count": 2,
+          "filtered_count": 48,
+          "duplicate_count": 0,
+          "elapsed_s": 7.337
+        },
+        {
+          "keyword": "c#",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.336
+        },
+        {
+          "keyword": "php",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.411
+        },
+        {
+          "keyword": "go",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.758
+        },
+        {
+          "keyword": "golang",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 5.845
+        },
+        {
+          "keyword": "kotlin",
+          "fetched_count": 11,
+          "matched_count": 2,
+          "added_count": 0,
+          "filtered_count": 9,
+          "duplicate_count": 2,
+          "elapsed_s": 5.411
+        },
+        {
+          "keyword": "scala",
+          "fetched_count": 11,
+          "matched_count": 3,
+          "added_count": 2,
+          "filtered_count": 8,
+          "duplicate_count": 1,
+          "elapsed_s": 5.483
+        },
+        {
+          "keyword": "fullstack",
+          "fetched_count": 8,
+          "matched_count": 4,
+          "added_count": 0,
+          "filtered_count": 4,
+          "duplicate_count": 4,
+          "elapsed_s": 6.367
+        },
+        {
+          "keyword": "frontend",
+          "fetched_count": 7,
+          "matched_count": 4,
+          "added_count": 0,
+          "filtered_count": 3,
+          "duplicate_count": 4,
+          "elapsed_s": 5.355
+        },
+        {
+          "keyword": "backend",
+          "fetched_count": 13,
+          "matched_count": 3,
+          "added_count": 1,
+          "filtered_count": 10,
+          "duplicate_count": 2,
+          "elapsed_s": 5.968
+        },
+        {
+          "keyword": "mobile",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.132
+        },
+        {
+          "keyword": "android",
+          "fetched_count": 15,
+          "matched_count": 4,
+          "added_count": 4,
+          "filtered_count": 11,
+          "duplicate_count": 0,
+          "elapsed_s": 5.431
+        },
+        {
+          "keyword": "ios",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 5.7
+        },
+        {
+          "keyword": "qa",
+          "fetched_count": 27,
+          "matched_count": 6,
+          "added_count": 6,
+          "filtered_count": 21,
+          "duplicate_count": 0,
+          "elapsed_s": 5.474
+        },
+        {
+          "keyword": "tester",
+          "fetched_count": 50,
+          "matched_count": 2,
+          "added_count": 1,
+          "filtered_count": 48,
+          "duplicate_count": 1,
+          "elapsed_s": 6.761
+        },
+        {
+          "keyword": "automation tester",
+          "fetched_count": 2,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 1,
+          "duplicate_count": 1,
+          "elapsed_s": 5.61
+        },
+        {
+          "keyword": "data engineer",
+          "fetched_count": 43,
+          "matched_count": 20,
+          "added_count": 11,
+          "filtered_count": 23,
+          "duplicate_count": 9,
+          "elapsed_s": 6.241
+        },
+        {
+          "keyword": "data analyst",
+          "fetched_count": 50,
+          "matched_count": 28,
+          "added_count": 28,
+          "filtered_count": 22,
+          "duplicate_count": 0,
+          "elapsed_s": 5.764
+        },
+        {
+          "keyword": "data scientist",
+          "fetched_count": 16,
+          "matched_count": 10,
+          "added_count": 8,
+          "filtered_count": 6,
+          "duplicate_count": 2,
+          "elapsed_s": 5.37
+        }
+      ]
+    },
+    "pracuj": {
+      "count": 200,
+      "elapsed_s": 36.886,
+      "file": "pracuj.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "python",
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.607
+        },
+        {
+          "keyword": "java",
+          "fetched_count": 50,
+          "matched_count": 49,
+          "added_count": 49,
+          "filtered_count": 1,
+          "duplicate_count": 0,
+          "elapsed_s": 6.222
+        },
+        {
+          "keyword": "javascript",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 6.219
+        },
+        {
+          "keyword": "typescript",
+          "fetched_count": 50,
+          "matched_count": 12,
+          "added_count": 12,
+          "filtered_count": 38,
+          "duplicate_count": 0,
+          "elapsed_s": 5.868
+        },
+        {
+          "keyword": "react",
+          "fetched_count": 50,
+          "matched_count": 49,
+          "added_count": 49,
+          "filtered_count": 1,
+          "duplicate_count": 0,
+          "elapsed_s": 6.07
+        },
+        {
+          "keyword": "angular",
+          "fetched_count": 50,
+          "matched_count": 47,
+          "added_count": 46,
+          "filtered_count": 3,
+          "duplicate_count": 1,
+          "elapsed_s": 5.9
+        }
+      ]
+    }
+  },
+  "keyword_metrics": {
+    "python": {
+      "keyword": "python",
+      "fetched_count": 200,
+      "matched_count": 168,
+      "added_count": 168,
+      "filtered_count": 32,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.331
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 18,
+          "added_count": 18,
+          "filtered_count": 32,
+          "duplicate_count": 0,
+          "elapsed_s": 0.683
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.313
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.607
+        }
+      }
+    },
+    "java": {
+      "keyword": "java",
+      "fetched_count": 200,
+      "matched_count": 107,
+      "added_count": 107,
+      "filtered_count": 93,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.682
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 7,
+          "added_count": 7,
+          "filtered_count": 43,
+          "duplicate_count": 0,
+          "elapsed_s": 6.921
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 49,
+          "added_count": 49,
+          "filtered_count": 1,
+          "duplicate_count": 0,
+          "elapsed_s": 6.222
+        }
+      }
+    },
+    "javascript": {
+      "keyword": "javascript",
+      "fetched_count": 133,
+      "matched_count": 21,
+      "added_count": 21,
+      "filtered_count": 112,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.529
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.541
+        },
+        "rocketjobs": {
+          "fetched_count": 33,
+          "matched_count": 20,
+          "added_count": 20,
+          "filtered_count": 13,
+          "duplicate_count": 0,
+          "elapsed_s": 6.19
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 6.219
+        }
+      }
+    },
+    "typescript": {
+      "keyword": "typescript",
+      "fetched_count": 159,
+      "matched_count": 68,
+      "added_count": 65,
+      "filtered_count": 91,
+      "duplicate_count": 3,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.899
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.717
+        },
+        "rocketjobs": {
+          "fetched_count": 9,
+          "matched_count": 6,
+          "added_count": 3,
+          "filtered_count": 3,
+          "duplicate_count": 3,
+          "elapsed_s": 6.428
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 12,
+          "added_count": 12,
+          "filtered_count": 38,
+          "duplicate_count": 0,
+          "elapsed_s": 5.868
+        }
+      }
+    },
+    "react": {
+      "keyword": "react",
+      "fetched_count": 165,
+      "matched_count": 103,
+      "added_count": 97,
+      "filtered_count": 62,
+      "duplicate_count": 6,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 48,
+          "filtered_count": 0,
+          "duplicate_count": 2,
+          "elapsed_s": 5.967
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.792
+        },
+        "rocketjobs": {
+          "fetched_count": 15,
+          "matched_count": 4,
+          "added_count": 0,
+          "filtered_count": 11,
+          "duplicate_count": 4,
+          "elapsed_s": 5.872
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 49,
+          "added_count": 49,
+          "filtered_count": 1,
+          "duplicate_count": 0,
+          "elapsed_s": 6.07
+        }
+      }
+    },
+    "angular": {
+      "keyword": "angular",
+      "fetched_count": 188,
+      "matched_count": 110,
+      "added_count": 106,
+      "filtered_count": 78,
+      "duplicate_count": 4,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.487
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.704
+        },
+        "rocketjobs": {
+          "fetched_count": 38,
+          "matched_count": 13,
+          "added_count": 10,
+          "filtered_count": 25,
+          "duplicate_count": 3,
+          "elapsed_s": 5.843
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 47,
+          "added_count": 46,
+          "filtered_count": 3,
+          "duplicate_count": 1,
+          "elapsed_s": 5.9
+        }
+      }
+    },
+    "vue": {
+      "keyword": "vue",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.506
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 8.184
+        }
+      }
+    },
+    "node": {
+      "keyword": "node",
+      "fetched_count": 84,
+      "matched_count": 1,
+      "added_count": 0,
+      "filtered_count": 83,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.627
+        },
+        "rocketjobs": {
+          "fetched_count": 34,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 33,
+          "duplicate_count": 1,
+          "elapsed_s": 5.72
+        }
+      }
+    },
+    "node.js": {
+      "keyword": "node.js",
+      "fetched_count": 54,
+      "matched_count": 2,
+      "added_count": 0,
+      "filtered_count": 52,
+      "duplicate_count": 2,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.933
+        },
+        "rocketjobs": {
+          "fetched_count": 4,
+          "matched_count": 2,
+          "added_count": 0,
+          "filtered_count": 2,
+          "duplicate_count": 2,
+          "elapsed_s": 5.867
+        }
+      }
+    },
+    ".net": {
+      "keyword": ".net",
+      "fetched_count": 100,
+      "matched_count": 2,
+      "added_count": 2,
+      "filtered_count": 98,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.65
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 2,
+          "added_count": 2,
+          "filtered_count": 48,
+          "duplicate_count": 0,
+          "elapsed_s": 7.337
+        }
+      }
+    },
+    "c#": {
+      "keyword": "c#",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.84
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.336
+        }
+      }
+    },
+    "php": {
+      "keyword": "php",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.561
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.411
+        }
+      }
+    },
+    "go": {
+      "keyword": "go",
+      "fetched_count": 100,
+      "matched_count": 100,
+      "added_count": 99,
+      "filtered_count": 0,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 49,
+          "filtered_count": 0,
+          "duplicate_count": 1,
+          "elapsed_s": 0.562
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 50,
+          "added_count": 50,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.758
+        }
+      }
+    },
+    "golang": {
+      "keyword": "golang",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.602
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 5.845
+        }
+      }
+    },
+    "kotlin": {
+      "keyword": "kotlin",
+      "fetched_count": 61,
+      "matched_count": 2,
+      "added_count": 0,
+      "filtered_count": 59,
+      "duplicate_count": 2,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.545
+        },
+        "rocketjobs": {
+          "fetched_count": 11,
+          "matched_count": 2,
+          "added_count": 0,
+          "filtered_count": 9,
+          "duplicate_count": 2,
+          "elapsed_s": 5.411
+        }
+      }
+    },
+    "scala": {
+      "keyword": "scala",
+      "fetched_count": 61,
+      "matched_count": 3,
+      "added_count": 2,
+      "filtered_count": 58,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.736
+        },
+        "rocketjobs": {
+          "fetched_count": 11,
+          "matched_count": 3,
+          "added_count": 2,
+          "filtered_count": 8,
+          "duplicate_count": 1,
+          "elapsed_s": 5.483
+        }
+      }
+    },
+    "fullstack": {
+      "keyword": "fullstack",
+      "fetched_count": 58,
+      "matched_count": 4,
+      "added_count": 0,
+      "filtered_count": 54,
+      "duplicate_count": 4,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.616
+        },
+        "rocketjobs": {
+          "fetched_count": 8,
+          "matched_count": 4,
+          "added_count": 0,
+          "filtered_count": 4,
+          "duplicate_count": 4,
+          "elapsed_s": 6.367
+        }
+      }
+    },
+    "frontend": {
+      "keyword": "frontend",
+      "fetched_count": 57,
+      "matched_count": 16,
+      "added_count": 12,
+      "filtered_count": 41,
+      "duplicate_count": 4,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 12,
+          "added_count": 12,
+          "filtered_count": 38,
+          "duplicate_count": 0,
+          "elapsed_s": 0.591
+        },
+        "rocketjobs": {
+          "fetched_count": 7,
+          "matched_count": 4,
+          "added_count": 0,
+          "filtered_count": 3,
+          "duplicate_count": 4,
+          "elapsed_s": 5.355
+        }
+      }
+    },
+    "backend": {
+      "keyword": "backend",
+      "fetched_count": 63,
+      "matched_count": 3,
+      "added_count": 1,
+      "filtered_count": 60,
+      "duplicate_count": 2,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.526
+        },
+        "rocketjobs": {
+          "fetched_count": 13,
+          "matched_count": 3,
+          "added_count": 1,
+          "filtered_count": 10,
+          "duplicate_count": 2,
+          "elapsed_s": 5.968
+        }
+      }
+    },
+    "mobile": {
+      "keyword": "mobile",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.628
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 6.132
+        }
+      }
+    },
+    "android": {
+      "keyword": "android",
+      "fetched_count": 65,
+      "matched_count": 4,
+      "added_count": 4,
+      "filtered_count": 61,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.72
+        },
+        "rocketjobs": {
+          "fetched_count": 15,
+          "matched_count": 4,
+          "added_count": 4,
+          "filtered_count": 11,
+          "duplicate_count": 0,
+          "elapsed_s": 5.431
+        }
+      }
+    },
+    "ios": {
+      "keyword": "ios",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.64
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 5.7
+        }
+      }
+    },
+    "qa": {
+      "keyword": "qa",
+      "fetched_count": 77,
+      "matched_count": 6,
+      "added_count": 6,
+      "filtered_count": 71,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.653
+        },
+        "rocketjobs": {
+          "fetched_count": 27,
+          "matched_count": 6,
+          "added_count": 6,
+          "filtered_count": 21,
+          "duplicate_count": 0,
+          "elapsed_s": 5.474
+        }
+      }
+    },
+    "tester": {
+      "keyword": "tester",
+      "fetched_count": 100,
+      "matched_count": 2,
+      "added_count": 1,
+      "filtered_count": 98,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.554
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 2,
+          "added_count": 1,
+          "filtered_count": 48,
+          "duplicate_count": 1,
+          "elapsed_s": 6.761
+        }
+      }
+    },
+    "automation tester": {
+      "keyword": "automation tester",
+      "fetched_count": 52,
+      "matched_count": 1,
+      "added_count": 0,
+      "filtered_count": 51,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.641
+        },
+        "rocketjobs": {
+          "fetched_count": 2,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 1,
+          "duplicate_count": 1,
+          "elapsed_s": 5.61
+        }
+      }
+    },
+    "data engineer": {
+      "keyword": "data engineer",
+      "fetched_count": 93,
+      "matched_count": 21,
+      "added_count": 11,
+      "filtered_count": 72,
+      "duplicate_count": 10,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 49,
+          "duplicate_count": 1,
+          "elapsed_s": 0.545
+        },
+        "rocketjobs": {
+          "fetched_count": 43,
+          "matched_count": 20,
+          "added_count": 11,
+          "filtered_count": 23,
+          "duplicate_count": 9,
+          "elapsed_s": 6.241
+        }
+      }
+    },
+    "data analyst": {
+      "keyword": "data analyst",
+      "fetched_count": 100,
+      "matched_count": 28,
+      "added_count": 28,
+      "filtered_count": 72,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.792
+        },
+        "rocketjobs": {
+          "fetched_count": 50,
+          "matched_count": 28,
+          "added_count": 28,
+          "filtered_count": 22,
+          "duplicate_count": 0,
+          "elapsed_s": 5.764
+        }
+      }
+    },
+    "data scientist": {
+      "keyword": "data scientist",
+      "fetched_count": 66,
+      "matched_count": 10,
+      "added_count": 8,
+      "filtered_count": 56,
+      "duplicate_count": 2,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.602
+        },
+        "rocketjobs": {
+          "fetched_count": 16,
+          "matched_count": 10,
+          "added_count": 8,
+          "filtered_count": 6,
+          "duplicate_count": 2,
+          "elapsed_s": 5.37
+        }
+      }
+    },
+    "machine learning": {
+      "keyword": "machine learning",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.524
+        }
+      }
+    },
+    "ai engineer": {
+      "keyword": "ai engineer",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.537
+        }
+      }
+    },
+    "ml engineer": {
+      "keyword": "ml engineer",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.518
+        }
+      }
+    },
+    "power bi": {
+      "keyword": "power bi",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.796
+        }
+      }
+    },
+    "tableau": {
+      "keyword": "tableau",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.496
+        }
+      }
+    },
+    "snowflake": {
+      "keyword": "snowflake",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.607
+        }
+      }
+    },
+    "databricks": {
+      "keyword": "databricks",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.515
+        }
+      }
+    },
+    "spark": {
+      "keyword": "spark",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.594
+        }
+      }
+    },
+    "etl": {
+      "keyword": "etl",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.596
+        }
+      }
+    },
+    "sql": {
+      "keyword": "sql",
+      "fetched_count": 50,
+      "matched_count": 1,
+      "added_count": 0,
+      "filtered_count": 49,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 49,
+          "duplicate_count": 1,
+          "elapsed_s": 0.556
+        }
+      }
+    },
+    "business intelligence": {
+      "keyword": "business intelligence",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.676
+        }
+      }
+    },
+    "devops": {
+      "keyword": "devops",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.631
+        }
+      }
+    },
+    "sre": {
+      "keyword": "sre",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.56
+        }
+      }
+    },
+    "site reliability": {
+      "keyword": "site reliability",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.562
+        }
+      }
+    },
+    "cloud engineer": {
+      "keyword": "cloud engineer",
+      "fetched_count": 50,
+      "matched_count": 1,
+      "added_count": 0,
+      "filtered_count": 49,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 0,
+          "filtered_count": 49,
+          "duplicate_count": 1,
+          "elapsed_s": 0.529
+        }
+      }
+    },
+    "aws": {
+      "keyword": "aws",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.6
+        }
+      }
+    },
+    "azure": {
+      "keyword": "azure",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.507
+        }
+      }
+    },
+    "gcp": {
+      "keyword": "gcp",
+      "fetched_count": 50,
+      "matched_count": 17,
+      "added_count": 0,
+      "filtered_count": 33,
+      "duplicate_count": 17,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 17,
+          "added_count": 0,
+          "filtered_count": 33,
+          "duplicate_count": 17,
+          "elapsed_s": 0.565
+        }
+      }
+    },
+    "kubernetes": {
+      "keyword": "kubernetes",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.574
+        }
+      }
+    },
+    "docker": {
+      "keyword": "docker",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.588
+        }
+      }
+    },
+    "terraform": {
+      "keyword": "terraform",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.514
+        }
+      }
+    },
+    "ansible": {
+      "keyword": "ansible",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.951
+        }
+      }
+    },
+    "linux": {
+      "keyword": "linux",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.51
+        }
+      }
+    },
+    "network engineer": {
+      "keyword": "network engineer",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.562
+        }
+      }
+    },
+    "security engineer": {
+      "keyword": "security engineer",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.584
+        }
+      }
+    },
+    "cybersecurity": {
+      "keyword": "cybersecurity",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.513
+        }
+      }
+    },
+    "sap": {
+      "keyword": "sap",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.541
+        }
+      }
+    },
+    "sap fi": {
+      "keyword": "sap fi",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.599
+        }
+      }
+    },
+    "sap co": {
+      "keyword": "sap co",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.609
+        }
+      }
+    },
+    "sap fico": {
+      "keyword": "sap fico",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.741
+        }
+      }
+    },
+    "sap sd": {
+      "keyword": "sap sd",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.699
+        }
+      }
+    },
+    "sap mm": {
+      "keyword": "sap mm",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.647
+        }
+      }
+    },
+    "sap basis": {
+      "keyword": "sap basis",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.567
+        }
+      }
+    },
+    "abap": {
+      "keyword": "abap",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.58
+        }
+      }
+    },
+    "salesforce": {
+      "keyword": "salesforce",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.548
+        }
+      }
+    },
+    "dynamics 365": {
+      "keyword": "dynamics 365",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.635
+        }
+      }
+    },
+    "microsoft dynamics": {
+      "keyword": "microsoft dynamics",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.639
+        }
+      }
+    },
+    "servicenow": {
+      "keyword": "servicenow",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.547
+        }
+      }
+    },
+    "workday": {
+      "keyword": "workday",
+      "fetched_count": 50,
+      "matched_count": 13,
+      "added_count": 0,
+      "filtered_count": 37,
+      "duplicate_count": 13,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 13,
+          "added_count": 0,
+          "filtered_count": 37,
+          "duplicate_count": 13,
+          "elapsed_s": 0.552
+        }
+      }
+    },
+    "pmo": {
+      "keyword": "pmo",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.569
+        }
+      }
+    },
+    "pmo specialist": {
+      "keyword": "pmo specialist",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.53
+        }
+      }
+    },
+    "project manager": {
+      "keyword": "project manager",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        }
+      }
+    },
+    "program manager": {
+      "keyword": "program manager",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.616
+        }
+      }
+    },
+    "delivery manager": {
+      "keyword": "delivery manager",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.909
+        }
+      }
+    },
+    "scrum master": {
+      "keyword": "scrum master",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.656
+        }
+      }
+    },
+    "product owner": {
+      "keyword": "product owner",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.65
+        }
+      }
+    },
+    "product manager": {
+      "keyword": "product manager",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.669
+        }
+      }
+    },
+    "business analyst": {
+      "keyword": "business analyst",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.497
+        }
+      }
+    },
+    "system analyst": {
+      "keyword": "system analyst",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        }
+      }
+    },
+    "process analyst": {
+      "keyword": "process analyst",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.551
+        }
+      }
+    },
+    "change manager": {
+      "keyword": "change manager",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.496
+        }
+      }
+    },
+    "release manager": {
+      "keyword": "release manager",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.534
+        }
+      }
+    },
+    "business consultant": {
+      "keyword": "business consultant",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.551
+        }
+      }
+    },
+    "it consultant": {
+      "keyword": "it consultant",
+      "fetched_count": 50,
+      "matched_count": 17,
+      "added_count": 4,
+      "filtered_count": 33,
+      "duplicate_count": 13,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 17,
+          "added_count": 4,
+          "filtered_count": 33,
+          "duplicate_count": 13,
+          "elapsed_s": 0.543
+        }
+      }
+    },
+    "implementation consultant": {
+      "keyword": "implementation consultant",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.5
+        }
+      }
+    },
+    "solution architect": {
+      "keyword": "solution architect",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.5
+        }
+      }
+    },
+    "enterprise architect": {
+      "keyword": "enterprise architect",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.606
+        }
+      }
+    },
+    "technical architect": {
+      "keyword": "technical architect",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.583
+        }
+      }
+    },
+    "support engineer": {
+      "keyword": "support engineer",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.599
+        }
+      }
+    },
+    "application support": {
+      "keyword": "application support",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.605
+        }
+      }
+    },
+    "it support": {
+      "keyword": "it support",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.611
+        }
+      }
+    },
+    "service desk": {
+      "keyword": "service desk",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.511
+        }
+      }
+    }
+  },
+  "errors": {},
+  "failed_portals": [],
+  "empty_portals": [],
+  "total_count": 684,
+  "finished_at": "2026-08-07T07:27:11.435577+00:00",
+  "status": "success"
+}
