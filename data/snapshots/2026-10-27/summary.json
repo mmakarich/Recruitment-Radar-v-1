@@ -1,0 +1,2054 @@
+{
+  "snapshot_date": "2026-10-27",
+  "started_at": "2026-10-27T11:55:39.059041+00:00",
+  "keyword_profile": "consulting",
+  "keywords": [
+    "data engineer",
+    "junior data engineer",
+    "data expert",
+    "sql server",
+    "t-sql",
+    "ssms",
+    "elt",
+    "etl developer",
+    "data warehouse",
+    "financial data",
+    "finance data analyst",
+    "vba",
+    "excel automation",
+    "power bi",
+    "azure data",
+    "python developer",
+    "pandas",
+    "numpy",
+    "spark",
+    "docker",
+    "junior data analyst",
+    "big data",
+    "business data analyst",
+    "reporting analyst",
+    "it support"
+  ],
+  "keyword_count": 25,
+  "limit_per_portal": 200,
+  "limit_per_keyword": 50,
+  "portals": {
+    "justjoin": {
+      "count": 0,
+      "elapsed_s": 117.823,
+      "file": null,
+      "keyword_metrics": [
+        {
+          "keyword": "data engineer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.274
+        },
+        {
+          "keyword": "junior data engineer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.635
+        },
+        {
+          "keyword": "data expert",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.48
+        },
+        {
+          "keyword": "sql server",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.625
+        },
+        {
+          "keyword": "t-sql",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.379
+        },
+        {
+          "keyword": "ssms",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.323
+        },
+        {
+          "keyword": "elt",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.852
+        },
+        {
+          "keyword": "etl developer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.491
+        },
+        {
+          "keyword": "data warehouse",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.816
+        },
+        {
+          "keyword": "financial data",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.502
+        },
+        {
+          "keyword": "finance data analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.38
+        },
+        {
+          "keyword": "vba",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.399
+        },
+        {
+          "keyword": "excel automation",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.023
+        },
+        {
+          "keyword": "power bi",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.493
+        },
+        {
+          "keyword": "azure data",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.752
+        },
+        {
+          "keyword": "python developer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.785
+        },
+        {
+          "keyword": "pandas",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.825
+        },
+        {
+          "keyword": "numpy",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.869
+        },
+        {
+          "keyword": "spark",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.531
+        },
+        {
+          "keyword": "docker",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.865
+        },
+        {
+          "keyword": "junior data analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.435
+        },
+        {
+          "keyword": "big data",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.541
+        },
+        {
+          "keyword": "business data analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.445
+        },
+        {
+          "keyword": "reporting analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.71
+        },
+        {
+          "keyword": "it support",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.392
+        }
+      ]
+    },
+    "nofluff": {
+      "count": 2,
+      "elapsed_s": 13.312,
+      "file": "nofluff.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "data engineer",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        },
+        {
+          "keyword": "junior data engineer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.458
+        },
+        {
+          "keyword": "data expert",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.472
+        },
+        {
+          "keyword": "sql server",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.574
+        },
+        {
+          "keyword": "t-sql",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.436
+        },
+        {
+          "keyword": "ssms",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.545
+        },
+        {
+          "keyword": "elt",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.602
+        },
+        {
+          "keyword": "etl developer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.65
+        },
+        {
+          "keyword": "data warehouse",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.598
+        },
+        {
+          "keyword": "financial data",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.471
+        },
+        {
+          "keyword": "finance data analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.51
+        },
+        {
+          "keyword": "vba",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.643
+        },
+        {
+          "keyword": "excel automation",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.468
+        },
+        {
+          "keyword": "power bi",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.503
+        },
+        {
+          "keyword": "azure data",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.431
+        },
+        {
+          "keyword": "python developer",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.603
+        },
+        {
+          "keyword": "pandas",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.608
+        },
+        {
+          "keyword": "numpy",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.434
+        },
+        {
+          "keyword": "spark",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.517
+        },
+        {
+          "keyword": "docker",
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 0.575
+        },
+        {
+          "keyword": "junior data analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.497
+        },
+        {
+          "keyword": "big data",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.542
+        },
+        {
+          "keyword": "business data analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.559
+        },
+        {
+          "keyword": "reporting analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.578
+        },
+        {
+          "keyword": "it support",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.473
+        }
+      ]
+    },
+    "rocketjobs": {
+      "count": 0,
+      "elapsed_s": 112.429,
+      "file": null,
+      "keyword_metrics": [
+        {
+          "keyword": "data engineer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.52
+        },
+        {
+          "keyword": "junior data engineer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.723
+        },
+        {
+          "keyword": "data expert",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.523
+        },
+        {
+          "keyword": "sql server",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.958
+        },
+        {
+          "keyword": "t-sql",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.221
+        },
+        {
+          "keyword": "ssms",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.535
+        },
+        {
+          "keyword": "elt",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.364
+        },
+        {
+          "keyword": "etl developer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.243
+        },
+        {
+          "keyword": "data warehouse",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.261
+        },
+        {
+          "keyword": "financial data",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.388
+        },
+        {
+          "keyword": "finance data analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.37
+        },
+        {
+          "keyword": "vba",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.484
+        },
+        {
+          "keyword": "excel automation",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.382
+        },
+        {
+          "keyword": "power bi",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.115
+        },
+        {
+          "keyword": "azure data",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.108
+        },
+        {
+          "keyword": "python developer",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.191
+        },
+        {
+          "keyword": "pandas",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.671
+        },
+        {
+          "keyword": "numpy",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.115
+        },
+        {
+          "keyword": "spark",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.638
+        },
+        {
+          "keyword": "docker",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.282
+        },
+        {
+          "keyword": "junior data analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.235
+        },
+        {
+          "keyword": "big data",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.344
+        },
+        {
+          "keyword": "business data analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.473
+        },
+        {
+          "keyword": "reporting analyst",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.905
+        },
+        {
+          "keyword": "it support",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.379
+        }
+      ]
+    },
+    "pracuj": {
+      "count": 188,
+      "elapsed_s": 122.081,
+      "file": "pracuj.parquet",
+      "keyword_metrics": [
+        {
+          "keyword": "data engineer",
+          "fetched_count": 50,
+          "matched_count": 29,
+          "added_count": 29,
+          "filtered_count": 21,
+          "duplicate_count": 0,
+          "elapsed_s": 6.402
+        },
+        {
+          "keyword": "junior data engineer",
+          "fetched_count": 17,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 16,
+          "duplicate_count": 0,
+          "elapsed_s": 4.365
+        },
+        {
+          "keyword": "data expert",
+          "fetched_count": 50,
+          "matched_count": 13,
+          "added_count": 13,
+          "filtered_count": 37,
+          "duplicate_count": 0,
+          "elapsed_s": 4.846
+        },
+        {
+          "keyword": "sql server",
+          "fetched_count": 50,
+          "matched_count": 4,
+          "added_count": 4,
+          "filtered_count": 46,
+          "duplicate_count": 0,
+          "elapsed_s": 5.088
+        },
+        {
+          "keyword": "t-sql",
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.944,
+          "error": "ValueError: invalid literal for int() with base 10: '31.40'"
+        },
+        {
+          "keyword": "ssms",
+          "fetched_count": 7,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 7,
+          "duplicate_count": 0,
+          "elapsed_s": 3.89
+        },
+        {
+          "keyword": "elt",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.633
+        },
+        {
+          "keyword": "etl developer",
+          "fetched_count": 50,
+          "matched_count": 11,
+          "added_count": 11,
+          "filtered_count": 39,
+          "duplicate_count": 0,
+          "elapsed_s": 4.648
+        },
+        {
+          "keyword": "data warehouse",
+          "fetched_count": 50,
+          "matched_count": 10,
+          "added_count": 10,
+          "filtered_count": 40,
+          "duplicate_count": 0,
+          "elapsed_s": 6.836
+        },
+        {
+          "keyword": "financial data",
+          "fetched_count": 50,
+          "matched_count": 6,
+          "added_count": 6,
+          "filtered_count": 44,
+          "duplicate_count": 0,
+          "elapsed_s": 4.766
+        },
+        {
+          "keyword": "finance data analyst",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.591
+        },
+        {
+          "keyword": "vba",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.812
+        },
+        {
+          "keyword": "excel automation",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.704
+        },
+        {
+          "keyword": "power bi",
+          "fetched_count": 50,
+          "matched_count": 15,
+          "added_count": 15,
+          "filtered_count": 35,
+          "duplicate_count": 0,
+          "elapsed_s": 5.478
+        },
+        {
+          "keyword": "azure data",
+          "fetched_count": 50,
+          "matched_count": 8,
+          "added_count": 8,
+          "filtered_count": 42,
+          "duplicate_count": 0,
+          "elapsed_s": 5.003
+        },
+        {
+          "keyword": "python developer",
+          "fetched_count": 50,
+          "matched_count": 20,
+          "added_count": 20,
+          "filtered_count": 30,
+          "duplicate_count": 0,
+          "elapsed_s": 4.882
+        },
+        {
+          "keyword": "pandas",
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.777
+        },
+        {
+          "keyword": "numpy",
+          "fetched_count": 30,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 30,
+          "duplicate_count": 0,
+          "elapsed_s": 4.964
+        },
+        {
+          "keyword": "spark",
+          "fetched_count": 18,
+          "matched_count": 15,
+          "added_count": 15,
+          "filtered_count": 3,
+          "duplicate_count": 0,
+          "elapsed_s": 4.271
+        },
+        {
+          "keyword": "docker",
+          "fetched_count": 50,
+          "matched_count": 2,
+          "added_count": 2,
+          "filtered_count": 48,
+          "duplicate_count": 0,
+          "elapsed_s": 4.687
+        },
+        {
+          "keyword": "junior data analyst",
+          "fetched_count": 50,
+          "matched_count": 4,
+          "added_count": 4,
+          "filtered_count": 46,
+          "duplicate_count": 0,
+          "elapsed_s": 4.501
+        },
+        {
+          "keyword": "big data",
+          "fetched_count": 50,
+          "matched_count": 8,
+          "added_count": 8,
+          "filtered_count": 42,
+          "duplicate_count": 0,
+          "elapsed_s": 4.926
+        },
+        {
+          "keyword": "business data analyst",
+          "fetched_count": 50,
+          "matched_count": 13,
+          "added_count": 13,
+          "filtered_count": 37,
+          "duplicate_count": 0,
+          "elapsed_s": 4.927
+        },
+        {
+          "keyword": "reporting analyst",
+          "fetched_count": 50,
+          "matched_count": 7,
+          "added_count": 6,
+          "filtered_count": 43,
+          "duplicate_count": 1,
+          "elapsed_s": 4.723
+        },
+        {
+          "keyword": "it support",
+          "fetched_count": 50,
+          "matched_count": 23,
+          "added_count": 23,
+          "filtered_count": 27,
+          "duplicate_count": 0,
+          "elapsed_s": 4.416
+        }
+      ]
+    }
+  },
+  "keyword_metrics": {
+    "data engineer": {
+      "keyword": "data engineer",
+      "fetched_count": 100,
+      "matched_count": 30,
+      "added_count": 30,
+      "filtered_count": 70,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.274
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 0.566
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.52
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 29,
+          "added_count": 29,
+          "filtered_count": 21,
+          "duplicate_count": 0,
+          "elapsed_s": 6.402
+        }
+      }
+    },
+    "junior data engineer": {
+      "keyword": "junior data engineer",
+      "fetched_count": 67,
+      "matched_count": 1,
+      "added_count": 1,
+      "filtered_count": 66,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.635
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.458
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.723
+        },
+        "pracuj": {
+          "fetched_count": 17,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 16,
+          "duplicate_count": 0,
+          "elapsed_s": 4.365
+        }
+      }
+    },
+    "data expert": {
+      "keyword": "data expert",
+      "fetched_count": 100,
+      "matched_count": 13,
+      "added_count": 13,
+      "filtered_count": 87,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.48
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.472
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.523
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 13,
+          "added_count": 13,
+          "filtered_count": 37,
+          "duplicate_count": 0,
+          "elapsed_s": 4.846
+        }
+      }
+    },
+    "sql server": {
+      "keyword": "sql server",
+      "fetched_count": 100,
+      "matched_count": 4,
+      "added_count": 4,
+      "filtered_count": 96,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.625
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.574
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.958
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 4,
+          "added_count": 4,
+          "filtered_count": 46,
+          "duplicate_count": 0,
+          "elapsed_s": 5.088
+        }
+      }
+    },
+    "t-sql": {
+      "keyword": "t-sql",
+      "fetched_count": 50,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 50,
+      "duplicate_count": 0,
+      "errors": {
+        "pracuj": "ValueError: invalid literal for int() with base 10: '31.40'"
+      },
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.379
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.436
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.221
+        },
+        "pracuj": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.944
+        }
+      }
+    },
+    "ssms": {
+      "keyword": "ssms",
+      "fetched_count": 57,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 57,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.323
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.545
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.535
+        },
+        "pracuj": {
+          "fetched_count": 7,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 7,
+          "duplicate_count": 0,
+          "elapsed_s": 3.89
+        }
+      }
+    },
+    "elt": {
+      "keyword": "elt",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.852
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.602
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.364
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.633
+        }
+      }
+    },
+    "etl developer": {
+      "keyword": "etl developer",
+      "fetched_count": 100,
+      "matched_count": 11,
+      "added_count": 11,
+      "filtered_count": 89,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.491
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.65
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.243
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 11,
+          "added_count": 11,
+          "filtered_count": 39,
+          "duplicate_count": 0,
+          "elapsed_s": 4.648
+        }
+      }
+    },
+    "data warehouse": {
+      "keyword": "data warehouse",
+      "fetched_count": 100,
+      "matched_count": 10,
+      "added_count": 10,
+      "filtered_count": 90,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.816
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.598
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.261
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 10,
+          "added_count": 10,
+          "filtered_count": 40,
+          "duplicate_count": 0,
+          "elapsed_s": 6.836
+        }
+      }
+    },
+    "financial data": {
+      "keyword": "financial data",
+      "fetched_count": 100,
+      "matched_count": 6,
+      "added_count": 6,
+      "filtered_count": 94,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.502
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.471
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.388
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 6,
+          "added_count": 6,
+          "filtered_count": 44,
+          "duplicate_count": 0,
+          "elapsed_s": 4.766
+        }
+      }
+    },
+    "finance data analyst": {
+      "keyword": "finance data analyst",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.38
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.51
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.37
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.591
+        }
+      }
+    },
+    "vba": {
+      "keyword": "vba",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.399
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.643
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.484
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.812
+        }
+      }
+    },
+    "excel automation": {
+      "keyword": "excel automation",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.023
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.468
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.382
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.704
+        }
+      }
+    },
+    "power bi": {
+      "keyword": "power bi",
+      "fetched_count": 100,
+      "matched_count": 15,
+      "added_count": 15,
+      "filtered_count": 85,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.493
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.503
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.115
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 15,
+          "added_count": 15,
+          "filtered_count": 35,
+          "duplicate_count": 0,
+          "elapsed_s": 5.478
+        }
+      }
+    },
+    "azure data": {
+      "keyword": "azure data",
+      "fetched_count": 100,
+      "matched_count": 8,
+      "added_count": 8,
+      "filtered_count": 92,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.752
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.431
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.108
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 8,
+          "added_count": 8,
+          "filtered_count": 42,
+          "duplicate_count": 0,
+          "elapsed_s": 5.003
+        }
+      }
+    },
+    "python developer": {
+      "keyword": "python developer",
+      "fetched_count": 100,
+      "matched_count": 20,
+      "added_count": 20,
+      "filtered_count": 80,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.785
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.603
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.191
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 20,
+          "added_count": 20,
+          "filtered_count": 30,
+          "duplicate_count": 0,
+          "elapsed_s": 4.882
+        }
+      }
+    },
+    "pandas": {
+      "keyword": "pandas",
+      "fetched_count": 100,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 100,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.825
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.608
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.671
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 4.777
+        }
+      }
+    },
+    "numpy": {
+      "keyword": "numpy",
+      "fetched_count": 80,
+      "matched_count": 0,
+      "added_count": 0,
+      "filtered_count": 80,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.869
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.434
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.115
+        },
+        "pracuj": {
+          "fetched_count": 30,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 30,
+          "duplicate_count": 0,
+          "elapsed_s": 4.964
+        }
+      }
+    },
+    "spark": {
+      "keyword": "spark",
+      "fetched_count": 68,
+      "matched_count": 15,
+      "added_count": 15,
+      "filtered_count": 53,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.531
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.517
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.638
+        },
+        "pracuj": {
+          "fetched_count": 18,
+          "matched_count": 15,
+          "added_count": 15,
+          "filtered_count": 3,
+          "duplicate_count": 0,
+          "elapsed_s": 4.271
+        }
+      }
+    },
+    "docker": {
+      "keyword": "docker",
+      "fetched_count": 100,
+      "matched_count": 3,
+      "added_count": 3,
+      "filtered_count": 97,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.865
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 1,
+          "added_count": 1,
+          "filtered_count": 49,
+          "duplicate_count": 0,
+          "elapsed_s": 0.575
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.282
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 2,
+          "added_count": 2,
+          "filtered_count": 48,
+          "duplicate_count": 0,
+          "elapsed_s": 4.687
+        }
+      }
+    },
+    "junior data analyst": {
+      "keyword": "junior data analyst",
+      "fetched_count": 100,
+      "matched_count": 4,
+      "added_count": 4,
+      "filtered_count": 96,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.435
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.497
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.235
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 4,
+          "added_count": 4,
+          "filtered_count": 46,
+          "duplicate_count": 0,
+          "elapsed_s": 4.501
+        }
+      }
+    },
+    "big data": {
+      "keyword": "big data",
+      "fetched_count": 100,
+      "matched_count": 8,
+      "added_count": 8,
+      "filtered_count": 92,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.541
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.542
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.344
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 8,
+          "added_count": 8,
+          "filtered_count": 42,
+          "duplicate_count": 0,
+          "elapsed_s": 4.926
+        }
+      }
+    },
+    "business data analyst": {
+      "keyword": "business data analyst",
+      "fetched_count": 100,
+      "matched_count": 13,
+      "added_count": 13,
+      "filtered_count": 87,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.445
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.559
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.473
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 13,
+          "added_count": 13,
+          "filtered_count": 37,
+          "duplicate_count": 0,
+          "elapsed_s": 4.927
+        }
+      }
+    },
+    "reporting analyst": {
+      "keyword": "reporting analyst",
+      "fetched_count": 100,
+      "matched_count": 7,
+      "added_count": 6,
+      "filtered_count": 93,
+      "duplicate_count": 1,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.71
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.578
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.905
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 7,
+          "added_count": 6,
+          "filtered_count": 43,
+          "duplicate_count": 1,
+          "elapsed_s": 4.723
+        }
+      }
+    },
+    "it support": {
+      "keyword": "it support",
+      "fetched_count": 100,
+      "matched_count": 23,
+      "added_count": 23,
+      "filtered_count": 77,
+      "duplicate_count": 0,
+      "errors": {},
+      "portals": {
+        "justjoin": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 5.392
+        },
+        "nofluff": {
+          "fetched_count": 50,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 50,
+          "duplicate_count": 0,
+          "elapsed_s": 0.473
+        },
+        "rocketjobs": {
+          "fetched_count": 0,
+          "matched_count": 0,
+          "added_count": 0,
+          "filtered_count": 0,
+          "duplicate_count": 0,
+          "elapsed_s": 4.379
+        },
+        "pracuj": {
+          "fetched_count": 50,
+          "matched_count": 23,
+          "added_count": 23,
+          "filtered_count": 27,
+          "duplicate_count": 0,
+          "elapsed_s": 4.416
+        }
+      }
+    }
+  },
+  "errors": {},
+  "failed_portals": [],
+  "empty_portals": [
+    "justjoin",
+    "rocketjobs"
+  ],
+  "total_count": 190,
+  "finished_at": "2026-10-27T11:55:39.086067+00:00",
+  "status": "success"
+}
